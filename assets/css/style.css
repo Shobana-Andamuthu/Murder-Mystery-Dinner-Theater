@@ -369,10 +369,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-<<<<<<< HEAD
-=======
   contain: layout paint;
->>>>>>> 68ae063b8d1b712790ac52f4f7ebe3b82d5d221b
   transition: none !important;
   animation: none !important;
 }
@@ -627,7 +624,6 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.3;
 }
 
-<<<<<<< HEAD
 [data-theme="light"] .dropdown-menu {
   background: #FFFFFF;
   border-color: rgba(180, 83, 9, 0.35);
@@ -655,8 +651,6 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #F8F5EE;
 }
 
-=======
->>>>>>> 68ae063b8d1b712790ac52f4f7ebe3b82d5d221b
 /* Navbar Action Controls */
 .navbar-actions {
   display: flex;
@@ -672,10 +666,17 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   width: 38px;
   height: 38px;
+  padding: 0;
+  margin: 0;
   border-radius: var(--border-radius-md);
   border: 1px solid var(--border-subtle);
   background: var(--bg-surface);
   color: var(--text-primary);
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+  box-sizing: border-box;
+  flex-shrink: 0;
   transition: all var(--transition-fast);
 }
 
@@ -687,9 +688,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toggle-btn svg {
+  display: block;
   width: 17px;
   height: 17px;
+  margin: 0 auto;
   fill: currentColor;
+  flex-shrink: 0;
 }
 
 .rtl-toggle-text {
