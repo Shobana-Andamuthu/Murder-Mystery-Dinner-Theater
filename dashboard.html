@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Patron Portal &amp; Guest Dashboard | The Grand Enigma Murder Mystery Dinner Theater</title>
+  <meta name="description" content="Exclusive patron portal for The Grand Enigma. Access your digital reservation boarding passes, table allocations, sommelier pairing customizer, and case dossiers.">
+  <meta name="keywords" content="guest dashboard, theater reservation portal, murder mystery ticket pass, sommelier pairings, loyalty alibi credits">
+  <meta property="og:title" content="Patron Portal &amp; Guest Dashboard | The Grand Enigma">
+  <meta property="og:description" content="Access your live theatrical boarding pass, table sightlines, sommelier pairings, and detective case dossiers.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/images/branding/logo-emblem.svg">
+  <link rel="stylesheet" href="assets/css/style.css?v=4.2">
+  <link rel="stylesheet" href="assets/css/dashboard-tabs.css?v=1.1">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=2.1">
+</head>
+<body class="dashboard-body">
+
+  <!-- =========================================================================
+       Page Preloader (Modern Luxury Mystery Loader)
+       ========================================================================= -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="page-loader-inner">
+      <div class="loader-emblem-wrap">
+        <div class="loader-pulse-ring"></div>
+        <div class="loader-compass-ring"></div>
+        <div class="loader-emblem">
+          <svg viewBox="0 0 64 64" fill="none" class="loader-svg" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28" stroke="url(#loaderGoldGradDash)" stroke-width="2" stroke-dasharray="4 3" class="loader-orbit"/>
+            <polygon points="32,8 39,25 56,32 39,39 32,56 25,39 8,32 25,25" fill="url(#loaderGoldGradDash)" opacity="0.9"/>
+            <circle cx="32" cy="32" r="5" fill="#0D0A07" stroke="#C48D28" stroke-width="2"/>
+            <defs>
+              <linearGradient id="loaderGoldGradDash" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F3D17A"/>
+                <stop offset="50%" stop-color="#C48D28"/>
+                <stop offset="100%" stop-color="#8E6316"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <div class="loader-brand-title">THE GRAND ENIGMA</div>
+      <div class="loader-status-text">Loading Patron Portal…</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       FULL-WIDTH TOPBAR (spans entire viewport, above sidebar + content)
+       Reference: image 1 & 4 — logo only on left, action buttons on right
+       ======================================================================= -->
+  <header class="dash-app-topbar" id="dashAppTopbar">
+    <div class="dash-topbar-left">
+      <!-- Brand in topbar: logo + website name (exact image requested) -->
+      <a href="index.html" class="dash-topbar-brand" aria-label="The Grand Enigma — Home">
+        <img src="assets/images/branding/logo.svg" alt="The Grand Enigma Murder Mystery Dinner Theater" class="dash-topbar-brand-logo">
+      </a>
+    </div>
+    <div class="dash-topbar-actions">
+      <button type="button" class="toggle-btn theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle Light / Dark Mode">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+      </button>
+      <button type="button" class="toggle-btn rtl-toggle-btn" aria-label="Toggle Layout Direction" title="Toggle RTL / LTR">
+        <span class="rtl-toggle-text">RTL</span>
+      </button>
+      <a href="index.html" class="dash-btn-back dash-btn-desktop-only">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+        <span>Back to Site</span>
+      </a>
+      <a href="login.html" class="dash-btn-logout" title="Log Out" aria-label="Log Out">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       PAGE BODY: Sidebar (left) + Main content (right) — below the topbar
+       ======================================================================= -->
+  <div class="dash-page-body">
+  <div class="dash-app-layout">
+
+    <!-- LEFT SIDEBAR (nav only — brand is in topbar) -->
+    <aside class="dash-app-sidebar" id="dashAppSidebar" aria-label="Dashboard Sidebar Navigation">
+
+      <ul class="dash-sidebar-menu">
+        <li class="dash-menu-item">
+          <button type="button" class="dash-menu-btn active" data-tab="tab-overview" id="tab-overview-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+            <span>Overview</span>
+          </button>
+        </li>
+        <li class="dash-menu-item">
+          <button type="button" class="dash-menu-btn" data-tab="tab-passes" id="tab-passes-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 10V6c0-1.11-.9-2-2-2H4c-1.1 0-1.99.89-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2z"/></svg>
+            <span>Active Passes</span>
+          </button>
+        </li>
+        <li class="dash-menu-item">
+          <button type="button" class="dash-menu-btn" data-tab="tab-gastronomy" id="tab-gastronomy-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+            <span>Menu &amp; Cellar</span>
+          </button>
+        </li>
+        <li class="dash-menu-item">
+          <button type="button" class="dash-menu-btn" data-tab="tab-case" id="tab-case-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            <span>Case Intelligence</span>
+          </button>
+        </li>
+        <li class="dash-menu-item">
+          <button type="button" class="dash-menu-btn" data-tab="tab-ledger" id="tab-ledger-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+            <span>Detective Ledger</span>
+          </button>
+        </li>
+        <li class="dash-menu-item">
+          <button type="button" class="dash-menu-btn" data-tab="tab-roster" id="tab-roster-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            <span>Companion Roster</span>
+          </button>
+        </li>
+        <li class="dash-menu-item">
+          <button type="button" class="dash-menu-btn" data-tab="tab-concierge" id="tab-concierge-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 9h12v2H6V9zm8 5H6v-2h8v2zm4-6H6V6h12v2z"/></svg>
+            <span>Concierge Dispatch</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="dash-sidebar-footer">
+        <div style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;">
+          Grand Enigma Alibi Society<br>
+          <strong style="color:var(--color-gold-bright);">VIP Member #0849</strong>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN AREA (tabs + content) -->
+    <div class="dash-app-main">
+
+      <!-- MOBILE TAB BAR (scrollable, below topbar on mobile) -->
+      <nav class="dash-mobile-tabs-bar" id="dashMobileTabBar" aria-label="Dashboard Mobile Navigation">
+        <button type="button" class="dash-mobile-tab-btn active" data-tab="tab-overview">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+          Overview
+        </button>
+        <button type="button" class="dash-mobile-tab-btn" data-tab="tab-passes">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 10V6c0-1.11-.9-2-2-2H4c-1.1 0-1.99.89-1.99 2v4c1.1 0 1.99.9 1.99 2s-.89 2-2 2v4c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2v-4c-1.1 0-2-.9-2-2s.9-2 2-2z"/></svg>
+          Passes
+        </button>
+        <button type="button" class="dash-mobile-tab-btn" data-tab="tab-gastronomy">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+          Menu &amp; Cellar
+        </button>
+        <button type="button" class="dash-mobile-tab-btn" data-tab="tab-case">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6z"/></svg>
+          Case Intel
+        </button>
+        <button type="button" class="dash-mobile-tab-btn" data-tab="tab-ledger">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/></svg>
+          Ledger
+        </button>
+        <button type="button" class="dash-mobile-tab-btn" data-tab="tab-roster">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3z"/></svg>
+          Roster
+        </button>
+        <button type="button" class="dash-mobile-tab-btn" data-tab="tab-concierge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+          Concierge
+        </button>
+      </nav>
+
+      <!-- TAB CONTENT -->
+      <main id="mainContent" class="dash-app-content">
+
+        <!-- TAB 1: OVERVIEW -->
+        <div class="dash-tab-pane active" id="tab-overview" role="tabpanel">
+          <section class="dash-hero-section" aria-labelledby="dashWelcomeTitle" style="padding-top:1rem;border-top:none;">
+            <div class="dash-welcome-row">
+              <div class="dash-welcome-avatar">
+                <img src="assets/images/dashboard/dashboard_patron_avatar.jpg" alt="Inspector Julian Vance Patron Portrait">
+              </div>
+              <div>
+                <div class="dash-welcome-sub">Welcome back,</div>
+                <h1 class="dash-welcome-name" id="dashWelcomeTitle">Lord Julian Vance</h1>
+              </div>
+            </div>
+
+            <div class="dash-metric-row">
+              <div class="dash-metric-card">
+                <div class="dash-metric-label">Active Investigation</div>
+                <div class="dash-metric-main">
+                  <div class="dash-metric-circle">&#127917;</div>
+                  <div>
+                    <div class="dash-metric-title">Blackwood Manor</div>
+                    <div class="dash-metric-sub">Sat, Oct 24 &bull; 7:00 PM</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dash-metric-card">
+                <div class="dash-metric-label">Society Rank</div>
+                <div>
+                  <div class="dash-metric-title">Grand Inquisitor VIP</div>
+                  <div class="dash-metric-sub">3,450 Alibi Credits (78% to Sovereign)</div>
+                  <div class="dash-metric-progress">
+                    <div class="dash-metric-progress-bar" style="width:78%;"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dash-metric-card">
+                <div class="dash-metric-label">Unmasking Rate</div>
+                <div class="dash-metric-main">
+                  <div class="dash-metric-circle">75%</div>
+                  <div>
+                    <div class="dash-metric-title">Master Sleuth</div>
+                    <div class="dash-metric-sub">3 of 4 Culprits Solved</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dash-metric-card" style="padding:0;border:none;background:transparent;">
+                <button type="button" class="dash-metric-btn-today" id="dashCheckInBtn">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right:0.5rem;" aria-hidden="true"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Check In / Scan Pass</span>
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB 2: ACTIVE PASSES -->
+        <div class="dash-tab-pane" id="tab-passes" role="tabpanel">
+          <section class="dash-pass-section" aria-labelledby="passHeading">
+            <div class="section-header" style="margin-bottom:2rem;">
+              <span class="section-tag">Tonight's Access Credential</span>
+              <h2 class="section-title" id="passHeading">Active Reservation &amp; Digital Boarding Pass</h2>
+              <p class="section-subtitle">Present this pass at the Porte-Cochere for complimentary valet, coat check, and Table #7 escort.</p>
+            </div>
+            <div class="dash-pass-split">
+              <div class="dash-ticket-card">
+                <div class="dash-ticket-header" style="background-image:url('assets/images/dashboard/dashboard_active_ticket.jpg');">
+                  <div class="dash-ticket-header-content">
+                    <div>
+                      <span class="dash-ticket-badge">Confirmed Production Pass</span>
+                      <h3 class="dash-ticket-title">The Masque of Blackwood Manor</h3>
+                    </div>
+                    <span style="color:var(--color-gold-bright);font-size:0.85rem;font-weight:700;background:rgba(0,0,0,0.7);padding:0.4rem 0.8rem;border-radius:6px;">Pass #TKT-8849-VIP</span>
+                  </div>
+                </div>
+                <div class="dash-ticket-body">
+                  <div class="dash-ticket-grid">
+                    <div><div class="dash-ticket-field-label">Performance Date</div><div class="dash-ticket-field-val">Saturday, Oct 24, 2026</div></div>
+                    <div><div class="dash-ticket-field-label">Curtain Time</div><div class="dash-ticket-field-val">7:00 PM (Doors 6:15 PM)</div></div>
+                    <div><div class="dash-ticket-field-label">Table Allocation</div><div class="dash-ticket-field-val" style="color:var(--color-gold-bright);">Table #7 (Director's Circle)</div></div>
+                    <div><div class="dash-ticket-field-label">Party Size</div><div class="dash-ticket-field-val">4 Distinguished Patrons</div></div>
+                  </div>
+                  <div class="dash-ticket-barcode-row">
+                    <div style="display:flex;align-items:center;gap:1.25rem;">
+                      <div class="dash-qr-code-box" title="Authenticated QR Scan for Usher">
+                        <svg viewBox="0 0 100 100" fill="currentColor">
+                          <rect x="5" y="5" width="28" height="28" fill="#000"/><rect x="9" y="9" width="20" height="20" fill="#fff"/><rect x="13" y="13" width="12" height="12" fill="#000"/>
+                          <rect x="67" y="5" width="28" height="28" fill="#000"/><rect x="71" y="9" width="20" height="20" fill="#fff"/><rect x="75" y="13" width="12" height="12" fill="#000"/>
+                          <rect x="5" y="67" width="28" height="28" fill="#000"/><rect x="9" y="71" width="20" height="20" fill="#fff"/><rect x="13" y="75" width="12" height="12" fill="#000"/>
+                          <rect x="40" y="10" width="8" height="8" fill="#000"/><rect x="50" y="20" width="10" height="10" fill="#000"/>
+                          <rect x="40" y="40" width="20" height="20" fill="#000"/>
+                          <rect x="65" y="45" width="8" height="12" fill="#000"/><rect x="75" y="70" width="18" height="8" fill="#000"/><rect x="45" y="75" width="12" height="14" fill="#000"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <div style="font-size:0.85rem;font-weight:700;color:var(--text-primary);margin-bottom:0.2rem;">Will Call &amp; Foyer Scan Ready</div>
+                        <div style="font-size:0.78rem;color:var(--text-muted);">Scan at Porte-Cochere for priority seating &amp; coat check.</div>
+                      </div>
+                    </div>
+                    <div class="dash-ticket-actions">
+                      <button type="button" class="btn btn-primary" id="dashDownloadPassBtn" style="padding:0.7rem 1.15rem;font-size:0.82rem;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                        <span>Download PDF Pass</span>
+                      </button>
+                      <button type="button" class="btn btn-secondary" id="dashWalletPassBtn" style="padding:0.7rem 1.15rem;font-size:0.82rem;">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8zm4-2.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                        <span>Apple / Google Wallet</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dash-locator-card">
+                <div>
+                  <div class="dash-locator-stage">Central Stage &bull; Proscenium Acting Circle</div>
+                  <div class="dash-seating-matrix" aria-label="Auditorium Seating Matrix">
+                    <div class="dash-seat-spot booked">T-1</div><div class="dash-seat-spot booked">T-2</div>
+                    <div class="dash-seat-spot booked">T-3</div><div class="dash-seat-spot booked">T-4</div>
+                    <div class="dash-seat-spot" data-table="5" data-tier="Director's Circle">T-5</div>
+                    <div class="dash-seat-spot booked">T-6</div>
+                    <div class="dash-seat-spot active-table" data-table="7" data-tier="Director's Circle" title="Your Confirmed Table #7">T-7 &#9733;</div>
+                    <div class="dash-seat-spot booked">T-8</div>
+                    <div class="dash-seat-spot" data-table="9" data-tier="Ballroom Center">T-9</div>
+                    <div class="dash-seat-spot" data-table="10" data-tier="Ballroom Center">T-10</div>
+                    <div class="dash-seat-spot booked">T-11</div><div class="dash-seat-spot booked">T-12</div>
+                    <div class="dash-seat-spot" data-table="13" data-tier="Mezzanine Booth">M-1</div>
+                    <div class="dash-seat-spot booked">M-2</div><div class="dash-seat-spot booked">M-3</div>
+                    <div class="dash-seat-spot" data-table="16" data-tier="Mezzanine Booth">M-4</div>
+                  </div>
+                </div>
+                <div>
+                  <div style="font-size:0.85rem;font-weight:700;color:var(--color-gold-bright);margin-bottom:0.35rem;" id="dashSeatDetailText">Table #7 &bull; Director's Circle &bull; 100% Unobstructed Stage Sightline</div>
+                  <p style="font-size:0.8rem;color:var(--text-secondary);line-height:1.5;">Front-row banquette positioning within arm's reach of crime-scene cross-examinations. Dedicated sommelier service by Maitre d' Laurent.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB 3: MENU & CELLAR -->
+        <div class="dash-tab-pane" id="tab-gastronomy" role="tabpanel">
+          <section class="dash-gastronomy-section" aria-labelledby="gastroHeading">
+            <div class="section-header" style="margin-bottom:2rem;">
+              <span class="section-tag">Haute Gastronomy &amp; Vintage Cellar</span>
+              <h2 class="section-title" id="gastroHeading">Pre-Show Menu Customizer &amp; Wine Pairings</h2>
+              <p class="section-subtitle">Configure your party's multi-course banquet preferences and select sommelier tasting flights.</p>
+            </div>
+            <div class="dash-gastro-split">
+              <div class="dash-gastro-card">
+                <div class="dash-gastro-img-header">
+                  <img src="assets/images/dashboard/dashboard_sommelier_cellar.jpg" alt="Four tasting glasses of vintage reserve wines" class="dash-gastro-img">
+                </div>
+                <div class="dash-gastro-body">
+                  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.75rem;">
+                    <h3 style="font-family:var(--font-display);font-size:1.35rem;color:var(--text-primary);">Sommelier Cellar Flight</h3>
+                    <span style="font-size:0.85rem;font-weight:800;color:var(--color-gold-bright);" id="dashWineTotalFig">+$45 / patron</span>
+                  </div>
+                  <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.6;">Curated wine and champagne allocations paired to each dramatic act by Sommelier Marc Valmont.</p>
+                  <div class="dash-wine-options-list">
+                    <div class="dash-wine-option selected" data-price="+$45">
+                      <div><div class="dash-wine-option-title">The Grand Sommelier Flight</div><div class="dash-wine-option-desc">Four glasses: Chablis Premier Cru, Barolo, Pinot Noir &amp; Tawny Port</div></div>
+                      <div class="dash-wine-option-price">+$45</div>
+                    </div>
+                    <div class="dash-wine-option" data-price="+$65">
+                      <div><div class="dash-wine-option-title">Prohibition Champagne Prestige</div><div class="dash-wine-option-desc">Vintage Veuve Clicquot 2012 flutes served throughout the performance</div></div>
+                      <div class="dash-wine-option-price">+$65</div>
+                    </div>
+                    <div class="dash-wine-option" data-price="+$28">
+                      <div><div class="dash-wine-option-title">Artisan Zero-Proof Mocktail Pairing</div><div class="dash-wine-option-desc">Smoked rosemary botanical elixirs and clarified spiced citrus infusions</div></div>
+                      <div class="dash-wine-option-price">+$28</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="dash-gastro-card">
+                <div class="dash-gastro-body" style="padding-top:2.25rem;">
+                  <span class="dash-patron-badge" style="margin-bottom:0.75rem;">Patron Privilege Concierge</span>
+                  <h3 style="font-family:var(--font-display);font-size:1.45rem;color:var(--text-primary);margin-bottom:0.75rem;">Enhance Your Evening of High Society</h3>
+                  <p style="font-size:0.9rem;color:var(--text-secondary);line-height:1.65;margin-bottom:1.75rem;">As a Grand Inquisitor VIP, unlock bespoke amenities to intensify your theatrical murder mystery experience.</p>
+                  <div style="display:flex;flex-direction:column;gap:1.15rem;margin-bottom:2rem;">
+                    <div style="display:flex;align-items:flex-start;gap:1rem;">
+                      <div style="width:24px;height:24px;border-radius:50%;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;color:var(--color-gold-bright);flex-shrink:0;margin-top:2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                      <div><strong style="color:var(--text-primary);font-size:0.92rem;">Caviar &amp; Blini Prelude (+$85)</strong><p style="font-size:0.82rem;color:var(--text-secondary);">Served tableside 20 minutes prior to curtain call with chilled vodka shots.</p></div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:1rem;">
+                      <div style="width:24px;height:24px;border-radius:50%;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;color:var(--color-gold-bright);flex-shrink:0;margin-top:2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                      <div><strong style="color:var(--text-primary);font-size:0.92rem;">Secret Undercover Actor Briefing (+$50)</strong><p style="font-size:0.82rem;color:var(--text-secondary);">Receive a confidential letter directly from the coroner before the prologue starts.</p></div>
+                    </div>
+                    <div style="display:flex;align-items:flex-start;gap:1rem;">
+                      <div style="width:24px;height:24px;border-radius:50%;background:rgba(212,175,55,0.15);display:flex;align-items:center;justify-content:center;color:var(--color-gold-bright);flex-shrink:0;margin-top:2px;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+                      <div><strong style="color:var(--text-primary);font-size:0.92rem;">Private Mezzanine Parlor Upgrade (+$120)</strong><p style="font-size:0.82rem;color:var(--text-secondary);">Elevated horseshoe booth with dedicated butler and private restroom corridor.</p></div>
+                    </div>
+                  </div>
+                  <button type="button" class="btn btn-secondary" style="width:100%;justify-content:center;" onclick="window.dashSwitchTab('tab-concierge')">
+                    <span>Dispatch Upgrade Request to Usher &rarr;</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB 4: CASE INTELLIGENCE -->
+        <div class="dash-tab-pane" id="tab-case" role="tabpanel">
+          <section class="dash-case-section" aria-labelledby="caseHeading">
+            <div class="section-header" style="margin-bottom:2rem;">
+              <span class="section-tag">Confidential Case Briefing</span>
+              <h2 class="section-title" id="caseHeading">Classified Suspect Dossier &amp; Motive Ledger</h2>
+              <p class="section-subtitle">Study your prime suspects prior to taking your seat. Click any portrait to inspect their recorded alibi.</p>
+            </div>
+            <div class="dash-dossier-card">
+              <div class="dash-dossier-media">
+                <img src="assets/images/dashboard/dashboard_evidence_brief.jpg" alt="Fountain pen handwritten cursive notebook journal" class="dash-dossier-img">
+              </div>
+              <div class="dash-dossier-content">
+                <span class="dash-patron-badge" style="align-self:flex-start;margin-bottom:0.85rem;">Case File #1932-B: The Will of Lord Blackwood</span>
+                <h3 style="font-family:var(--font-display);font-size:1.6rem;color:var(--text-primary);margin-bottom:0.5rem;">The Four Prime Beneficiaries</h3>
+                <p style="font-size:0.88rem;color:var(--text-secondary);line-height:1.65;">Lord Sterling was discovered slumped over his mahogany desk at 11:42 PM. Four guests were seen leaving the west conservatory. Tap any suspect card below to view their leaked testimony:</p>
+                <div class="dash-suspects-grid">
+                  <div class="dash-suspect-mini-card" data-secret-alibi="Claims she was adjusting her pearls in the powder room, but glass shards were found on her hemline.">
+                    <div class="dash-suspect-mini-name">Lady Vivienne Sterling</div>
+                    <div class="dash-suspect-mini-role">The Grieving Heiress &bull; Sole Beneficiary</div>
+                  </div>
+                  <div class="dash-suspect-mini-card" data-secret-alibi="Claims he was sterilizing syringes in the pantry, but the tincture bottle was unsealed.">
+                    <div class="dash-suspect-mini-name">Dr. Alistair Finch</div>
+                    <div class="dash-suspect-mini-role">Personal Physician &bull; Bitter Creditor</div>
+                  </div>
+                  <div class="dash-suspect-mini-card" data-secret-alibi="Claims the seance required complete darkness, yet the library key was missing from the chime box.">
+                    <div class="dash-suspect-mini-name">Madame Genevieve</div>
+                    <div class="dash-suspect-mini-role">Venetian Spiritualist &bull; Guest of Honor</div>
+                  </div>
+                  <div class="dash-suspect-mini-card" data-secret-alibi="Claims he never entered the study, but his silver pocket watch was discovered under the armchair.">
+                    <div class="dash-suspect-mini-name">Colonel Arthur Sterling</div>
+                    <div class="dash-suspect-mini-role">Disinherited Brother &bull; Royal Army Veteran</div>
+                  </div>
+                </div>
+                <div>
+                  <a href="#" class="btn btn-secondary" onclick="event.preventDefault();window.showToast('Encrypted Case Dossier #1932-B downloaded. Review pages 4-7 for coroner analysis.','info');">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    <span>Download Complete Case Briefing (PDF 4.2 MB)</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB 5: DETECTIVE LEDGER -->
+        <div class="dash-tab-pane" id="tab-ledger" role="tabpanel">
+          <section class="dash-ledger-section" aria-labelledby="ledgerHeading">
+            <div class="section-header" style="margin-bottom:2rem;">
+              <span class="section-tag">Deduction History &amp; Society Honors</span>
+              <h2 class="section-title" id="ledgerHeading">The Detective Ledger &amp; Loyalty Rank</h2>
+              <p class="section-subtitle">An official record of all previous murder mysteries attended and verified culprit unmaskings.</p>
+            </div>
+            <div class="dash-ledger-split">
+              <div class="dash-ledger-card">
+                <table class="dash-ledger-table" aria-label="Past Attendance Ledger">
+                  <thead>
+                    <tr><th>Production &amp; Date</th><th>Table</th><th>Accused Culprit</th><th>Outcome</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong style="color:var(--text-primary);display:block;">The Obsidian Key</strong><span style="font-size:0.78rem;color:var(--text-muted);">Nov 14, 2025</span></td>
+                      <td>Table #4</td><td>Lord Montgomery (The Nephew)</td>
+                      <td><span class="dash-badge-solved">&#10003; Solved (+500 pts)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong style="color:var(--text-primary);display:block;">Midnight in Manhattan</strong><span style="font-size:0.78rem;color:var(--text-muted);">Feb 28, 2026</span></td>
+                      <td>Table #12</td><td>Eleanor Vance (The Singer)</td>
+                      <td><span class="dash-badge-solved">&#10003; Solved (+500 pts)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong style="color:var(--text-primary);display:block;">Murder on the Orient Express</strong><span style="font-size:0.78rem;color:var(--text-muted);">May 19, 2026</span></td>
+                      <td>Table #2</td><td>Count Andrenyi</td>
+                      <td><span style="font-size:0.75rem;color:var(--text-muted);">Inconclusive (+200 pts)</span></td>
+                    </tr>
+                    <tr>
+                      <td><strong style="color:var(--text-primary);display:block;">The Baron's Last Toast</strong><span style="font-size:0.78rem;color:var(--text-muted);">Aug 08, 2026</span></td>
+                      <td>Table #8</td><td>Chef Jean-Luc (Arsenic in Sauce)</td>
+                      <td><span class="dash-badge-solved">&#10003; Solved (+500 pts)</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="dash-loyalty-panel">
+                <div class="dash-loyalty-card">
+                  <span class="dash-patron-badge" style="margin-bottom:0.5rem;">Society Progression</span>
+                  <h3 style="font-family:var(--font-display);font-size:1.3rem;color:var(--text-primary);">The Sovereign Sleuth Tier</h3>
+                  <p style="font-size:0.85rem;color:var(--text-secondary);margin-top:0.35rem;">3,450 / 5,000 Alibi Credits to unlock Sovereign status with complimentary private parlor dinner.</p>
+                  <div class="dash-progress-track"><div class="dash-progress-fill"></div></div>
+                  <div style="display:flex;justify-content:space-between;font-size:0.78rem;color:var(--text-muted);">
+                    <span>Grand Inquisitor (Current)</span><span>Sovereign Sleuth (5,000)</span>
+                  </div>
+                </div>
+                <div class="dash-loyalty-card">
+                  <h4 style="font-family:var(--font-display);font-size:1.15rem;color:var(--text-primary);margin-bottom:0.85rem;">Earned Society Merit Medals</h4>
+                  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.85rem;text-align:center;">
+                    <div style="background:var(--bg-surface);padding:0.85rem 0.5rem;border-radius:8px;border:1px solid var(--border-subtle);"><div style="font-size:1.5rem;margin-bottom:0.2rem;">&#128269;</div><div style="font-size:0.75rem;font-weight:700;color:var(--text-primary);">Keen Eye</div></div>
+                    <div style="background:var(--bg-surface);padding:0.85rem 0.5rem;border-radius:8px;border:1px solid var(--border-subtle);"><div style="font-size:1.5rem;margin-bottom:0.2rem;">&#127863;</div><div style="font-size:0.75rem;font-weight:700;color:var(--text-primary);">Gourmet Sleuth</div></div>
+                    <div style="background:var(--bg-surface);padding:0.85rem 0.5rem;border-radius:8px;border:1px solid var(--border-subtle);"><div style="font-size:1.5rem;margin-bottom:0.2rem;">&#127917;</div><div style="font-size:0.75rem;font-weight:700;color:var(--text-primary);">Front Row VIP</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB 6: COMPANION ROSTER -->
+        <div class="dash-tab-pane" id="tab-roster" role="tabpanel">
+          <section class="dash-party-section" aria-labelledby="partyHeading">
+            <div class="section-header" style="margin-bottom:2rem;">
+              <span class="section-tag">Party Roster &amp; Dietary Allocations</span>
+              <h2 class="section-title" id="partyHeading">Table #7 Companion Roster (4 Patrons)</h2>
+              <p class="section-subtitle">Manage your party's names, selected dinner courses, and kitchen dietary flags.</p>
+            </div>
+            <div class="dash-companion-grid">
+              <div class="dash-companion-card">
+                <div class="dash-companion-avatar">JV</div>
+                <h3 class="dash-companion-name">Lord Julian Vance</h3>
+                <div class="dash-companion-role">Lead Detective (Seat 7-A)</div>
+                <div style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.75rem;">Entree: <strong>Duck Confit Grand Enigma</strong></div>
+                <span class="dash-dietary-badge">Standard Haute Menu</span>
+              </div>
+              <div class="dash-companion-card">
+                <div class="dash-companion-avatar">EV</div>
+                <h3 class="dash-companion-name">Lady Eleanor Vance</h3>
+                <div class="dash-companion-role">Deputy Sleuth (Seat 7-B)</div>
+                <div style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.75rem;">Entree: <strong>Black Truffle Filet Mignon</strong></div>
+                <span class="dash-dietary-badge" style="color:#22C55E;border-color:rgba(34,197,94,0.3);">Gluten-Free Verified</span>
+              </div>
+              <div class="dash-companion-card">
+                <div class="dash-companion-avatar">RT</div>
+                <h3 class="dash-companion-name">Sir Reginald Thorne</h3>
+                <div class="dash-companion-role">Evidence Analyst (Seat 7-C)</div>
+                <div style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.75rem;">Entree: <strong>Pan-Roasted Chilean Seabass</strong></div>
+                <span class="dash-dietary-badge" style="color:#F59E0B;border-color:rgba(245,158,11,0.3);">Shellfish Allergy Flag</span>
+              </div>
+              <div class="dash-companion-card">
+                <div class="dash-companion-avatar">CT</div>
+                <h3 class="dash-companion-name">Countess Clara Thorne</h3>
+                <div class="dash-companion-role">Interrogator (Seat 7-D)</div>
+                <div style="font-size:0.82rem;color:var(--text-secondary);margin-bottom:0.75rem;">Entree: <strong>Hand-Rolled Wild Herb Gnocchi</strong></div>
+                <span class="dash-dietary-badge" style="color:#3B82F6;border-color:rgba(59,130,246,0.3);">Vegetarian Course</span>
+              </div>
+            </div>
+            <div style="text-align:center;margin-top:2rem;">
+              <button type="button" class="btn btn-secondary" onclick="window.showToast('Companion dietary flags locked with Head Chef Jean-Luc Moreau.','info');">
+                <span>Update Party Entree Selections &rarr;</span>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <!-- TAB 7: CONCIERGE DISPATCH -->
+        <div class="dash-tab-pane" id="tab-concierge" role="tabpanel">
+          <section class="dash-concierge-section" aria-labelledby="chatHeading">
+            <div class="section-header" style="margin-bottom:2rem;">
+              <span class="section-tag">Direct Box Office Telegraph</span>
+              <h2 class="section-title" id="chatHeading">Concierge Live Dispatch Messenger</h2>
+              <p class="section-subtitle">Direct priority communications with Head Usher Harrison regarding Table #7 arrangements.</p>
+            </div>
+            <div class="dash-chat-box">
+              <div class="dash-chat-header">
+                <div style="display:flex;align-items:center;gap:0.85rem;">
+                  <div style="width:10px;height:10px;border-radius:50%;background:#22C55E;box-shadow:0 0 10px #22C55E;"></div>
+                  <div>
+                    <strong style="color:var(--text-primary);font-size:0.95rem;display:block;">Lead Usher Harrison &bull; Box Office Concierge</strong>
+                    <span style="font-size:0.75rem;color:var(--text-muted);">Direct Line for Table #7 Patrons</span>
+                  </div>
+                </div>
+                <span class="dash-patron-badge" style="margin-bottom:0;">Priority VIP Dispatch</span>
+              </div>
+              <div class="dash-chat-history" id="dashChatHistory" aria-live="polite">
+                <div class="dash-chat-msg usher">
+                  <span>Good afternoon, Lord Vance. Table #7 front-row placement is confirmed for Saturday, Oct 24. Your sommelier pairing is noted with the cellar herald.</span>
+                  <span class="dash-chat-time">2:15 PM &bull; Lead Usher</span>
+                </div>
+                <div class="dash-chat-msg patron">
+                  <span>Thank you, Harrison. Can we ensure Lady Eleanor's dessert is strictly dairy-free for Saturday's performance?</span>
+                  <span class="dash-chat-time">2:40 PM &bull; Sent</span>
+                </div>
+                <div class="dash-chat-msg usher">
+                  <span>Understood, Lord Vance. Pastry Chef has substituted the Noir Valrhona Chocolate Mousse with a Raspberry Truffle Sorbet for Seat 7-B.</span>
+                  <span class="dash-chat-time">3:05 PM &bull; Lead Usher</span>
+                </div>
+              </div>
+              <form class="dash-chat-input-bar" id="dashConciergeChatForm">
+                <input type="text" class="dash-chat-input" id="dashConciergeInput" placeholder="Transmit dispatch note to Box Office Concierge..." required aria-label="Message to Concierge">
+                <button type="submit" class="btn btn-primary" style="padding:0.85rem 1.5rem;flex-shrink:0;">
+                  <span>Transmit</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+              </form>
+            </div>
+          </section>
+        </div>
+
+      </main>
+    </div><!-- /dash-app-main -->
+  </div><!-- /dash-app-layout -->
+  </div><!-- /dash-page-body -->
+
+  <button type="button" class="back-to-top" aria-label="Back to top of page" title="Return to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/></svg>
+  </button>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

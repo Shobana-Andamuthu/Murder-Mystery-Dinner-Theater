@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 58" fill="none" width="340" height="58">
+  <!-- Crest Icon -->
+  <g transform="translate(2, 4)">
+    <!-- Outer Shield / Diamond -->
+    <path d="M25 1 L49 15 L49 35 L25 49 L1 35 L1 15 Z" stroke="url(#goldGrad)" stroke-width="2.2" fill="url(#crestBg)" />
+    <!-- Inner Filigree & Mask Frame -->
+    <path d="M25 7 L43 18 L43 32 L25 43 L7 32 L7 18 Z" stroke="url(#goldGrad)" stroke-width="1.2" stroke-opacity="0.85" fill="none"/>
+    <!-- Masquerade Eyes Motif -->
+    <path d="M15 22 C18 19 22 20 25 24 C28 20 32 19 35 22 C37 25 34 29 25 33 C16 29 13 25 15 22 Z" fill="url(#goldGrad)"/>
+    <circle cx="20" cy="24" r="1.8" fill="#0B0C10"/>
+    <circle cx="30" cy="24" r="1.8" fill="#0B0C10"/>
+    <!-- Mystery Key Accent -->
+    <path d="M25 33 L25 41 M23 39 L27 39" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round"/>
+    <!-- Star Sparkle -->
+    <path d="M25 2 L26 5 L29 6 L26 7 L25 10 L24 7 L21 6 L24 5 Z" fill="#FFE066"/>
+  </g>
+  <!-- Typography -->
+  <text x="60" y="27" font-family="'Cinzel Decorative', 'Playfair Display', Georgia, serif" font-size="20" font-weight="800" letter-spacing="2.2" fill="url(#goldGrad)">THE GRAND ENIGMA</text>
+  <text x="61" y="45" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" font-weight="700" letter-spacing="3.2" fill="#E5C07B" opacity="0.95">MURDER MYSTERY DINNER THEATER</text>
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0A0" />
+      <stop offset="35%" stop-color="#F5BD1F" />
+      <stop offset="70%" stop-color="#E5A910" />
+      <stop offset="100%" stop-color="#D4AF37" />
+    </linearGradient>
+    <linearGradient id="crestBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3D0A14" />
+      <stop offset="100%" stop-color="#0B0C10" />
+    </linearGradient>
+  </defs>
+</svg>

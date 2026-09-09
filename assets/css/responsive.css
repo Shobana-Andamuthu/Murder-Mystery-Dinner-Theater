@@ -1,0 +1,629 @@
+/* ==========================================================================
+   THE GRAND ENIGMA — MURDER MYSTERY DINNER THEATER
+   Responsive Breakpoints — Fully Mobile-First Compatible
+   Covers: 320px · 375px · 390px · 430px · 768px · 1024px · Desktop
+   ==========================================================================
+
+/* --------------------------------------------------------------------------
+   1. Large Desktop (1440px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1240px;
+  }
+
+  .navbar-logo-img {
+    height: 44px;
+    width: auto;
+    max-width: none;
+  }
+
+  .navbar-nav {
+    gap: 1.35rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. Large Desktop (1440px - 1920px+)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1240px;
+  }
+
+  .navbar-logo-img {
+    height: 44px;
+    width: auto;
+    max-width: none;
+  }
+
+  .navbar-nav {
+    gap: 1.35rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Standard Desktop / Laptop (1200px - 1439px)
+      Specifically covers 1280px and 1366px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1439px) and (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .navbar-logo-img {
+    height: 44px;
+    width: auto;
+    max-width: none;
+  }
+
+  .navbar-nav {
+    gap: 1.15rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+    padding: 0.45rem 0.3rem;
+  }
+
+  .navbar-actions {
+    gap: 0.5rem;
+  }
+
+  .btn-nav-dashboard {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  .btn-nav-login {
+    padding: 0.48rem 1.05rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Compact Desktop (1024px - 1199px)
+      PRECISE MATH GUARANTEE: ZERO OVERLAP & ZERO CLIPPING AT 1024px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) and (min-width: 1024px) {
+  .container {
+    max-width: 1000px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .navbar-container {
+    height: 74px;
+    gap: 0.75rem;
+  }
+
+  .navbar-logo-img {
+    height: 42px;
+    width: auto;
+    max-width: none;
+  }
+
+  .navbar-nav {
+    gap: 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.2rem;
+    letter-spacing: 0;
+  }
+
+  .dropdown-chevron {
+    width: 9px;
+    height: 9px;
+  }
+
+  .navbar-actions {
+    gap: 0.35rem;
+  }
+
+  .toggle-btn {
+    width: 32px;
+    height: 32px;
+  }
+
+  .toggle-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .rtl-toggle-text {
+    font-size: 0.65rem;
+  }
+
+  .btn-nav-dashboard {
+    padding: 0.38rem 0.7rem;
+    font-size: 0.74rem;
+    gap: 0.25rem;
+  }
+
+  .btn-nav-dashboard svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .btn-nav-login {
+    padding: 0.4rem 0.85rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+    gap: 0.25rem;
+  }
+
+  .btn-nav-login svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+    gap: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Tablet (768px - 1023px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  body { overflow-x: clip; }
+
+  .master-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  /* Navbar */
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 68px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .navbar-nav-wrapper { display: none; }
+
+  .navbar-actions .btn-nav-dashboard,
+  .navbar-actions .btn-nav-login { display: none; }
+
+  .mobile-toggle {
+    display: flex;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    margin-right: 0;
+  }
+
+  .navbar-brand {
+    flex-shrink: 0;
+    margin-left: 0;
+  }
+
+  /* Logo: clean, proportionate for tablets */
+  .navbar-logo-img {
+    height: 38px;
+    width: auto;
+    max-width: 200px;
+  }
+
+  /* Announcement */
+  .announcement-tools { display: none; }
+  .announcement-inner { justify-content: center; text-align: center; }
+
+  /* Footer */
+  .footer-top-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer-logo-img { height: 40px; width: auto; max-width: 240px; object-fit: contain; }
+  .footer-brand-desc { font-size: 0.875rem; max-width: 100%; }
+  .foundation-checklist-grid { grid-template-columns: 1fr 1fr; }
+}
+
+/* --------------------------------------------------------------------------
+   5. Mobile (up to 767px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+  html, body { overflow-x: clip; max-width: 100vw; }
+
+  .master-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Announcement */
+  .announcement-bar { font-size: 0.75rem; padding: 0.35rem 0.75rem; }
+  .announcement-badge { padding: 0.1rem 0.45rem; font-size: 0.625rem; }
+
+  /* Navbar — compact for 375-430px */
+  .navbar-container { height: 60px; padding-left: 0; padding-right: 0; gap: 0; }
+  .navbar-brand { flex-shrink: 0; margin-left: 0; }
+  .navbar-logo-img { height: 32px; width: auto; max-width: 180px; display: block; }
+  .navbar-actions { gap: 0.35rem; flex-shrink: 0; }
+  .toggle-btn { width: 32px; height: 32px; }
+  .toggle-btn svg { width: 14px; height: 14px; }
+  .rtl-toggle-text { font-size: 0.6rem; }
+  .mobile-toggle { width: 34px; height: 34px; margin-right: 0; flex-shrink: 0; }
+  .hamburger-line { width: 18px; }
+
+  /* Footer */
+  .master-footer { padding: 3rem 0 1.5rem; }
+  .footer-top-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-brand-col { align-items: flex-start; gap: 0.875rem; padding-left: 0; }
+  .footer-logo-img { height: 38px; width: auto; max-width: 220px; object-fit: contain; margin-left: 0; display: block; }
+  .footer-brand-desc { font-size: 0.8125rem; line-height: 1.6; max-width: 100%; }
+  .footer-social-links { gap: 0.6rem; }
+  .social-link-btn { width: 32px; height: 32px; }
+  .social-link-btn svg { width: 14px; height: 14px; }
+  .footer-col-title { font-size: 0.85rem; margin-bottom: 0.75rem; }
+  .footer-link-item { font-size: 0.8rem; }
+  .footer-bottom-bar { flex-direction: column; text-align: center; gap: 1rem; font-size: 0.75rem; }
+  .footer-bottom-links { flex-wrap: wrap; justify-content: center; gap: 0.75rem; }
+  .mobile-drawer { width: 100%; max-width: 100%; }
+
+  /* General */
+  .foundation-checklist-grid { grid-template-columns: 1fr; }
+  .foundation-hero { padding: 4rem 0 3.5rem; }
+  .foundation-status-card { padding: 1.5rem; }
+}
+
+/* --------------------------------------------------------------------------
+   6. Small Mobile (320px - 424px) — covers 320, 375, 390px
+   -------------------------------------------------------------------------- */
+@media (max-width: 424px) {
+  .container { padding-left: 0.875rem; padding-right: 0.875rem; }
+
+  /* Navbar: very compact */
+  .navbar-container { height: 56px; gap: 0; }
+  .navbar-logo-img { height: 28px; max-width: 160px; }
+  .navbar-actions { gap: 0.25rem; }
+  .toggle-btn { width: 28px; height: 28px; padding: 4px; }
+  .toggle-btn svg { width: 12px; height: 12px; }
+  .rtl-toggle-text { font-size: 0.55rem; }
+  .mobile-toggle { width: 30px; height: 30px; margin-right: 0; padding: 6px; }
+  .hamburger-line { width: 16px; height: 1.5px; margin: 2px 0; }
+
+  /* Footer */
+  .footer-logo-img { height: 34px; width: auto; max-width: 200px; object-fit: contain; display: block; }
+  .footer-brand-desc { font-size: 0.775rem; }
+
+  /* General */
+  .mobile-drawer { width: 100%; max-width: 100%; }
+  .hero-pill-badge { font-size: 0.725rem; padding: 0.3rem 0.8rem; }
+  .status-card-header { flex-direction: column; align-items: flex-start; }
+  .back-to-top { bottom: 1.25rem; right: 1.25rem; width: 38px; height: 38px; }
+  [dir="rtl"] .back-to-top { right: auto; left: 1.25rem; }
+}
+
+/* --------------------------------------------------------------------------
+   7. Home 1 Section Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .booking-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .current-prod-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .current-prod-media img {
+    height: 380px;
+  }
+
+  .acts-timeline-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .shows-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dining-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .events-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .booking-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .acts-timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shows-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .events-bento-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dining-floating-card {
+    position: static;
+    margin-top: 1rem;
+  }
+
+  .home-hero {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .stat-number {
+    font-size: 1.65rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. Home 2 (The Velvet Alibi) Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .h2-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .h2-hero-img-box img {
+    height: 380px;
+  }
+
+  .suspects-pin-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .chamber-row-card,
+  .chamber-row-card:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+
+  .chamber-row-card:nth-child(even) .chamber-img-wrap {
+    order: 1;
+  }
+
+  .chamber-row-card:nth-child(even) .chamber-info-wrap {
+    order: 2;
+  }
+
+  .chamber-info-wrap {
+    padding: 2rem 1.5rem;
+  }
+
+  .tasting-panel-card.active {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .membership-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .membership-card.featured {
+    transform: none;
+  }
+
+  .membership-card.featured:hover {
+    transform: translateY(-4px);
+  }
+
+  .whispers-split-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .h2-hero-section {
+    padding: 3.5rem 0 3rem;
+  }
+
+  .case-board-cork {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .suspects-pin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quiz-container-box {
+    padding: 1.5rem;
+  }
+
+  .passcode-form {
+    flex-direction: column;
+  }
+
+  .countdown-clock-grid {
+    gap: 0.75rem;
+  }
+
+  .countdown-unit-box {
+    min-width: 70px;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .countdown-digit {
+    font-size: 1.75rem;
+  }
+
+  .h2-floating-cocktail {
+    position: static;
+    margin-top: 1rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Universal Mobile Safeguards (All Pages & Viewports <= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Prevent horizontal overflow without breaking position: sticky */
+  html {
+    overflow-x: clip;
+  }
+  body {
+    overflow-x: clip;
+    max-width: 100vw;
+  }
+
+  .master-header {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* All buttons: auto wrap and box-sizing */
+  .btn {
+    max-width: 100%;
+    box-sizing: border-box;
+    white-space: normal;
+    text-align: center;
+  }
+
+  /* Universal container safety */
+  .container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Section titles & headings break cleanly */
+  .section-title,
+  .hero-title,
+  .h1, .h2, .h3, h1, h2, h3 {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  /* Form controls stay within screen bounds */
+  input, select, textarea, button {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Contact Strip Clean Mobile Alignment */
+  .cal-boxoffice-contact-strip,
+  .events-direct-contact-strip,
+  .menu-reservation-meta-strip {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.85rem !important;
+  }
+
+  .cal-contact-item,
+  .events-contact-item,
+  .menu-reservation-meta-item {
+    display: inline-flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    max-width: 330px !important;
+    margin: 0 auto !important;
+    gap: 0.65rem !important;
+  }
+
+  .cal-contact-item svg,
+  .events-contact-item svg,
+  .menu-meta-icon {
+    flex-shrink: 0 !important;
+    margin-top: 3px !important;
+  }
+
+  .cal-contact-item span,
+  .events-contact-item span,
+  .menu-reservation-meta-item span {
+    text-align: left !important;
+    line-height: 1.4 !important;
+  }
+
+  /* Guarantees & Pillars of Assurance Clean Vertical Checkmark Alignment */
+  .contact-guarantees-grid,
+  .story-guarantees-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 320px !important;
+    margin: 0 auto !important;
+    gap: 0.85rem !important;
+  }
+
+  .contact-guarantee-item,
+  .story-guarantee-item {
+    justify-content: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-lg {
+    padding: 0.85rem 1.25rem;
+    font-size: 0.92rem;
+  }
+  .btn {
+    padding: 0.75rem 1.15rem;
+    font-size: 0.875rem;
+  }
+}
+

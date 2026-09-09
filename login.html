@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Guest Loyalty Login | The Grand Enigma Murder Mystery Dinner Theater</title>
+  <meta name="description" content="Access your Guest Loyalty Portal to manage reservations, track dining history, and unlock exclusive murder mystery season offers at The Grand Enigma.">
+  <meta name="keywords" content="murder mystery dinner login, guest portal, loyalty program, reservation management, The Grand Enigma">
+  <meta property="og:title" content="Guest Loyalty Login | The Grand Enigma">
+  <meta property="og:description" content="Sign in to your Grand Enigma patron account to manage bookings, view case history, and access exclusive loyalty perks.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/images/branding/logo-emblem.svg">
+  <link rel="stylesheet" href="assets/css/style.css?v=3.5">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=2.1">
+  <style>
+    /* =============================================
+       AUTH PAGE — SPLIT SCREEN LOGIN
+       Noir Cinematic Layout — Left: Visual / Right: Form
+    ============================================= */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body.auth-body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-base);
+      overflow-x: hidden;
+    }
+
+    .auth-wrap {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 100vh;
+    }
+
+    /* ——— Left Panel: Cinematic Visual ——— */
+    .auth-visual {
+      position: relative;
+      overflow: hidden;
+      min-height: 100%;
+    }
+
+    .auth-visual-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      filter: brightness(0.45) saturate(0.6);
+    }
+
+    .auth-visual-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(8, 9, 12, 0.72) 0%,
+        rgba(139, 90, 20, 0.18) 60%,
+        rgba(8, 9, 12, 0.85) 100%
+      );
+    }
+
+    .auth-visual-content {
+      position: relative;
+      z-index: 2;
+      padding: 3.5rem 3rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .auth-visual-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      text-decoration: none;
+    }
+
+    .auth-visual-brand img {
+      height: 42px;
+      width: auto;
+    }
+
+    .auth-visual-headline {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3rem 0 2rem;
+    }
+
+    .auth-eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-gold);
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .auth-eyebrow::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 2px;
+      background: var(--accent-gold);
+      border-radius: 2px;
+    }
+
+    .auth-visual-title {
+      font-size: clamp(1.85rem, 3vw, 2.85rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.01em;
+      color: #f5ead4;
+      margin-bottom: 1.25rem;
+      text-transform: uppercase;
+    }
+
+    .auth-visual-sub {
+      font-size: 1rem;
+      color: rgba(245, 234, 212, 0.68);
+      line-height: 1.65;
+      max-width: 340px;
+    }
+
+    .auth-visual-perks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .auth-perk-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.875rem;
+      color: rgba(245, 234, 212, 0.8);
+    }
+
+    .auth-perk-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-gold);
+      flex-shrink: 0;
+    }
+
+    .auth-visual-quote {
+      border-top: 1px solid rgba(245, 234, 212, 0.15);
+      padding-top: 1.5rem;
+    }
+
+    .auth-quote-text {
+      font-size: 0.9rem;
+      color: rgba(245, 234, 212, 0.6);
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 0.5rem;
+    }
+
+    .auth-quote-attr {
+      font-size: 0.75rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+    }
+
+    /* ——— Right Panel: Form ——— */
+    .auth-form-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 3.5rem 3.5rem 3.5rem 3.5rem;
+      background: var(--bg-surface);
+      border-left: 1px solid var(--border-subtle);
+      overflow-y: auto;
+    }
+
+    .auth-form-header {
+      margin-bottom: 2.25rem;
+    }
+
+    .auth-form-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(196, 141, 40, 0.12);
+      border: 1px solid rgba(196, 141, 40, 0.3);
+      color: var(--accent-gold);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.85rem;
+      border-radius: 30px;
+      margin-bottom: 1.1rem;
+    }
+
+    .auth-form-badge svg {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+    }
+
+    .auth-form-title {
+      font-size: clamp(1.5rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+      line-height: 1.15;
+    }
+
+    .auth-form-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    /* Form Fields */
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .auth-field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .auth-field-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: 0.03em;
+    }
+
+    .auth-field-label span {
+      color: var(--accent-gold);
+    }
+
+    .auth-input-wrap {
+      position: relative;
+    }
+
+    .auth-input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      fill: var(--text-muted);
+      pointer-events: none;
+      transition: fill 0.2s;
+    }
+
+    .auth-input {
+      width: 100%;
+      padding: 0.85rem 1rem 0.85rem 2.85rem;
+      background: var(--bg-surface-alt);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--border-radius-md);
+      color: var(--text-primary);
+      font-size: 0.9375rem;
+      font-family: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+      outline: none;
+    }
+
+    .auth-input::placeholder {
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+
+    .auth-input:focus {
+      border-color: var(--accent-gold);
+      box-shadow: 0 0 0 3px rgba(196, 141, 40, 0.14);
+      background: var(--bg-surface-elevated);
+    }
+
+    .auth-input:focus ~ .auth-input-icon,
+    .auth-input-wrap:focus-within .auth-input-icon {
+      fill: var(--accent-gold);
+    }
+
+    /* Password toggle */
+    .auth-pw-toggle {
+      position: absolute;
+      right: 0.9rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      transition: color 0.2s;
+    }
+
+    .auth-pw-toggle:hover { color: var(--accent-gold); }
+    .auth-pw-toggle svg { width: 18px; height: 18px; fill: currentColor; }
+
+    /* Row: Remember + Forgot */
+    .auth-form-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .auth-remember {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      font-size: 0.845rem;
+      color: var(--text-secondary);
+      user-select: none;
+    }
+
+    .auth-remember input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--accent-gold);
+      cursor: pointer;
+    }
+
+    .auth-forgot {
+      font-size: 0.845rem;
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s;
+    }
+
+    .auth-forgot:hover { opacity: 0.75; }
+
+    /* Submit Button */
+    .auth-submit-btn {
+      width: 100%;
+      padding: 0.95rem 1.5rem;
+      background: linear-gradient(135deg, var(--color-gold-main) 0%, var(--color-gold-bright) 100%);
+      color: #08090C;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: none;
+      border-radius: var(--border-radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      transition: all 0.25s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .auth-submit-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.2s;
+    }
+
+    .auth-submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(196, 141, 40, 0.4);
+    }
+
+    .auth-submit-btn:hover::before {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .auth-submit-btn svg { width: 17px; height: 17px; fill: currentColor; }
+
+    /* Divider */
+    .auth-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.25rem 0;
+    }
+
+    .auth-divider::before,
+    .auth-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-subtle);
+    }
+
+    .auth-divider span {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    /* Register link */
+    .auth-switch {
+      text-align: center;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .auth-switch a {
+      color: var(--accent-gold);
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .auth-switch a:hover { opacity: 0.75; }
+
+    /* Validation states */
+    .auth-input.is-error { border-color: #e55; }
+    .auth-field-error {
+      font-size: 0.775rem;
+      color: #e55;
+      display: none;
+    }
+    .auth-field-group.has-error .auth-field-error { display: block; }
+    .auth-field-group.has-error .auth-input { border-color: #e55; }
+
+    .auth-field-group.is-valid .auth-input { border-color: #4caf85; }
+
+    /* Auth page footer */
+    .auth-page-footer {
+      padding: 1.25rem 2rem;
+      background: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+
+    .auth-page-footer p {
+      font-size: 0.775rem;
+      color: var(--text-muted);
+    }
+
+    .auth-page-footer a {
+      color: var(--accent-gold);
+      text-decoration: none;
+    }
+
+    .auth-visual-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .auth-visual-brand {
+      display: inline-flex;
+      align-items: center;
+      flex: 1;
+      max-width: calc(100% - 90px);
+      text-decoration: none;
+    }
+
+    .auth-visual-brand img {
+      height: 36px;
+      width: auto;
+      max-width: 100%;
+      object-fit: contain;
+    }
+
+    .auth-actions-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+
+    .auth-ctrl-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--border-radius-full);
+      background: rgba(22, 24, 32, 0.82);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #F3F4F6;
+      cursor: pointer;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      transition: all var(--transition-base);
+    }
+
+    .auth-ctrl-btn:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      background: rgba(30, 34, 46, 0.95);
+      transform: translateY(-1px);
+    }
+
+    .auth-ctrl-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    .auth-ctrl-btn .rtl-toggle-text {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: inherit;
+    }
+
+    [data-theme="light"] .auth-ctrl-btn {
+      background: rgba(255, 255, 255, 0.92);
+      border-color: rgba(0, 0, 0, 0.12);
+      color: #1E293B;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    [data-theme="light"] .auth-ctrl-btn:hover {
+      border-color: #B45309;
+      color: #B45309;
+      background: #FFFFFF;
+    }
+
+    /* ——— Responsive ——— */
+    @media (max-width: 900px) {
+      .auth-wrap {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .auth-visual {
+        min-height: 300px;
+        max-height: 340px;
+      }
+
+      .auth-visual-content {
+        padding: 2rem 1.75rem;
+      }
+
+      .auth-visual-headline {
+        padding: 1.5rem 0 1rem;
+      }
+
+      .auth-visual-quote { display: none; }
+
+      .auth-form-panel {
+        padding: 2.5rem 1.75rem;
+        border-left: none;
+        border-top: 1px solid var(--border-subtle);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .auth-visual { min-height: 240px; max-height: 280px; }
+      .auth-visual-content { padding: 1.5rem 1.25rem; }
+      .auth-form-panel { padding: 2rem 1.25rem; }
+      .auth-form-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    }
+  </style>
+</head>
+<body class="auth-body">
+
+  <!-- =========================================================================
+       Page Preloader (Modern Luxury Mystery Loader)
+       ========================================================================= -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="page-loader-inner">
+      <div class="loader-emblem-wrap">
+        <div class="loader-pulse-ring"></div>
+        <div class="loader-compass-ring"></div>
+        <div class="loader-emblem">
+          <svg viewBox="0 0 64 64" fill="none" class="loader-svg" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28" stroke="url(#loaderGoldGradLogin)" stroke-width="2" stroke-dasharray="4 3" class="loader-orbit"/>
+            <polygon points="32,8 39,25 56,32 39,39 32,56 25,39 8,32 25,25" fill="url(#loaderGoldGradLogin)" opacity="0.9"/>
+            <circle cx="32" cy="32" r="5" fill="#0D0A07" stroke="#C48D28" stroke-width="2"/>
+            <defs>
+              <linearGradient id="loaderGoldGradLogin" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F3D17A"/>
+                <stop offset="50%" stop-color="#C48D28"/>
+                <stop offset="100%" stop-color="#8E6316"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <div class="loader-brand-title">THE GRAND ENIGMA</div>
+      <div class="loader-status-text">Accessing Patron Records…</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+    <div class="auth-wrap">
+
+      <!-- LEFT: Cinematic Visual Panel -->
+      <div class="auth-visual" aria-hidden="true">
+        <img src="assets/images/experience/auth-detective.jpg" alt="Grand Enigma detective atmosphere" class="auth-visual-img" loading="eager">
+        <div class="auth-visual-overlay"></div>
+        <div class="auth-visual-content">
+          <!-- Unified Top Bar: Brand + Theme & RTL Controls -->
+          <div class="auth-visual-top-bar">
+            <a href="index.html" class="auth-visual-brand" aria-label="The Grand Enigma Home">
+              <img src="assets/images/branding/logo.svg" alt="The Grand Enigma">
+            </a>
+            <div class="auth-actions-group">
+              <button type="button" class="toggle-btn theme-toggle-btn auth-ctrl-btn" aria-label="Toggle Color Theme" title="Toggle Light / Dark Mode">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/></svg>
+              </button>
+              <button type="button" class="toggle-btn rtl-toggle-btn auth-ctrl-btn" aria-label="Toggle Layout Direction" title="Toggle RTL / LTR">
+                <span class="rtl-toggle-text">RTL</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Headline -->
+          <div class="auth-visual-headline">
+            <p class="auth-eyebrow">Guest Loyalty Portal</p>
+            <h1 class="auth-visual-title">The Case<br>Awaits Your<br>Return</h1>
+            <p class="auth-visual-sub">
+              Sign in to your patron account to manage reservations, view your solved case archive, and unlock this season's exclusive loyalty perks.
+            </p>
+            <div class="auth-visual-perks">
+              <div class="auth-perk-row">
+                <span class="auth-perk-dot"></span>
+                <span>Priority seating for new mystery premieres</span>
+              </div>
+              <div class="auth-perk-row">
+                <span class="auth-perk-dot"></span>
+                <span>Digital evidence dossier archive</span>
+              </div>
+              <div class="auth-perk-row">
+                <span class="auth-perk-dot"></span>
+                <span>Exclusive Alibi Society member discounts</span>
+              </div>
+              <div class="auth-perk-row">
+                <span class="auth-perk-dot"></span>
+                <span>Behind-the-scenes cast dispatches</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quote -->
+          <div class="auth-visual-quote">
+            <p class="auth-quote-text">"A theatrical experience so immersive, you'll be questioning every alibi at your table long after the curtain falls."</p>
+            <span class="auth-quote-attr">— Eleanor Montgomery, The Broadway Post</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Login Form -->
+      <div class="auth-form-panel">
+        <div class="auth-form-header">
+          <span class="auth-form-badge">
+            <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+            Patron Sign-In
+          </span>
+          <h2 class="auth-form-title">Welcome Back,<br>Detective</h2>
+          <p class="auth-form-subtitle">Enter your credentials to access the Grand Enigma loyalty portal.</p>
+        </div>
+
+        <form class="auth-form" id="loginForm" novalidate aria-label="Guest Login Form">
+
+          <!-- Email -->
+          <div class="auth-field-group" id="emailGroup">
+            <label class="auth-field-label" for="loginEmail">
+              Email Address <span>*</span>
+            </label>
+            <div class="auth-input-wrap">
+              <svg class="auth-input-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              <input
+                type="email"
+                id="loginEmail"
+                name="email"
+                class="auth-input"
+                placeholder="your.alias@grandenigma.com"
+                autocomplete="email"
+                required
+                aria-describedby="emailError"
+              >
+            </div>
+            <span class="auth-field-error" id="emailError" role="alert">Please enter a valid email address.</span>
+          </div>
+
+          <!-- Password -->
+          <div class="auth-field-group" id="passwordGroup">
+            <label class="auth-field-label" for="loginPassword">
+              Password <span>*</span>
+            </label>
+            <div class="auth-input-wrap">
+              <svg class="auth-input-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2z"/>
+              </svg>
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                class="auth-input"
+                placeholder="Your secret passphrase"
+                autocomplete="current-password"
+                required
+                aria-describedby="passwordError"
+              >
+              <button type="button" class="auth-pw-toggle" id="pwToggle" aria-label="Show or hide password">
+                <svg id="pwEyeShow" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                <svg id="pwEyeHide" viewBox="0 0 24 24" style="display:none"><path d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46A11.804 11.804 0 001 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"/></svg>
+              </button>
+            </div>
+            <span class="auth-field-error" id="passwordError" role="alert">Password must be at least 8 characters.</span>
+          </div>
+
+          <!-- Remember Me + Forgot Password -->
+          <div class="auth-form-meta">
+            <label class="auth-remember">
+              <input type="checkbox" id="rememberMe" name="remember">
+              Remember this device
+            </label>
+            <a href="#" class="auth-forgot">Forgot passphrase?</a>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="auth-submit-btn" id="loginSubmit">
+            <svg viewBox="0 0 24 24"><path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/></svg>
+            Enter the Case Room
+          </button>
+
+          <!-- Divider -->
+          <div class="auth-divider"><span>New to The Grand Enigma?</span></div>
+
+          <!-- Switch to Register -->
+          <p class="auth-switch">
+            Join as a patron and unlock loyalty perks &rarr;
+            <a href="register.html">Create Your Alias</a>
+          </p>
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Password visibility toggle
+    const pwToggle = document.getElementById('pwToggle');
+    const pwInput = document.getElementById('loginPassword');
+    const eyeShow = document.getElementById('pwEyeShow');
+    const eyeHide = document.getElementById('pwEyeHide');
+
+    if (pwToggle) {
+      pwToggle.addEventListener('click', () => {
+        const isPassword = pwInput.type === 'password';
+        pwInput.type = isPassword ? 'text' : 'password';
+        eyeShow.style.display = isPassword ? 'none' : 'block';
+        eyeHide.style.display = isPassword ? 'block' : 'none';
+        pwToggle.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+      });
+    }
+
+    // Form validation
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+      loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let valid = true;
+
+        const emailInput = document.getElementById('loginEmail');
+        const emailGroup = document.getElementById('emailGroup');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!emailRegex.test(emailInput.value.trim())) {
+          emailGroup.classList.add('has-error');
+          emailGroup.classList.remove('is-valid');
+          valid = false;
+        } else {
+          emailGroup.classList.remove('has-error');
+          emailGroup.classList.add('is-valid');
+        }
+
+        const pwInput = document.getElementById('loginPassword');
+        const pwGroup = document.getElementById('passwordGroup');
+
+        if (pwInput.value.trim().length < 8) {
+          pwGroup.classList.add('has-error');
+          pwGroup.classList.remove('is-valid');
+          valid = false;
+        } else {
+          pwGroup.classList.remove('has-error');
+          pwGroup.classList.add('is-valid');
+        }
+
+        if (valid) {
+          const btn = document.getElementById('loginSubmit');
+          btn.textContent = 'Entering the Case Room…';
+          btn.disabled = true;
+          setTimeout(() => { window.location.href = 'dashboard.html'; }, 1200);
+        }
+      });
+
+      // Live validation on input
+      ['loginEmail', 'loginPassword'].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) {
+          input.addEventListener('blur', () => {
+            input.closest('.auth-field-group').classList.remove('has-error', 'is-valid');
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>

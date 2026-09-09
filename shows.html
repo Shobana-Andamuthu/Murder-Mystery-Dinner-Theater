@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Theatrical Productions | The Grand Enigma</title>
+  <meta name="description" content="Step into an immersive evening of suspense, fine dining, and live theatrical deception at The Grand Enigma Murder Mystery Dinner Theater.">
+  <meta name="keywords" content="murder mystery dinner, dinner theater, live immersive theater, detective show, corporate mystery events, fine dining entertainment">
+  
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="The Grand Enigma | Murder Mystery Dinner Theater">
+  <meta property="og:description" content="An evening of fine dining, high intrigue, and theatrical deception. Can you identify the culprit before the final course?">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/branding/logo-emblem.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=5.0">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=5.0">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Page Preloader (Modern Luxury Mystery Loader)
+       ========================================================================= -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="page-loader-inner">
+      <div class="loader-emblem-wrap">
+        <div class="loader-pulse-ring"></div>
+        <div class="loader-compass-ring"></div>
+        <div class="loader-emblem">
+          <svg viewBox="0 0 64 64" fill="none" class="loader-svg" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28" stroke="url(#loaderGoldGradShows)" stroke-width="2" stroke-dasharray="4 3" class="loader-orbit"/>
+            <polygon points="32,8 39,25 56,32 39,39 32,56 25,39 8,32 25,25" fill="url(#loaderGoldGradShows)" opacity="0.9"/>
+            <circle cx="32" cy="32" r="5" fill="#0D0A07" stroke="#C48D28" stroke-width="2"/>
+            <defs>
+              <linearGradient id="loaderGoldGradShows" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F3D17A"/>
+                <stop offset="50%" stop-color="#C48D28"/>
+                <stop offset="100%" stop-color="#8E6316"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <div class="loader-brand-title">THE GRAND ENIGMA</div>
+      <div class="loader-status-text">Curating the Repertoire…</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- =========================================================================
+       2. Master Shared Header (Exactly 7 Main Items + Dashboard + Login)
+       ========================================================================= -->
+  <header class="master-header" id="masterHeader">
+    <div class="container">
+      <div class="navbar-container">
+
+        <!-- Brand Logo -->
+        <a href="index.html" class="navbar-brand" aria-label="The Grand Enigma Home">
+          <img src="assets/images/branding/logo.svg" alt="The Grand Enigma Murder Mystery Dinner Theater" class="navbar-logo-img">
+        </a>
+
+        <!-- Main Desktop Navigation (Exactly 7 Main Items) -->
+        <nav class="navbar-nav-wrapper" aria-label="Main Navigation">
+          <ul class="navbar-nav">
+            <!-- 1. Home (Dropdown) -->
+            <li class="nav-item dropdown">
+              <a href="index.html" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                <span>Home</span>
+                <svg class="dropdown-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+              </a>
+              <div class="dropdown-menu" role="menu">
+                <a href="index.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-item-icon">I</div>
+                  <div class="dropdown-item-text">
+                    <span class="dropdown-item-title">Home 1: The Grand Enigma</span>
+                    <span class="dropdown-item-sub">Cinematic Noir Atmosphere</span>
+                  </div>
+                </a>
+                <a href="home-2.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-item-icon">II</div>
+                  <div class="dropdown-item-text">
+                    <span class="dropdown-item-title">Home 2: The Velvet Alibi</span>
+                    <span class="dropdown-item-sub">Editorial Speakeasy Mystery</span>
+                  </div>
+                </a>
+              </div>
+            </li>
+
+            <!-- 2. Our Story -->
+            <li class="nav-item">
+              <a href="story.html" class="nav-link">Our Story</a>
+            </li>
+
+            <!-- 3. Shows -->
+            <li class="nav-item">
+              <a href="shows.html" class="nav-link active">Shows</a>
+            </li>
+
+            <!-- 4. Show Calendar -->
+            <li class="nav-item">
+              <a href="calendar.html" class="nav-link">Show Calendar</a>
+            </li>
+
+            <!-- 5. Private & Corporate Events -->
+            <li class="nav-item">
+              <a href="events.html" class="nav-link">Events</a>
+            </li>
+
+            <!-- 6. Menu -->
+            <li class="nav-item">
+              <a href="menu.html" class="nav-link">Menu</a>
+            </li>
+
+            <!-- 7. Contact -->
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+
+            <!-- 8. Dashboard -->
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Navbar Actions: Theme, RTL, Login & Mobile Toggle -->
+        <div class="navbar-actions">
+          <!-- Theme Toggle (Light / Dark) -->
+          <button type="button" class="toggle-btn theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle Light / Dark Mode">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+            </svg>
+          </button>
+
+          <!-- RTL / LTR Toggle -->
+          <button type="button" class="toggle-btn rtl-toggle-btn" aria-label="Toggle Layout Direction" title="Toggle RTL / LTR">
+            <span class="rtl-toggle-text">RTL</span>
+          </button>
+
+          <!-- Login (Separate Final Action Button) -->
+          <a href="login.html" class="btn-nav-login" title="Guest Access">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            </svg>
+            <span>Login</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="mobile-toggle" aria-label="Open Navigation Drawer" aria-expanded="false" aria-controls="mobileDrawer">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. Mobile Navigation Drawer
+       ========================================================================= -->
+  <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <img src="assets/images/branding/logo.svg" alt="The Grand Enigma" class="mobile-drawer-logo">
+      <button type="button" class="mobile-close-btn" aria-label="Close Navigation Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items (7 Main Items) -->
+    <ul class="mobile-nav-list">
+      <!-- 1. Home Accordion -->
+      <li class="mobile-nav-item dropdown">
+        <button type="button" class="mobile-dropdown-btn" aria-expanded="false">
+          <span>1. Home</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </button>
+        <div class="mobile-sub-menu">
+          <a href="index.html" class="mobile-sub-link">Home 1: The Grand Enigma</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2: The Velvet Alibi</a>
+        </div>
+      </li>
+
+      <!-- 2. Our Story -->
+      <li class="mobile-nav-item">
+        <a href="story.html" class="mobile-nav-link">2. Our Story</a>
+      </li>
+
+      <!-- 3. Shows -->
+      <li class="mobile-nav-item active">
+        <a href="shows.html" class="mobile-nav-link">3. Shows</a>
+      </li>
+
+      <!-- 4. Show Calendar -->
+      <li class="mobile-nav-item">
+        <a href="calendar.html" class="mobile-nav-link">4. Show Calendar</a>
+      </li>
+
+      <!-- 5. Private & Corporate Events -->
+      <li class="mobile-nav-item">
+        <a href="events.html" class="mobile-nav-link">5. Events</a>
+      </li>
+
+      <!-- 6. Menu -->
+      <li class="mobile-nav-item">
+        <a href="menu.html" class="mobile-nav-link">6. Menu</a>
+      </li>
+
+      <!-- 7. Contact -->
+      <li class="mobile-nav-item">
+        <a href="contact.html" class="mobile-nav-link">7. Contact</a>
+      </li>
+    </ul>
+
+    <!-- Mobile Action Buttons -->
+    <div class="mobile-drawer-actions">
+      <a href="dashboard.html" class="btn btn-secondary" style="width: 100%;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent-gold)" aria-hidden="true">
+          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z"/>
+        </svg>
+        <span>Guest Dashboard</span>
+      </a>
+
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+        </svg>
+        <span>Guest Login</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       4. Main Content — Phase 4: Theatrical Productions (Exactly 7 Sections)
+       ========================================================================= -->
+  <main id="mainContent">
+
+    <!-- =======================================================================
+         SECTION 1: Theatrical Repertoire Hero Banner (Modernized)
+         ======================================================================= -->
+    <section class="shows-hero-section" id="showsHero" aria-label="Current Theatrical Season">
+      <div class="container">
+        <div class="shows-hero-grid">
+          <div class="shows-hero-content-col">
+            <div class="hero-tag-badge">
+              <span class="live-pulse-dot" style="margin-right: 2px;"></span>
+              <span>1928–1929 Repertoire &bull; 3 Rotating Masterpieces</span>
+            </div>
+            <h1 class="shows-hero-title">
+              LIVE MURDER MYSTERY <br><span class="text-gold-gradient">STAGE REPERTOIRE</span>
+            </h1>
+            <p class="shows-hero-lead">
+              Three original, rotating whodunit masterpieces performed directly among dining tables by our award-winning repertory ensemble. Each production is paired with an exquisite four-course culinary experience and audience deduction.
+            </p>
+            <div class="shows-hero-actions">
+              <a href="#flagshipShows" class="btn btn-primary">
+                <span>Explore Current Season</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              </a>
+              <a href="calendar.html" class="btn btn-outline-gold">
+                <span>View Full Calendar &amp; Dates</span>
+              </a>
+            </div>
+
+            <!-- Quick Jump Production Pills -->
+            <div class="shows-quick-jump-wrap">
+              <span class="shows-jump-label">Jump to Case:</span>
+              <div class="shows-jump-pills">
+                <a href="#obsidianKey" class="shows-jump-pill">#1 The Obsidian Key</a>
+                <a href="#midnightManhattan" class="shows-jump-pill">#2 Midnight in Manhattan</a>
+                <a href="#baronsToast" class="shows-jump-pill">#3 The Baron's Last Toast</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Media Card with Modern Overlays (Even Height) -->
+          <div class="shows-hero-media-wrap">
+            <div class="shows-hero-media-card">
+              <img src="assets/images/shows/shows_hero_repertoire.jpg" alt="Theatrical Stage Mystery Performance" class="shows-hero-img">
+              <div class="shows-hero-overlay-glow"></div>
+              <div class="shows-live-badge-card">
+                <div style="display: flex; align-items: center; gap: 0.75rem;">
+                  <span class="live-pulse-dot" aria-hidden="true"></span>
+                  <div>
+                    <div style="font-size: 0.85rem; font-weight: 800; color: var(--text-primary);">Tonight's Feature: The Obsidian Key</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">Doors Open 6:45 PM | Curtain Rises 7:30 PM</div>
+                  </div>
+                </div>
+                <a href="calendar.html" class="btn btn-gold" style="padding: 0.45rem 1rem; font-size: 0.75rem;">
+                  <span>Book &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Season Stats Ribbon (Full-Width Symmetrical Base) -->
+        <div class="season-stats-ribbon">
+          <div class="stat-ribbon-item">
+            <div class="stat-ribbon-val">3</div>
+            <div class="stat-ribbon-lbl">Flagship Shows</div>
+          </div>
+          <div class="stat-ribbon-item">
+            <div class="stat-ribbon-val">120+</div>
+            <div class="stat-ribbon-lbl">Min Runtime</div>
+          </div>
+          <div class="stat-ribbon-item">
+            <div class="stat-ribbon-val">4</div>
+            <div class="stat-ribbon-lbl">Dining Courses</div>
+          </div>
+          <div class="stat-ribbon-item">
+            <div class="stat-ribbon-val">98%</div>
+            <div class="stat-ribbon-lbl">Guest Acclaim</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 2: Flagship Mystery Productions Showcase
+         ======================================================================= -->
+    <section class="shows-productions-section" id="flagshipShows" aria-label="Flagship Mystery Productions">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Current Running Masterworks</span>
+          <h2 class="section-title">Three Unforgiving Crimes. One Dining Hall.</h2>
+          <p class="section-desc">
+            Alternating weekly so you can return time and again. Each story features branching actor improvisations and rotating killers.
+          </p>
+        </div>
+
+        <!-- Production 1: The Obsidian Key -->
+        <article class="production-dossier-card" id="obsidianKey">
+          <div class="production-img-wrap">
+            <img src="assets/images/shows/show_obsidian_key.jpg" alt="The Obsidian Key Production" class="production-img">
+            <span class="production-case-tag">Case File #1928-A</span>
+          </div>
+          <div class="production-body">
+            <div class="production-meta-badges">
+              <span class="meta-badge-pill is-highlight">Prohibition Noir</span>
+              <span class="meta-badge-pill">Difficulty: High (Level 4/5)</span>
+              <span class="meta-badge-pill">140 Min</span>
+              <span class="meta-badge-pill">Ages 16+</span>
+            </div>
+            <h3 class="production-title">The Obsidian Key: Speakeasy Syndicate Execution</h3>
+            <p class="production-synopsis">
+              Beneath the brass chandeliers of 1928 Manhattan, syndicate boss Salvatore Morretti summons his inner circle to divide contraband liquor revenues. Before the champagne arrives, Morretti is found poisoned beside his fortified vault—and the key has vanished.
+            </p>
+            <div class="prod-clue-quote">
+              "The vault combination was split between two men who hated each other. Only one of them is still breathing tonight." &mdash; Inspector Jack Malone
+            </div>
+            <div class="production-details-grid">
+              <div>
+                <div class="prod-sub-title">Suspect Ensemble</div>
+                <div class="prod-sub-desc">The Chanteuse (Evelyn), The Corrupt Detective, The Safe-Cracker, and The Banker.</div>
+              </div>
+              <div>
+                <div class="prod-sub-title">Gastronomic Pairing</div>
+                <div class="prod-sub-desc">Slow-braised Black Angus short ribs in smoked bourbon reduction with truffled mash.</div>
+              </div>
+            </div>
+            <div class="prod-schedule-row">
+              <div class="prod-schedule-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>Thurs &amp; Sat: 7:30 PM</span>
+              </div>
+              <div class="prod-schedule-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>4.9 / 5.0 (340+ Verified Reviews)</span>
+              </div>
+            </div>
+            <div class="production-card-actions">
+              <a href="calendar.html" class="btn btn-primary">
+                <span>Reserve Tables For This Show</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              </a>
+              <a href="menu.html" class="btn btn-secondary">
+                <span>View Full Menu</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Production 2: Midnight in Manhattan -->
+        <article class="production-dossier-card is-reversed" id="midnightManhattan">
+          <div class="production-img-wrap">
+            <img src="assets/images/shows/show_midnight_manhattan.jpg" alt="Midnight in Manhattan Production" class="production-img">
+            <span class="production-case-tag">Case File #1928-B</span>
+          </div>
+          <div class="production-body">
+            <div class="production-meta-badges">
+              <span class="meta-badge-pill is-highlight">High-Society Jazz Age</span>
+              <span class="meta-badge-pill">Difficulty: Moderate (Level 3/5)</span>
+              <span class="meta-badge-pill">125 Min</span>
+              <span class="meta-badge-pill">All Ages / Family Sleuths</span>
+            </div>
+            <h3 class="production-title">Midnight in Manhattan: The Penthouse Poisoning</h3>
+            <p class="production-synopsis">
+              A glittering engagement gala on the 48th floor turns scandalous when railway heiress Eleanor Vance collapses during the midnight toast. As the storm cuts power to the elevators, the penthouse is sealed. Everyone has an alibi, but someone has arsenic on their gloves.
+            </p>
+            <div class="prod-clue-quote">
+              "The poison was fast, but the inheritance battle had been brewing for twelve long years." &mdash; Clara Fontaine
+            </div>
+            <div class="production-details-grid">
+              <div>
+                <div class="prod-sub-title">Suspect Ensemble</div>
+                <div class="prod-sub-desc">The Wall Street Tycoon, The Broadway Starlet, The Sommelier, and The Jealous Sister.</div>
+              </div>
+              <div>
+                <div class="prod-sub-title">Gastronomic Pairing</div>
+                <div class="prod-sub-desc">Pan-crisped Chilean sea bass with Oscietra caviar velouté and saffron risotto.</div>
+              </div>
+            </div>
+            <div class="prod-schedule-row">
+              <div class="prod-schedule-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>Fri &amp; Sun: 7:00 PM</span>
+              </div>
+              <div class="prod-schedule-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>4.8 / 5.0 (410+ Verified Reviews)</span>
+              </div>
+            </div>
+            <div class="production-card-actions">
+              <a href="calendar.html" class="btn btn-primary">
+                <span>Reserve Tables For This Show</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              </a>
+              <a href="menu.html" class="btn btn-secondary">
+                <span>View Full Menu</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Production 3: The Baron's Last Toast -->
+        <article class="production-dossier-card" id="baronsToast">
+          <div class="production-img-wrap">
+            <img src="assets/images/shows/show_barons_toast.jpg" alt="The Baron's Last Toast Production" class="production-img">
+            <span class="production-case-tag">Case File #1928-C</span>
+          </div>
+          <div class="production-body">
+            <div class="production-meta-badges">
+              <span class="meta-badge-pill is-highlight">Gothic Aristocracy</span>
+              <span class="meta-badge-pill">Difficulty: Mastermind (Level 5/5)</span>
+              <span class="meta-badge-pill">150 Min</span>
+              <span class="meta-badge-pill">Mature Audiences 18+</span>
+            </div>
+            <h3 class="production-title">The Baron's Last Toast: Venetian Masquerade Masque</h3>
+            <p class="production-synopsis">
+              Behind gilded filigree masks, Baron Wolfgang von Kassel hosts his secretive autumnal masque. He announces that his sole heir will be revealed when the grandfather clock strikes ten. As the chime reverberates, the Baron falls face-forward into his goblet.
+            </p>
+            <div class="prod-clue-quote">
+              "We wore masks to hide our shame, but someone wore a mask to commit murder under our very noses." &mdash; Contessa Isabella
+            </div>
+            <div class="production-details-grid">
+              <div>
+                <div class="prod-sub-title">Suspect Ensemble</div>
+                <div class="prod-sub-desc">The Masked Contessa, The Disinherited Nephew, The Occult Physician, and The Majordomo.</div>
+              </div>
+              <div>
+                <div class="prod-sub-title">Gastronomic Pairing</div>
+                <div class="prod-sub-desc">Confit of Moulard duck leg with spiced blackberry reduction, wild porcini, and rosemary polenta.</div>
+              </div>
+            </div>
+            <div class="prod-schedule-row">
+              <div class="prod-schedule-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>Wed &amp; Sat: 8:00 PM</span>
+              </div>
+              <div class="prod-schedule-item">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <span>5.0 / 5.0 (280+ Verified Reviews)</span>
+              </div>
+            </div>
+            <div class="production-card-actions">
+              <a href="calendar.html" class="btn btn-primary">
+                <span>Reserve Tables For This Show</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+              </a>
+              <a href="menu.html" class="btn btn-secondary">
+                <span>View Full Menu</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 3: Interactive Mystery Genre Showcase
+         ======================================================================= -->
+    <section class="shows-genre-matcher-section" id="genreMatcher" aria-label="Mystery Atmosphere Showcase">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Curated Theatrical Atmospheres</span>
+          <h2 class="section-title">Explore Our Distinctive Mystery Styles</h2>
+          <p class="section-desc">
+            Each running production offers unique dramatic pacing, deduction complexities, and group dynamics tailored to every detective preference.
+          </p>
+        </div>
+
+        <!-- 3-Column Grid Without Filtering -->
+        <div class="genre-cards-grid" id="genreMatcherGrid">
+          <div class="genre-item-card" data-genre="noir">
+            <div class="genre-card-icon">&#9879;</div>
+            <h3 class="genre-card-title">Gritty Syndicate Tension</h3>
+            <p class="genre-card-desc">
+              Smoky rooms, hidden guns, secret bootleg transactions, and hard-boiled detective interrogations. Ideal for groups seeking high stakes and cynical twists.
+            </p>
+            <span class="genre-card-tag-pill">Featured In: The Obsidian Key</span>
+          </div>
+
+          <div class="genre-item-card" data-genre="society">
+            <div class="genre-card-icon">&#9835;</div>
+            <h3 class="genre-card-title">Jazz Age Wit &amp; Glamour</h3>
+            <p class="genre-card-desc">
+              Fast-paced Agatha Christie style parlour intrigue with champagne, sharp comedic dialogue, social rivalries, and baffling locked-room alibis.
+            </p>
+            <span class="genre-card-tag-pill">Featured In: Midnight in Manhattan</span>
+          </div>
+
+          <div class="genre-item-card" data-genre="gothic">
+            <div class="genre-card-icon">&#9789;</div>
+            <h3 class="genre-card-title">Candlelit Aristocratic Suspense</h3>
+            <p class="genre-card-desc">
+              Venetian disguises, ancient family secrets, occult ciphers, and intense psychological deduction under flickering chandeliers.
+            </p>
+            <span class="genre-card-tag-pill">Featured In: The Baron's Last Toast</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 4: The Investigation Mechanics (Audience Participation Guide)
+         ======================================================================= -->
+    <section class="shows-mechanics-section" id="investigationMechanics" aria-label="Investigation Protocol Guide">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Guest Experience Architecture</span>
+          <h2 class="section-title">How You Solve The Murder Over Dinner</h2>
+          <p class="section-desc">
+            You are never pulled on stage or forced to speak in public. Investigation rounds unfold seamlessly between courses at your own pace.
+          </p>
+        </div>
+
+        <div class="mechanics-container-grid">
+          <!-- Left Visual -->
+          <div class="mechanics-visual-box">
+            <img src="assets/images/shows/show_investigation_mechanics.jpg" alt="Vintage Detective Dossier and Forensic Evidence" class="mechanics-img">
+          </div>
+
+          <!-- Right Step Stack -->
+          <div class="mechanics-steps-stack">
+            <!-- Step 1 -->
+            <div class="mechanics-step-card">
+              <div class="mechanics-step-num">1</div>
+              <div>
+                <h3 class="mechanics-step-title">Course 1: The Evidence Dossier Unsealed</h3>
+                <p class="mechanics-step-desc">
+                  As appetizers are served, each table receives a wax-sealed confidential case file containing suspect biographies, floor plans, and the initial police bulletin.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="mechanics-step-card">
+              <div class="mechanics-step-num">2</div>
+              <div>
+                <h3 class="mechanics-step-title">Course 2: The Murder Incident Live</h3>
+                <p class="mechanics-step-desc">
+                  During soup and salad, tensions erupt in the dining room. A gunshot or poisoned cry rings out. The victim collapses, and the Chief Inspector locks down the hall.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="mechanics-step-card">
+              <div class="mechanics-step-num">3</div>
+              <div>
+                <h3 class="mechanics-step-title">Course 3: Tabletop Interrogation Rounds</h3>
+                <p class="mechanics-step-desc">
+                  Between the main entrée and palate cleansers, surviving suspects visit every table for 3-minute cross-examinations. Grill them on their motives and alibis.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="mechanics-step-card">
+              <div class="mechanics-step-num">4</div>
+              <div>
+                <h3 class="mechanics-step-title">Course 4: Final Verdict &amp; Award Presentation</h3>
+                <p class="mechanics-step-desc">
+                  Before dessert, tables cast their official Detective Ballots. The Inspector names the killer, reconstructs the crime, and awards the Golden Handcuffs trophy to winning sleuths.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 5: Seasonal & Limited Engagement World Premieres
+         ======================================================================= -->
+    <section class="shows-premieres-section" id="seasonalPremieres" aria-label="Limited Seasonal Mystery Runs">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Limited Engagements</span>
+          <h2 class="section-title">Seasonal &amp; Holiday World Premieres</h2>
+          <p class="section-desc">
+            Bespoke theatrical runs staged exclusively for holidays and special galas with guest directors and limited ticket caps.
+          </p>
+        </div>
+
+        <div class="premieres-bento-grid">
+          <!-- Featured Large Bento -->
+          <div class="premiere-bento-card is-featured-large">
+            <div>
+              <span class="premiere-season-badge">Winter Holiday Gala Premiere</span>
+              <h3 class="premiere-card-title">The Orient Express Sleeper Car Heist</h3>
+              <p class="premiere-card-desc">
+                Staged inside an elaborate replica train car setting with snow-buffeted soundscapes and seven-course European imperial dining. An international diplomat is discovered with a stiletto in his heart as the train stalls in an alpine blizzard.
+              </p>
+
+              <!-- Orient Express High-Res Generated Media -->
+              <div class="premiere-bento-media">
+                <img src="assets/images/shows/show_orient_express.jpg" alt="Orient Express Luxury Sleeper Car Dining" class="premiere-bento-img">
+              </div>
+
+              <!-- Feature Highlights Grid -->
+              <ul class="premiere-feature-list">
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>7-Course Imperial Tasting Menu</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Chamber String Quartet Accompaniment</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>1920s Sleeper Compartment Stage Sets</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Strictly 40 VIP Guests Per Evening</span>
+                </li>
+              </ul>
+
+              <!-- Luxury Inclusions Box -->
+              <div style="background: rgba(255, 184, 0, 0.04); border: 1px dashed var(--border-subtle); border-radius: var(--border-radius-md); padding: 1rem 1.15rem; margin-bottom: 1.25rem;">
+                <div style="font-size: 0.8125rem; color: var(--color-gold-bright); font-weight: 700; margin-bottom: 0.35rem; display: flex; align-items: center; gap: 0.4rem;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 21h22L12 2zm0 3.84L20.14 19H3.86L12 5.84zM11 10h2v4h-2zm0 6h2v2h-2z"/></svg>
+                  <span>Exclusive Theatrical Experience Includes:</span>
+                </div>
+                <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.55; margin: 0;">
+                  Personalized leather-bound evidence docket with wax-sealed passenger alibis, vintage brass magnifying lens, and rare 1928 Grand Cru Champagne reception.
+                </p>
+              </div>
+
+              <!-- Critic Acclaim Badge -->
+              <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1.15rem; font-style: italic;">
+                <span style="color: var(--accent-gold); font-style: normal; letter-spacing: 2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+                <span>&ldquo;The pinnacle of luxury immersive dinner theater.&rdquo; &mdash; The Stage Gazette</span>
+              </div>
+
+              <!-- Urgency Pill -->
+              <div class="premiere-urgency-badge">
+                <span>&#128293; Limited Engagement: Only 18 Seats Remaining Across December Dates</span>
+              </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 1.25rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+              <div class="premiere-dates-tag">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                <span>November 28 &ndash; December 31 | 14 Performances Only</span>
+              </div>
+              <div>
+                <a href="calendar.html" class="btn btn-primary" style="padding: 0.65rem 1.45rem; font-size: 0.875rem;">
+                  <span>Reserve Holiday Seats &rarr;</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento Card 2 -->
+          <div class="premiere-bento-card">
+            <div>
+              <span class="premiere-season-badge">Autumn Solstice Special</span>
+              <h3 class="premiere-card-title" style="font-size: 1.25rem;">The Black Dahlia Speakeasy Masque</h3>
+              <p class="premiere-card-desc">
+                A tribute to vintage Los Angeles noir with live saxophone accompaniment, bespoke speakeasy cocktails, and a 1947 Hollywood homicide deduction.
+              </p>
+
+              <!-- Features List -->
+              <ul class="premiere-feature-list" style="margin-bottom: 1rem;">
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Live 1940s Bebop Saxophone Trio</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Speakeasy Smoked Bourbon Pairing</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Period Masquerade Dress Code</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Audience Interrogation Round</span>
+                </li>
+              </ul>
+
+              <!-- Urgency Pill -->
+              <div class="premiere-urgency-badge">
+                <span>&#128293; Limited: Only 4 Thursday Evenings Announced &bull; 32 Seats/Night</span>
+              </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+              <div class="premiere-dates-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                <span>September 18 &ndash; October 15 | Thursday Nights</span>
+              </div>
+              <a href="calendar.html" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1.15rem; font-size: 0.8125rem;">
+                <span>Reserve Seats &rarr;</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Bento Card 3 -->
+          <div class="premiere-bento-card">
+            <div>
+              <span class="premiere-season-badge">Halloween Late-Night Run</span>
+              <h3 class="premiere-card-title" style="font-size: 1.25rem;">The Alchemist's Crypt at Midnight</h3>
+              <p class="premiere-card-desc">
+                Candlelit occult s&eacute;ance mystery performed in our subterranean wine cellar with rare green fairy absinthe cocktails and dark alchemy clues.
+              </p>
+
+              <!-- Features List -->
+              <ul class="premiere-feature-list" style="margin-bottom: 1rem;">
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Subterranean Vault Candlelit Staging</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Rare Green Fairy Absinthe Service</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Tarot Deduction & Crypt Clues</span>
+                </li>
+                <li class="premiere-feature-item">
+                  <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  <span>Four-Course Dark Alchemy Dining</span>
+                </li>
+              </ul>
+
+              <!-- Urgency Pill -->
+              <div class="premiere-urgency-badge">
+                <span>&#128293; Midnight Run: Strictly 18+ &bull; 24 VIP Vault Guests Only</span>
+              </div>
+            </div>
+
+            <div style="margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+              <div class="premiere-dates-tag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/></svg>
+                <span>October 26 &ndash; November 2 | Midnight Showings</span>
+              </div>
+              <a href="calendar.html" class="btn btn-secondary btn-sm" style="padding: 0.5rem 1.15rem; font-size: 0.8125rem;">
+                <span>Book Midnight Pass &rarr;</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 6: Seating Tiers & Dining Pairing Overview
+         ======================================================================= -->
+    <section class="shows-seating-section" id="seatingOverview" aria-label="Seating Tiers and Dining Pairing">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Tiered Immersion Packages</span>
+          <h2 class="section-title">Select Your Distance From The Danger</h2>
+          <p class="section-desc">
+            All tickets include our full four-course gastronomic dinner. Your proximity to actor cross-examinations determines your tier.
+          </p>
+        </div>
+
+        <!-- Seating Banner Visual -->
+        <div class="seating-banner-card">
+          <img src="assets/images/shows/show_seating_dining.jpg" alt="Grand Enigma Dining Hall and Stage" class="seating-banner-img">
+          <div class="seating-banner-overlay">
+            <h3 class="seating-banner-title">The Grand Enigma Main Dining Chamber</h3>
+            <p class="seating-banner-sub">Intimate 80-seat speakeasy theater designed for maximum acoustic immersion and clear stage sightlines.</p>
+          </div>
+        </div>
+
+        <!-- 3 Seating Tiers -->
+        <div class="seating-cards-grid">
+          <!-- Tier 1 -->
+          <div class="seating-tier-card">
+            <h3 class="seating-tier-name">Orchestra Mezzanine</h3>
+            <div class="seating-tier-price">
+              <span>$115</span>
+              <span class="seating-price-per">/ guest</span>
+            </div>
+            <ul class="seating-features-list">
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Full four-course gourmet dinner</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Elevated center view of all stage action</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Complete Tabletop Clue Dossier</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Full access to suspect questioning rounds</span>
+              </li>
+            </ul>
+            <a href="calendar.html" class="btn btn-secondary seating-tier-btn">
+              <span>Select Mezzanine</span>
+            </a>
+          </div>
+
+          <!-- Tier 2 (Featured) -->
+          <div class="seating-tier-card is-recommended">
+            <span class="seating-recom-badge">Most Popular</span>
+            <h3 class="seating-tier-name">Detective Circle</h3>
+            <div class="seating-tier-price">
+              <span>$135</span>
+              <span class="seating-price-per">/ guest</span>
+            </div>
+            <ul class="seating-features-list">
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Front-row stage &amp; murder scene proximity</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Welcome glass of vintage French champagne</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Actors sit and converse directly at your table</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Priority handling of forensic physical clues</span>
+              </li>
+            </ul>
+            <a href="calendar.html" class="btn btn-primary seating-tier-btn">
+              <span>Select Detective Circle</span>
+            </a>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="seating-tier-card">
+            <h3 class="seating-tier-name">Syndicate VIP Alcove</h3>
+            <div class="seating-tier-price">
+              <span>$165</span>
+              <span class="seating-price-per">/ guest</span>
+            </div>
+            <ul class="seating-features-list">
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Private mahogany &amp; velvet booth (6-10 guests)</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Dedicated sommelier &amp; custom cocktail service</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Custom scripted plot cameo for your party</span>
+              </li>
+              <li class="seating-feature-item">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                <span>Commemorative engraved antique flask gift</span>
+              </li>
+            </ul>
+            <a href="calendar.html" class="btn btn-secondary seating-tier-btn">
+              <span>Select VIP Alcove</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         SECTION 7: Grand Production Finale CTA
+         ======================================================================= -->
+    <section class="shows-cta-section" id="showsGrandCta" aria-label="Reservations and Booking Call to Action">
+      <div class="container">
+        <div class="shows-cta-box">
+          <div class="hero-pill-badge" style="margin-bottom: 1.25rem;">
+            <span>Limited Theater Capacity</span>
+          </div>
+          <h2 class="shows-cta-title">The Curtain Rises at 7:30 PM Tonight</h2>
+          <p class="shows-cta-lead">
+            With strictly 80 seats per performance, our theatrical dining shows sell out quickly. Secure your table today and prepare your alibi before someone else frames you.
+          </p>
+          <div class="shows-cta-actions">
+            <a href="calendar.html" class="btn btn-primary" style="padding: 0.95rem 2.2rem; font-size: 1rem;">
+              <span>Check Show Calendar &amp; Reserve</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </a>
+            <a href="events.html" class="btn btn-outline-gold" style="padding: 0.95rem 2rem;">
+              <span>Inquire for Private Buyouts</span>
+            </a>
+          </div>
+          <div class="shows-cta-support">
+            Box Office Concierge: (555) 843-6446 &bull; Dietary Substitutions Accommodated with 24h Notice &bull; 742 Noir Boulevard
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       5. Master Shared Footer Foundation
+       ========================================================================= -->
+  <footer class="master-footer" id="masterFooter">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Column 1: Brand Information -->
+        <div class="footer-brand-col">
+          <a href="index.html" aria-label="The Grand Enigma Home">
+            <img src="assets/images/branding/logo.svg" alt="The Grand Enigma Murder Mystery Dinner Theater" class="footer-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            Where high society meets cold-blooded deception. An evening of bespoke four-course gastronomy, 
+            award-winning stage actors, and audience-interactive murder mystery investigations.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-link-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-link-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+            </a>
+            <a href="#" class="social-link-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Theatrical Navigation -->
+        <div>
+          <h3 class="footer-col-title">Theatrical Shows</h3>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="shows.html">Current Productions</a></li>
+            <li class="footer-link-item"><a href="calendar.html">Upcoming Show Calendar</a></li>
+            <li class="footer-link-item"><a href="menu.html">Theatrical Dinner Menu</a></li>
+            <li class="footer-link-item"><a href="events.html">Private &amp; Corporate Dinners</a></li>
+            <li class="footer-link-item"><a href="dashboard.html">Guest Reservation Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: The Grand Enigma Story -->
+        <div>
+          <h3 class="footer-col-title">The Experience</h3>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="story.html">Our Heritage &amp; Actors</a></li>
+            <li class="footer-link-item"><a href="story.html#faq">How The Murder Mystery Works</a></li>
+            <li class="footer-link-item"><a href="contact.html">Box Office &amp; Seating Inquiries</a></li>
+            <li class="footer-link-item"><a href="login.html">Guest Loyalty Program</a></li>
+            <li class="footer-link-item"><a href="contact.html#venue">Directions &amp; Parking</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: VIP Mystery Dispatch (Newsletter) -->
+        <div class="footer-newsletter-box">
+          <h3 class="footer-col-title">The Alibi Society</h3>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+            Subscribe to secret show announcements, premier seating releases, and private murder dinner invitations.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter Subscription">
+            <input type="email" class="newsletter-input" placeholder="Your confidential email address..." required aria-label="Email address">
+            <button type="submit" class="newsletter-submit-btn" aria-label="Submit Email">
+              <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+          </form>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">
+            Dispatches delivered monthly. No spam. Unsubscribe at any time.
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 The Grand Enigma Murder Mystery Dinner Theater. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Admission</a>
+          <a href="#">Seating &amp; Dietary Guidelines</a>
+          <a href="#">Accessibility Statement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       6. Back-To-Top Utility Button
+       ========================================================================= -->
+  <button type="button" class="back-to-top" aria-label="Back to top of page" title="Return to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <!-- =========================================================================
+       7. Scripts
+       ========================================================================= -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
