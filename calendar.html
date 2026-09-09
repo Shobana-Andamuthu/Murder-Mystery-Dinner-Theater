@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Show Calendar & Performance Dates | The Grand Enigma</title>
+  <meta name="description" content="Step into an immersive evening of suspense, fine dining, and live theatrical deception at The Grand Enigma Murder Mystery Dinner Theater.">
+  <meta name="keywords" content="murder mystery dinner, dinner theater, live immersive theater, detective show, corporate mystery events, fine dining entertainment">
+  
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="The Grand Enigma | Murder Mystery Dinner Theater">
+  <meta property="og:description" content="An evening of fine dining, high intrigue, and theatrical deception. Can you identify the culprit before the final course?">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/branding/logo-emblem.svg">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css?v=5.0">
+  <link rel="stylesheet" href="assets/css/responsive.css?v=5.0">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Page Preloader (Modern Luxury Mystery Loader)
+       ========================================================================= -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="page-loader-inner">
+      <div class="loader-emblem-wrap">
+        <div class="loader-pulse-ring"></div>
+        <div class="loader-compass-ring"></div>
+        <div class="loader-emblem">
+          <svg viewBox="0 0 64 64" fill="none" class="loader-svg" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="32" cy="32" r="28" stroke="url(#loaderGoldGradCal)" stroke-width="2" stroke-dasharray="4 3" class="loader-orbit"/>
+            <polygon points="32,8 39,25 56,32 39,39 32,56 25,39 8,32 25,25" fill="url(#loaderGoldGradCal)" opacity="0.9"/>
+            <circle cx="32" cy="32" r="5" fill="#0D0A07" stroke="#C48D28" stroke-width="2"/>
+            <defs>
+              <linearGradient id="loaderGoldGradCal" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#F3D17A"/>
+                <stop offset="50%" stop-color="#C48D28"/>
+                <stop offset="100%" stop-color="#8E6316"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+      <div class="loader-brand-title">THE GRAND ENIGMA</div>
+      <div class="loader-status-text">Synchronizing Showtimes…</div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- =========================================================================
+       2. Master Shared Header (Exactly 7 Main Items + Dashboard + Login)
+       ========================================================================= -->
+  <header class="master-header" id="masterHeader">
+    <div class="container">
+      <div class="navbar-container">
+
+        <!-- Brand Logo -->
+        <a href="index.html" class="navbar-brand" aria-label="The Grand Enigma Home">
+          <img src="assets/images/branding/logo.svg" alt="The Grand Enigma Murder Mystery Dinner Theater" class="navbar-logo-img">
+        </a>
+
+        <!-- Main Desktop Navigation (Exactly 7 Main Items) -->
+        <nav class="navbar-nav-wrapper" aria-label="Main Navigation">
+          <ul class="navbar-nav">
+            <!-- 1. Home (Dropdown) -->
+            <li class="nav-item dropdown">
+              <a href="index.html" class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+                <span>Home</span>
+                <svg class="dropdown-chevron" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 10l5 5 5-5z"/>
+                </svg>
+              </a>
+              <div class="dropdown-menu" role="menu">
+                <a href="index.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-item-icon">I</div>
+                  <div class="dropdown-item-text">
+                    <span class="dropdown-item-title">Home 1: The Grand Enigma</span>
+                    <span class="dropdown-item-sub">Cinematic Noir Atmosphere</span>
+                  </div>
+                </a>
+                <a href="home-2.html" class="dropdown-item" role="menuitem">
+                  <div class="dropdown-item-icon">II</div>
+                  <div class="dropdown-item-text">
+                    <span class="dropdown-item-title">Home 2: The Velvet Alibi</span>
+                    <span class="dropdown-item-sub">Editorial Speakeasy Mystery</span>
+                  </div>
+                </a>
+              </div>
+            </li>
+
+            <!-- 2. Our Story -->
+            <li class="nav-item">
+              <a href="story.html" class="nav-link">Our Story</a>
+            </li>
+
+            <!-- 3. Shows -->
+            <li class="nav-item">
+              <a href="shows.html" class="nav-link">Shows</a>
+            </li>
+
+            <!-- 4. Show Calendar -->
+            <li class="nav-item">
+              <a href="calendar.html" class="nav-link active">Show Calendar</a>
+            </li>
+
+            <!-- 5. Private & Corporate Events -->
+            <li class="nav-item">
+              <a href="events.html" class="nav-link">Events</a>
+            </li>
+
+            <!-- 6. Menu -->
+            <li class="nav-item">
+              <a href="menu.html" class="nav-link">Menu</a>
+            </li>
+
+            <!-- 7. Contact -->
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link">Contact</a>
+            </li>
+
+            <!-- 8. Dashboard -->
+            <li class="nav-item">
+              <a href="dashboard.html" class="nav-link">Dashboard</a>
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Navbar Actions: Theme, RTL, Login & Mobile Toggle -->
+        <div class="navbar-actions">
+          <!-- Theme Toggle (Light / Dark) -->
+          <button type="button" class="toggle-btn theme-toggle-btn" aria-label="Toggle Color Theme" title="Toggle Light / Dark Mode">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.389 5.389 0 0 1-4.4 2.26 5.403 5.403 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z"/>
+            </svg>
+          </button>
+
+          <!-- RTL / LTR Toggle -->
+          <button type="button" class="toggle-btn rtl-toggle-btn" aria-label="Toggle Layout Direction" title="Toggle RTL / LTR">
+            <span class="rtl-toggle-text">RTL</span>
+          </button>
+
+          <!-- Login (Separate Final Action Button) -->
+          <a href="login.html" class="btn-nav-login" title="Guest Access">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+            </svg>
+            <span>Login</span>
+          </a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="mobile-toggle" aria-label="Open Navigation Drawer" aria-expanded="false" aria-controls="mobileDrawer">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       3. Mobile Navigation Drawer
+       ========================================================================= -->
+  <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <img src="assets/images/branding/logo.svg" alt="The Grand Enigma" class="mobile-drawer-logo">
+      <button type="button" class="mobile-close-btn" aria-label="Close Navigation Menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Items (7 Main Items) -->
+    <ul class="mobile-nav-list">
+      <!-- 1. Home Accordion -->
+      <li class="mobile-nav-item dropdown">
+        <button type="button" class="mobile-dropdown-btn" aria-expanded="false">
+          <span>1. Home</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M7 10l5 5 5-5z"/>
+          </svg>
+        </button>
+        <div class="mobile-sub-menu">
+          <a href="index.html" class="mobile-sub-link">Home 1: The Grand Enigma</a>
+          <a href="home-2.html" class="mobile-sub-link">Home 2: The Velvet Alibi</a>
+        </div>
+      </li>
+
+      <!-- 2. Our Story -->
+      <li class="mobile-nav-item">
+        <a href="story.html" class="mobile-nav-link">2. Our Story</a>
+      </li>
+
+      <!-- 3. Shows -->
+      <li class="mobile-nav-item">
+        <a href="shows.html" class="mobile-nav-link">3. Shows</a>
+      </li>
+
+      <!-- 4. Show Calendar -->
+      <li class="mobile-nav-item active">
+        <a href="calendar.html" class="mobile-nav-link">4. Show Calendar</a>
+      </li>
+
+      <!-- 5. Private & Corporate Events -->
+      <li class="mobile-nav-item">
+        <a href="events.html" class="mobile-nav-link">5. Events</a>
+      </li>
+
+      <!-- 6. Menu -->
+      <li class="mobile-nav-item">
+        <a href="menu.html" class="mobile-nav-link">6. Menu</a>
+      </li>
+
+      <!-- 7. Contact -->
+      <li class="mobile-nav-item">
+        <a href="contact.html" class="mobile-nav-link">7. Contact</a>
+      </li>
+    </ul>
+
+    <!-- Mobile Action Buttons -->
+    <div class="mobile-drawer-actions">
+      <a href="dashboard.html" class="btn btn-secondary" style="width: 100%;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="var(--accent-gold)" aria-hidden="true">
+          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .55-.45 1-1 1H6c-.55 0-1-.45-1-1v-1h14v1z"/>
+        </svg>
+        <span>Guest Dashboard</span>
+      </a>
+
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
+        </svg>
+        <span>Guest Login</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       4. Main Content — Phase 1 Foundation Verification & Showcase
+       ========================================================================= -->
+  <main id="mainContent">
+
+    <!-- =========================================================================
+         Section 1: Hero Repertoire Box Office & Instant Date Finder Search Widget
+         ========================================================================= -->
+    <section class="cal-hero-section" id="calendarHero">
+      <div class="container">
+        <div class="cal-hero-content">
+          <div class="cal-hero-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 4h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
+            </svg>
+            <span>Live Box Office &amp; Season Schedules</span>
+          </div>
+          <h1 class="cal-hero-title">THE REPERTOIRE CALENDAR &amp; BOX OFFICE</h1>
+          <p class="cal-hero-lead">
+            Select your evening of intrigue. Reserve private dining tables, secure speakeasy banquettes, 
+            or explore exclusive Sunday champagne matinees across our active season repertoire.
+          </p>
+        </div>
+
+        <!-- Instant Date Finder Widget -->
+        <div class="cal-search-widget-wrap">
+          <form id="dateFinderForm" class="cal-search-grid">
+            <div class="cal-search-field">
+              <label for="finderShowSelect" class="cal-search-label">Production</label>
+              <select id="finderShowSelect" class="cal-search-select">
+                <option value="all">All Active Mysteries</option>
+                <option value="obsidian">The Obsidian Key (Noir)</option>
+                <option value="manhattan">Midnight in Manhattan (Gala)</option>
+                <option value="baron">The Baron's Last Toast (Venetian)</option>
+              </select>
+            </div>
+
+            <div class="cal-search-field">
+              <label for="finderMonthSelect" class="cal-search-label">Performance Month</label>
+              <select id="finderMonthSelect" class="cal-search-select">
+                <option value="oct">October 2026</option>
+                <option value="nov">November 2026</option>
+                <option value="dec">December 2026 (Holiday Gala)</option>
+              </select>
+            </div>
+
+            <div class="cal-search-field">
+              <label for="finderTimeSelect" class="cal-search-label">Experience Slot</label>
+              <select id="finderTimeSelect" class="cal-search-select">
+                <option value="any">Any Slot (Evening &amp; Matinee)</option>
+                <option value="evening">Dinner Soirée (7:00 PM - 10:15 PM)</option>
+                <option value="matinee">Champagne Matinee (1:00 PM - 3:30 PM)</option>
+              </select>
+            </div>
+
+            <div class="cal-search-field">
+              <label for="finderPartySelect" class="cal-search-label">Party Size</label>
+              <select id="finderPartySelect" class="cal-search-select">
+                <option value="2">2 Guests (Intimate Table)</option>
+                <option value="4">4 Guests (Private Banquette)</option>
+                <option value="6">6 to 8 Guests (VIP Stage Table)</option>
+                <option value="12">10+ Guests (Group Buyout)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary cal-search-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+              </svg>
+              <span>Check Box Office</span>
+            </button>
+          </form>
+
+          <!-- Live Stats Strip -->
+          <div class="cal-hero-stats-row">
+            <div class="cal-hero-stat-item">
+              <div class="cal-hero-stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
+              </div>
+              <div>
+                <div class="cal-hero-stat-number">24 Soirées</div>
+                <div class="cal-hero-stat-label">Scheduled Each Month</div>
+              </div>
+            </div>
+
+            <div class="cal-hero-stat-item">
+              <div class="cal-hero-stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              </div>
+              <div>
+                <div class="cal-hero-stat-number">88 Guests</div>
+                <div class="cal-hero-stat-label">Intimate Max Capacity</div>
+              </div>
+            </div>
+
+            <div class="cal-hero-stat-item">
+              <div class="cal-hero-stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+              </div>
+              <div>
+                <div class="cal-hero-stat-number">4.97 / 5.0</div>
+                <div class="cal-hero-stat-label">Guest Experience Rating</div>
+              </div>
+            </div>
+
+            <div class="cal-hero-stat-item">
+              <div class="cal-hero-stat-icon">
+                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+              </div>
+              <div>
+                <div class="cal-hero-stat-number">24/7 Concierge</div>
+                <div class="cal-hero-stat-label">Dietary &amp; Seating Care</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Section 2: Master Interactive Performance Schedule Matrix
+         ========================================================================= -->
+    <section class="cal-matrix-section" id="scheduleMatrix">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Performance Dates</span>
+          <h2 class="section-title">MASTER PRODUCTION SCHEDULE</h2>
+          <p class="section-desc">
+            Reserve your mystery dining soiree. Filter by theatrical production, choose between 
+            our visual calendar cards or chronological agenda view, and secure verified table seating.
+          </p>
+        </div>
+
+        <!-- Toolbar: Filters & View Switcher -->
+        <div class="cal-matrix-toolbar">
+          <div class="cal-filter-tabs">
+            <button type="button" class="cal-filter-btn active" data-show="all">All Productions</button>
+            <button type="button" class="cal-filter-btn" data-show="obsidian">The Obsidian Key</button>
+            <button type="button" class="cal-filter-btn" data-show="manhattan">Midnight in Manhattan</button>
+            <button type="button" class="cal-filter-btn" data-show="baron">The Baron's Last Toast</button>
+          </div>
+
+          <div class="cal-view-switch">
+            <button type="button" class="cal-view-btn active" data-view="grid" aria-label="Grid View">
+              <svg viewBox="0 0 24 24"><path d="M4 11h5V5H4v6zm0 7h5v-6H4v6zm6 0h5v-6h-5v6zm6 0h5v-6h-5v6zm-6-7h5V5h-5v6zm6-6v6h5V5h-5z"/></svg>
+              <span>Grid View</span>
+            </button>
+            <button type="button" class="cal-view-btn" data-view="agenda" aria-label="Agenda View">
+              <svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>
+              <span>Agenda View</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- View 1: Calendar Cards Grid (9 Verified Performance Dates - 3 Per Filter) -->
+        <div class="cal-cards-grid" id="calGridView">
+          <!-- Card 1: Obsidian 1 -->
+          <article class="cal-card" data-show="obsidian">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Oct</span>
+                <span class="cal-date-day">16</span>
+                <span class="cal-date-weekday">Fri</span>
+              </div>
+              <span class="cal-status-pill is-fast">Selling Fast</span>
+            </div>
+            <div class="cal-card-showtag">1920s Noir Gangland</div>
+            <h3 class="cal-card-title">The Obsidian Key</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>4-Course Speakeasy Tasting &amp; Pairing</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>The Obsidian Ballroom &bull; Main Stage</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$135</span>
+                <span class="cal-price-note">per guest &bull; all-inclusive</span>
+              </div>
+              <a href="contact.html?date=2026-10-16&show=obsidian" class="btn btn-primary btn-sm">Reserve Table</a>
+            </div>
+          </article>
+
+          <!-- Card 2: Manhattan 1 -->
+          <article class="cal-card" data-show="manhattan">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Oct</span>
+                <span class="cal-date-day">17</span>
+                <span class="cal-date-weekday">Sat</span>
+              </div>
+              <span class="cal-status-pill is-urgent">Last 3 Tables</span>
+            </div>
+            <div class="cal-card-showtag">Art Deco High Society</div>
+            <h3 class="cal-card-title">Midnight in Manhattan</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3.25 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>4-Course Black Tie Filet Mignon Dinner</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Skyline Penthouse Salon</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$148</span>
+                <span class="cal-price-note">per guest &bull; gala seating</span>
+              </div>
+              <a href="contact.html?date=2026-10-17&show=manhattan" class="btn btn-primary btn-sm">Reserve Table</a>
+            </div>
+          </article>
+
+          <!-- Card 3: Baron 1 -->
+          <article class="cal-card" data-show="baron">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Oct</span>
+                <span class="cal-date-day">23</span>
+                <span class="cal-date-weekday">Fri</span>
+              </div>
+              <span class="cal-status-pill is-available">Available</span>
+            </div>
+            <div class="cal-card-showtag">Venetian Gothic Masquerade</div>
+            <h3 class="cal-card-title">The Baron's Last Toast</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>4-Course Northern Italian Feast &amp; Chianti</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>The Venetian Crypt &bull; Vaulted Hall</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$140</span>
+                <span class="cal-price-note">per guest &bull; mask included</span>
+              </div>
+              <a href="contact.html?date=2026-10-23&show=baron" class="btn btn-primary btn-sm">Reserve Table</a>
+            </div>
+          </article>
+
+          <!-- Card 4: Obsidian 2 -->
+          <article class="cal-card" data-show="obsidian">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Oct</span>
+                <span class="cal-date-day">24</span>
+                <span class="cal-date-weekday">Sat</span>
+              </div>
+              <span class="cal-status-pill is-fast">Selling Fast</span>
+            </div>
+            <div class="cal-card-showtag">1920s Noir Gangland</div>
+            <h3 class="cal-card-title">The Obsidian Key</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>4-Course Speakeasy Tasting &amp; Pairing</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>The Obsidian Ballroom &bull; Main Stage</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$135</span>
+                <span class="cal-price-note">per guest &bull; all-inclusive</span>
+              </div>
+              <a href="contact.html?date=2026-10-24&show=obsidian" class="btn btn-primary btn-sm">Reserve Table</a>
+            </div>
+          </article>
+
+          <!-- Card 5: Manhattan 2 -->
+          <article class="cal-card" data-show="manhattan">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Oct</span>
+                <span class="cal-date-day">30</span>
+                <span class="cal-date-weekday">Fri</span>
+              </div>
+              <span class="cal-status-pill is-urgent">Last 2 Tables</span>
+            </div>
+            <div class="cal-card-showtag">Art Deco High Society</div>
+            <h3 class="cal-card-title">Midnight in Manhattan</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3.25 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>4-Course Black Tie Filet Mignon Dinner</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Skyline Penthouse Salon</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$148</span>
+                <span class="cal-price-note">per guest &bull; gala seating</span>
+              </div>
+              <a href="contact.html?date=2026-10-30&show=manhattan" class="btn btn-primary btn-sm">Reserve Table</a>
+            </div>
+          </article>
+
+          <!-- Card 6: Baron 2 -->
+          <article class="cal-card" data-show="baron">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Oct</span>
+                <span class="cal-date-day">31</span>
+                <span class="cal-date-weekday">Sat</span>
+              </div>
+              <span class="cal-status-pill is-waitlist">Waitlist Only</span>
+            </div>
+            <div class="cal-card-showtag">Halloween Masquerade Special</div>
+            <h3 class="cal-card-title">The Baron's Last Toast</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3.5 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>5-Course Venetian Crypt Tasting Gala</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>The Venetian Crypt &bull; Vaulted Hall</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$165</span>
+                <span class="cal-price-note">sold out &bull; waitlist active</span>
+              </div>
+              <a href="contact.html?date=2026-10-31&show=baron" class="btn btn-secondary btn-sm">Join Waitlist</a>
+            </div>
+          </article>
+
+          <!-- Card 7: Obsidian 3 -->
+          <article class="cal-card" data-show="obsidian">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Nov</span>
+                <span class="cal-date-day">06</span>
+                <span class="cal-date-weekday">Fri</span>
+              </div>
+              <span class="cal-status-pill is-available">Available</span>
+            </div>
+            <div class="cal-card-showtag">1920s Noir Gangland</div>
+            <h3 class="cal-card-title">The Obsidian Key</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>4-Course Speakeasy Tasting &amp; Pairing</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>The Obsidian Ballroom &bull; Main Stage</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$135</span>
+                <span class="cal-price-note">per guest &bull; all-inclusive</span>
+              </div>
+              <a href="contact.html?date=2026-11-06&show=obsidian" class="btn btn-primary btn-sm">Reserve Table</a>
+            </div>
+          </article>
+
+          <!-- Card 8: Manhattan 3 -->
+          <article class="cal-card" data-show="manhattan">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Nov</span>
+                <span class="cal-date-day">07</span>
+                <span class="cal-date-weekday">Sat</span>
+              </div>
+              <span class="cal-status-pill is-available">Available</span>
+            </div>
+            <div class="cal-card-showtag">Art Deco High Society</div>
+            <h3 class="cal-card-title">Midnight in Manhattan</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3.25 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>4-Course Black Tie Filet Mignon Dinner</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Skyline Penthouse Salon</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$148</span>
+                <span class="cal-price-note">per guest &bull; gala seating</span>
+              </div>
+              <a href="contact.html?date=2026-11-07&show=manhattan" class="btn btn-primary btn-sm">Reserve Table</a>
+            </div>
+          </article>
+
+          <!-- Card 9: Baron 3 -->
+          <article class="cal-card" data-show="baron">
+            <div class="cal-card-top">
+              <div class="cal-date-badge">
+                <span class="cal-date-month">Nov</span>
+                <span class="cal-date-day">13</span>
+                <span class="cal-date-weekday">Fri</span>
+              </div>
+              <span class="cal-status-pill is-available">Available</span>
+            </div>
+            <div class="cal-card-showtag">Venetian Gothic Masquerade</div>
+            <h3 class="cal-card-title">The Baron's Last Toast</h3>
+            <div class="cal-card-meta">
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                <span>7:00 PM &bull; 3 Hours Duration</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+                <span>4-Course Northern Italian Feast &amp; Chianti</span>
+              </div>
+              <div class="cal-meta-row">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>The Venetian Crypt &bull; Vaulted Hall</span>
+              </div>
+            </div>
+            <div class="cal-card-footer">
+              <div class="cal-price-box">
+                <span class="cal-price-val">$140</span>
+                <span class="cal-price-note">per guest &bull; mask included</span>
+              </div>
+              <a href="contact.html?date=2026-11-13&show=baron" class="btn btn-primary btn-sm">Reserve Table</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- View 2: Chronological Agenda List (3 Per Filter - 9 Total Rows) -->
+        <div class="cal-agenda-view" id="calAgendaView">
+          <!-- Row 1: Obsidian -->
+          <div class="cal-agenda-row" data-show="obsidian">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Oct</span>
+              <span class="cal-date-day">16</span>
+              <span class="cal-date-weekday">Fri</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">1920s Noir Gangland</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">The Obsidian Key</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">The Obsidian Ballroom &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">4-Course Speakeasy Tasting</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-fast">Selling Fast</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-10-16&show=obsidian" class="btn btn-primary btn-sm">Book $135</a>
+            </div>
+          </div>
+
+          <!-- Row 2: Manhattan -->
+          <div class="cal-agenda-row" data-show="manhattan">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Oct</span>
+              <span class="cal-date-day">17</span>
+              <span class="cal-date-weekday">Sat</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">Art Deco High Society</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Midnight in Manhattan</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Skyline Penthouse Salon &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">4-Course Filet Mignon Gala</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-urgent">Last 3 Tables</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-10-17&show=manhattan" class="btn btn-primary btn-sm">Book $148</a>
+            </div>
+          </div>
+
+          <!-- Row 3: Baron -->
+          <div class="cal-agenda-row" data-show="baron">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Oct</span>
+              <span class="cal-date-day">23</span>
+              <span class="cal-date-weekday">Fri</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">Venetian Gothic Masquerade</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">The Baron's Last Toast</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">The Venetian Crypt &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">4-Course Italian Feast &amp; Wine</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-available">Available</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-10-23&show=baron" class="btn btn-primary btn-sm">Book $140</a>
+            </div>
+          </div>
+
+          <!-- Row 4: Obsidian -->
+          <div class="cal-agenda-row" data-show="obsidian">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Oct</span>
+              <span class="cal-date-day">24</span>
+              <span class="cal-date-weekday">Sat</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">1920s Noir Gangland</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">The Obsidian Key</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">The Obsidian Ballroom &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">4-Course Speakeasy Tasting</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-fast">Selling Fast</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-10-24&show=obsidian" class="btn btn-primary btn-sm">Book $135</a>
+            </div>
+          </div>
+
+          <!-- Row 5: Manhattan -->
+          <div class="cal-agenda-row" data-show="manhattan">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Oct</span>
+              <span class="cal-date-day">30</span>
+              <span class="cal-date-weekday">Fri</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">Art Deco High Society</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Midnight in Manhattan</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Skyline Penthouse Salon &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">4-Course Filet Mignon Gala</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-urgent">Last 2 Tables</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-10-30&show=manhattan" class="btn btn-primary btn-sm">Book $148</a>
+            </div>
+          </div>
+
+          <!-- Row 6: Baron -->
+          <div class="cal-agenda-row" data-show="baron">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Oct</span>
+              <span class="cal-date-day">31</span>
+              <span class="cal-date-weekday">Sat</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">Halloween Masquerade Special</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">The Baron's Last Toast</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">The Venetian Crypt &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">5-Course Venetian Gala</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-waitlist">Waitlist Only</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-10-31&show=baron" class="btn btn-secondary btn-sm">Waitlist $165</a>
+            </div>
+          </div>
+
+          <!-- Row 7: Obsidian -->
+          <div class="cal-agenda-row" data-show="obsidian">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Nov</span>
+              <span class="cal-date-day">06</span>
+              <span class="cal-date-weekday">Fri</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">1920s Noir Gangland</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">The Obsidian Key</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">The Obsidian Ballroom &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">4-Course Speakeasy Tasting</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-available">Available</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-11-06&show=obsidian" class="btn btn-primary btn-sm">Book $135</a>
+            </div>
+          </div>
+
+          <!-- Row 8: Manhattan -->
+          <div class="cal-agenda-row" data-show="manhattan">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Nov</span>
+              <span class="cal-date-day">07</span>
+              <span class="cal-date-weekday">Sat</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">Art Deco High Society</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Midnight in Manhattan</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Skyline Penthouse Salon &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">4-Course Filet Mignon Gala</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-available">Available</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-11-07&show=manhattan" class="btn btn-primary btn-sm">Book $148</a>
+            </div>
+          </div>
+
+          <!-- Row 9: Baron -->
+          <div class="cal-agenda-row" data-show="baron">
+            <div class="cal-date-badge">
+              <span class="cal-date-month">Nov</span>
+              <span class="cal-date-day">13</span>
+              <span class="cal-date-weekday">Fri</span>
+            </div>
+            <div>
+              <div class="cal-card-showtag">Venetian Gothic Masquerade</div>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">The Baron's Last Toast</h3>
+              <span style="font-size: 0.8rem; color: var(--text-muted);">The Venetian Crypt &bull; 7:00 PM</span>
+            </div>
+            <div>
+              <span style="font-size: 0.825rem; color: var(--text-secondary);">4-Course Italian Feast &amp; Wine</span>
+            </div>
+            <div>
+              <span class="cal-status-pill is-available">Available</span>
+            </div>
+            <div style="text-align: right;">
+              <a href="contact.html?date=2026-11-13&show=baron" class="btn btn-primary btn-sm">Book $140</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Section 3: Evening Timeline & Gastronomic Itinerary
+         ========================================================================= -->
+    <section class="cal-itinerary-section" id="eveningItinerary">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">The Experience Flow</span>
+          <h2 class="section-title">THE ANATOMY OF A MURDER SOIRÉE</h2>
+          <p class="section-desc">
+            A seamless three-hour theatrical odyssey where gastronomy and suspense advance in perfect lockstep. 
+            Every course brings new alibis, interrogations, and dramatic revelations.
+          </p>
+        </div>
+
+        <div class="cal-timeline-track">
+          <!-- Step 1 -->
+          <div class="cal-timeline-card">
+            <div class="cal-step-indicator">
+              <span class="cal-step-time">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 13H11V7h1.5v8z"/></svg>
+                06:30 PM
+              </span>
+              <span class="cal-step-badge">1</span>
+            </div>
+            <h3 class="cal-timeline-title">Speakeasy Entrance &amp; Alibi Cocktails</h3>
+            <p class="cal-timeline-desc">
+              Whisper the evening's secret passphrase at the heavy brass bookcase door. 
+              Sip signature prohibition cocktails while actors in character mingle disguised among guests.
+            </p>
+            <div class="cal-culinary-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21 5V3H3v2l8 9v5H6v2h12v-2h-5v-5l8-9zM7.43 7L5.66 5h12.69l-1.78 2H7.43z"/></svg>
+              <span>Welcome Cocktail: The Smoked Rye Alibi</span>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="cal-timeline-card">
+            <div class="cal-step-indicator">
+              <span class="cal-step-time">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 13H11V7h1.5v8z"/></svg>
+                07:15 PM
+              </span>
+              <span class="cal-step-badge">2</span>
+            </div>
+            <h3 class="cal-timeline-title">Act I: The Gathering &amp; Amuse-Bouche</h3>
+            <p class="cal-timeline-desc">
+              Guests are seated at velvet-clothed banquet tables. The family patriarch or host delivers 
+              a scandalous welcome address before tensions suddenly flare into high drama.
+            </p>
+            <div class="cal-culinary-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+              <span>Truffled Wild Mushroom Tartlet &amp; Bisque</span>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="cal-timeline-card">
+            <div class="cal-step-indicator">
+              <span class="cal-step-time">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 13H11V7h1.5v8z"/></svg>
+                07:45 PM
+              </span>
+              <span class="cal-step-badge">3</span>
+            </div>
+            <h3 class="cal-timeline-title">Act II: The Blackout &amp; The Murder</h3>
+            <p class="cal-timeline-desc">
+              Lights flicker and a blood-curdling scream shatters the silence. The victim collapses center stage. 
+              The Lead Detective locks all exits as the decadent chef entrée is served to tables.
+            </p>
+            <div class="cal-culinary-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+              <span>Prime Filet Mignon or Pan-Seared Seabass</span>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="cal-timeline-card">
+            <div class="cal-step-indicator">
+              <span class="cal-step-time">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 13H11V7h1.5v8z"/></svg>
+                08:45 PM
+              </span>
+              <span class="cal-step-badge">4</span>
+            </div>
+            <h3 class="cal-timeline-title">Act III: Clue Hunt &amp; Interrogations</h3>
+            <p class="cal-timeline-desc">
+              Your table receives sealed forensic dossiers, cipher wheels, and coroner reports. 
+              Actors are brought directly to your table to be cross-examined under intense scrutiny.
+            </p>
+            <div class="cal-culinary-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              <span>Detective Clue Dossier &amp; Interrogation Pack</span>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="cal-timeline-card">
+            <div class="cal-step-indicator">
+              <span class="cal-step-time">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm.5 13H11V7h1.5v8z"/></svg>
+                09:30 PM
+              </span>
+              <span class="cal-step-badge">5</span>
+            </div>
+            <h3 class="cal-timeline-title">Act IV: The Climax, Dessert &amp; Accusations</h3>
+            <p class="cal-timeline-desc">
+              Submit your formal accusation ballot with dessert. The culprit is sensationally unmasked, 
+              handcuffed, and top sleuths receive custom engraved awards.
+            </p>
+            <div class="cal-culinary-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.06 22.99h1.66c.84 0 1.53-.64 1.63-1.48L23 5.05h-5V1h-1.97v4.05h-4.97l.3 2.34c1.71.47 3.31 1.32 4.27 2.26 1.44 1.42 2.43 2.89 2.43 5.29v8.05zM1 21.99V21h15.03v.99c0 .55-.45 1-1 1H2c-.55 0-1-.45-1-1zm15.03-7c0-8-15.03-3-15.03-3v8.01h15.03v-5.01z"/></svg>
+              <span>Gold-Dusted Belgian Dark Chocolate Ganache</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Section 4: Low Inventory & Urgent Departures Alert Board
+         ========================================================================= -->
+    <section class="cal-urgency-section" id="fillingFast">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">High Demand Notice</span>
+          <h2 class="section-title">FILLING FAST &amp; FINAL CURTAIN CALLS</h2>
+          <p class="section-desc">
+            These select dates have reached 85%+ capacity. Secure the remaining tables before the box office 
+            officially transitions the dates to waitlist status.
+          </p>
+        </div>
+
+        <div class="cal-urgency-grid">
+          <!-- Urgency Item 1 -->
+          <div class="cal-urgency-card is-hot">
+            <div class="cal-urgency-header">
+              <span class="cal-urgency-date">Saturday, Oct 17 &bull; 7:00 PM</span>
+              <span class="cal-status-pill is-urgent"><span class="cal-pulse-dot"></span>3 Tables Left</span>
+            </div>
+            <h3 class="cal-urgency-title">Midnight in Manhattan</h3>
+            <p style="font-size: 0.825rem; color: var(--text-secondary); line-height: 1.5;">
+              Skyline Penthouse Salon. Premium private banquettes are already claimed. Only three 4-top tables remain.
+            </p>
+            <div class="cal-gauge-wrap">
+              <div class="cal-gauge-labels">
+                <span class="cal-gauge-label-left">Reserved Capacity</span>
+                <span class="cal-gauge-label-right">96% Booked</span>
+              </div>
+              <div class="cal-gauge-bar">
+                <div class="cal-gauge-fill" style="width: 96%;"></div>
+              </div>
+            </div>
+            <a href="contact.html?date=2026-10-17&show=manhattan" class="btn btn-primary btn-sm" style="width: 100%;">Instant Reserve ($148)</a>
+          </div>
+
+          <!-- Urgency Item 2 -->
+          <div class="cal-urgency-card is-hot">
+            <div class="cal-urgency-header">
+              <span class="cal-urgency-date">Friday, Oct 24 &bull; 7:00 PM</span>
+              <span class="cal-status-pill is-fast"><span class="cal-pulse-dot"></span>5 Tables Left</span>
+            </div>
+            <h3 class="cal-urgency-title">The Obsidian Key</h3>
+            <p style="font-size: 0.825rem; color: var(--text-secondary); line-height: 1.5;">
+              The Obsidian Ballroom. 1920s Noir Gangland. High party volume expected; couple tables filling quickly.
+            </p>
+            <div class="cal-gauge-wrap">
+              <div class="cal-gauge-labels">
+                <span class="cal-gauge-label-left">Reserved Capacity</span>
+                <span class="cal-gauge-label-right">91% Booked</span>
+              </div>
+              <div class="cal-gauge-bar">
+                <div class="cal-gauge-fill" style="width: 91%;"></div>
+              </div>
+            </div>
+            <a href="contact.html?date=2026-10-24&show=obsidian" class="btn btn-primary btn-sm" style="width: 100%;">Instant Reserve ($135)</a>
+          </div>
+
+          <!-- Urgency Item 3 -->
+          <div class="cal-urgency-card is-hot">
+            <div class="cal-urgency-header">
+              <span class="cal-urgency-date">Friday, Oct 30 &bull; 7:00 PM</span>
+              <span class="cal-status-pill is-urgent"><span class="cal-pulse-dot"></span>2 Tables Left</span>
+            </div>
+            <h3 class="cal-urgency-title">Midnight in Manhattan</h3>
+            <p style="font-size: 0.825rem; color: var(--text-secondary); line-height: 1.5;">
+              Pre-Halloween Gala Edition. Black-tie attire encouraged. Champagne toast included upon arrival.
+            </p>
+            <div class="cal-gauge-wrap">
+              <div class="cal-gauge-labels">
+                <span class="cal-gauge-label-left">Reserved Capacity</span>
+                <span class="cal-gauge-label-right">98% Booked</span>
+              </div>
+              <div class="cal-gauge-bar">
+                <div class="cal-gauge-fill" style="width: 98%;"></div>
+              </div>
+            </div>
+            <a href="contact.html?date=2026-10-30&show=manhattan" class="btn btn-primary btn-sm" style="width: 100%;">Instant Reserve ($148)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Section 5: Sunday Champagne Matinees & Daylight Conspiracies
+         ========================================================================= -->
+    <section class="cal-matinee-section" id="matineeSpecials">
+      <div class="container">
+        <div class="cal-matinee-grid">
+          <!-- Media Column -->
+          <div class="cal-matinee-media">
+            <img src="assets/images/calendar/calendar_matinee_brunch.jpg" alt="Sunday Champagne Matinee Luxury Table Setting" class="cal-matinee-img">
+            <div class="cal-matinee-badge-float">
+              <div class="cal-matinee-badge-title">Sunday Midday Edition</div>
+              <div class="cal-matinee-badge-sub">1:00 PM - 3:30 PM &bull; Sunlit Conservatory</div>
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="cal-matinee-content">
+            <span class="section-tag">Daylight Intrigue</span>
+            <h2 class="section-title" style="margin-bottom: 1rem; text-align: left;">SUNDAY CHAMPAGNE MATINEES</h2>
+            <p class="section-desc" style="margin-bottom: 1.5rem; margin-left: 0; margin-right: 0; text-align: left;">
+              Not every murder occurs under the cover of midnight. Experience daylight deception bathed in warm 
+              sunlight streaming through stained-glass conservatory windows. Paired with a sumptuous three-course 
+              Parisian brunch and artisanal mimosa cart service.
+            </p>
+
+            <div class="cal-matinee-features">
+              <div class="cal-matinee-feature-item">
+                <div class="cal-matinee-feature-title">Artisanal 3-Course Brunch</div>
+                <div class="cal-matinee-feature-desc">Truffled poached egg brioche, duck confit hash, and fresh fruit crepes.</div>
+              </div>
+              <div class="cal-matinee-feature-item">
+                <div class="cal-matinee-feature-title">Bottomless Mimosa &amp; Bellini</div>
+                <div class="cal-matinee-feature-desc">Fresh pressed blood orange and white peach purée paired with dry sparkling cava.</div>
+              </div>
+              <div class="cal-matinee-feature-item">
+                <div class="cal-matinee-feature-title">Daylight Family Sleuthing</div>
+                <div class="cal-matinee-feature-desc">Recommended for ages 14+; ideal for multi-generation birthdays &amp; celebrations.</div>
+              </div>
+              <div class="cal-matinee-feature-item">
+                <div class="cal-matinee-feature-title">Complimentary Valet Parking</div>
+                <div class="cal-matinee-feature-desc">Convenient daylight arrival with dedicated covered courtyard valet.</div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+              <a href="contact.html?experience=matinee" class="btn btn-primary">Book Champagne Matinee ($115)</a>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Every Sunday &bull; Limited to 65 Guests</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Section 6: Private Buyout & Corporate Gala Calendar
+         ========================================================================= -->
+    <section class="cal-buyout-section" id="privateBuyout">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">Exclusive Evenings</span>
+          <h2 class="section-title">PRIVATE BUYOUTS &amp; CORPORATE GALAS</h2>
+          <p class="section-desc">
+            Host the ultimate team-building conspiracy or celebratory gala. Commandeer the entire ballroom 
+            with custom storylines woven around your guests, company executives, or anniversary honorees.
+          </p>
+        </div>
+
+        <div class="cal-buyout-bento">
+          <!-- Buyout Image Column with Overlay -->
+          <div class="cal-buyout-media">
+            <img src="assets/images/calendar/calendar_private_buyout.jpg" alt="Grand Ballroom Private Buyout Banquet" class="cal-buyout-img">
+            <div class="cal-buyout-media-overlay">
+              <div class="cal-buyout-overlay-title">Private Grand Ballroom Buyout</div>
+              <p class="cal-buyout-overlay-desc">
+                Full venue exclusivity for 40 to 180 guests. Complete audio-visual theatrical lighting, 
+                dedicated 12-actor cast, and bespoke wine pairings selected by our master sommelier.
+              </p>
+            </div>
+          </div>
+
+          <!-- Buyout Content & Interactive Estimator -->
+          <div class="cal-buyout-content">
+            <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Instant Buyout Budget Estimator</h3>
+            <p style="font-size: 0.85rem; color: var(--text-secondary);">
+              Select your party size and package tier for real-time cost transparency.
+            </p>
+
+            <div class="cal-buyout-estimator-box">
+              <div class="cal-estimator-row">
+                <span class="cal-search-label">Guest Count:</span>
+                <div class="cal-estimator-pills">
+                  <button type="button" class="cal-pill-opt cal-pill-guests active" data-guests="40">40 Guests</button>
+                  <button type="button" class="cal-pill-opt cal-pill-guests" data-guests="75">75 Guests</button>
+                  <button type="button" class="cal-pill-opt cal-pill-guests" data-guests="120">120 Guests</button>
+                  <button type="button" class="cal-pill-opt cal-pill-guests" data-guests="180">180 Guests (Full Hall)</button>
+                </div>
+              </div>
+
+              <div class="cal-estimator-row">
+                <span class="cal-search-label">Package Tier:</span>
+                <div class="cal-estimator-pills">
+                  <button type="button" class="cal-pill-opt cal-pill-tier active" data-rate="135">Noir Standard ($135/pp)</button>
+                  <button type="button" class="cal-pill-opt cal-pill-tier" data-rate="170">VIP Imperial ($170/pp)</button>
+                </div>
+              </div>
+
+              <div class="cal-estimator-output">
+                <div>
+                  <span style="font-size: 0.8rem; color: var(--text-muted); display: block;">Estimated Buyout Total</span>
+                  <span style="font-size: 0.75rem; color: var(--text-secondary);">Includes 4 courses &bull; Full cast &bull; Staging</span>
+                </div>
+                <div class="cal-estimate-figure" id="buyoutEstimateFig">$5,400</div>
+              </div>
+            </div>
+
+            <div style="margin-top: auto;">
+              <a href="events.html" class="btn btn-primary" style="width: 100%; text-align: center;">Request Private Buyout Proposal</a>
+              <p style="font-size: 0.775rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">
+                Custom date holds available Monday through Thursday or prime weekend buyouts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         Section 7: Box Office Guarantees & Concierge Reservation Finale
+         ========================================================================= -->
+    <section class="cal-cta-section" id="calendarCta">
+      <div class="container">
+        <!-- 3 Pillars of Box Office Assurance -->
+        <div class="cal-guarantees-grid">
+          <div class="cal-guarantee-card">
+            <div class="cal-guarantee-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <h3 class="cal-guarantee-title">48-Hour Rescheduling</h3>
+            <p class="cal-guarantee-desc">
+              Plans change unexpectedly. Transfer your reservation to any future date up to 48 hours prior with zero penalty fees.
+            </p>
+          </div>
+
+          <div class="cal-guarantee-card">
+            <div class="cal-guarantee-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+            <h3 class="cal-guarantee-title">100% Dietary Concierge</h3>
+            <p class="cal-guarantee-desc">
+              Dedicated vegan, vegetarian, gluten-free, and severe allergy adaptations crafted without ever sacrificing gastronomic luxury.
+            </p>
+          </div>
+
+          <div class="cal-guarantee-card">
+            <div class="cal-guarantee-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+            </div>
+            <h3 class="cal-guarantee-title">Guaranteed Group Seating</h3>
+            <p class="cal-guarantee-desc">
+              Parties booked under the same reservation reference are always seated together at private tables or banquettes.
+            </p>
+          </div>
+        </div>
+
+        <!-- Finale Box Office Reservation Box -->
+        <div class="cal-boxoffice-cta-box">
+          <h2 class="cal-boxoffice-title">RESERVE YOUR TABLE BEFORE THE GAVEL FALLS</h2>
+          <p class="cal-boxoffice-lead">
+            Whether booking an intimate anniversary table for two or reserving a grand company buyout, 
+            our box office concierge stands ready to craft an unforgettable theatrical evening.
+          </p>
+          <div class="cal-boxoffice-actions">
+            <a href="contact.html" class="btn btn-primary btn-lg">Reserve Performance Tickets</a>
+            <a href="events.html" class="btn btn-secondary btn-lg">Inquire About Group Buyout</a>
+          </div>
+          <div class="cal-boxoffice-contact-strip">
+            <div class="cal-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+              <span>Direct Box Office: (212) 555-MYSTERY</span>
+            </div>
+            <div class="cal-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              <span>concierge@thegrandenigma.com</span>
+            </div>
+            <div class="cal-contact-item">
+              <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+              <span>442 West 44th Street, Theater District, New York</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       5. Master Shared Footer Foundation
+       ========================================================================= -->
+  <footer class="master-footer" id="masterFooter">
+    <div class="container">
+      <div class="footer-top-grid">
+
+        <!-- Column 1: Brand Information -->
+        <div class="footer-brand-col">
+          <a href="index.html" aria-label="The Grand Enigma Home">
+            <img src="assets/images/branding/logo.svg" alt="The Grand Enigma Murder Mystery Dinner Theater" class="footer-logo-img">
+          </a>
+          <p class="footer-brand-desc">
+            Where high society meets cold-blooded deception. An evening of bespoke four-course gastronomy, 
+            award-winning stage actors, and audience-interactive murder mystery investigations.
+          </p>
+          <div class="footer-social-links">
+            <a href="#" class="social-link-btn" aria-label="Instagram">
+              <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" class="social-link-btn" aria-label="Facebook">
+              <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+            </a>
+            <a href="#" class="social-link-btn" aria-label="YouTube">
+              <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Theatrical Navigation -->
+        <div>
+          <h3 class="footer-col-title">Theatrical Shows</h3>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="shows.html">Current Productions</a></li>
+            <li class="footer-link-item"><a href="calendar.html">Upcoming Show Calendar</a></li>
+            <li class="footer-link-item"><a href="menu.html">Theatrical Dinner Menu</a></li>
+            <li class="footer-link-item"><a href="events.html">Private &amp; Corporate Dinners</a></li>
+            <li class="footer-link-item"><a href="dashboard.html">Guest Reservation Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: The Grand Enigma Story -->
+        <div>
+          <h3 class="footer-col-title">The Experience</h3>
+          <ul class="footer-links-list">
+            <li class="footer-link-item"><a href="story.html">Our Heritage &amp; Actors</a></li>
+            <li class="footer-link-item"><a href="story.html#faq">How The Murder Mystery Works</a></li>
+            <li class="footer-link-item"><a href="contact.html">Box Office &amp; Seating Inquiries</a></li>
+            <li class="footer-link-item"><a href="login.html">Guest Loyalty Program</a></li>
+            <li class="footer-link-item"><a href="contact.html#venue">Directions &amp; Parking</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: VIP Mystery Dispatch (Newsletter) -->
+        <div class="footer-newsletter-box">
+          <h3 class="footer-col-title">The Alibi Society</h3>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+            Subscribe to secret show announcements, premier seating releases, and private murder dinner invitations.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter Subscription">
+            <input type="email" class="newsletter-input" placeholder="Your confidential email address..." required aria-label="Email address">
+            <button type="submit" class="newsletter-submit-btn" aria-label="Submit Email">
+              <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </button>
+          </form>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">
+            Dispatches delivered monthly. No spam. Unsubscribe at any time.
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 The Grand Enigma Murder Mystery Dinner Theater. All rights reserved.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Admission</a>
+          <a href="#">Seating &amp; Dietary Guidelines</a>
+          <a href="#">Accessibility Statement</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       6. Back-To-Top Utility Button
+       ========================================================================= -->
+  <button type="button" class="back-to-top" aria-label="Back to top of page" title="Return to top">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <!-- =========================================================================
+       7. Scripts
+       ========================================================================= -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
