@@ -270,18 +270,36 @@
       });
     }
 
-    // H. Highlight Active Navigation Item Based on URL
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-    const allNavLinks = document.querySelectorAll('.nav-link, .mobile-nav-link, .dropdown-item, .mobile-sub-link');
+    // H. Highlight Active Navigation Item & Dropdown State Based on URL
+    let currentPath = window.location.pathname.split('/').pop().toLowerCase();
+    if (!currentPath || currentPath === '' || currentPath === 'index' || currentPath === 'index.php') {
+      currentPath = 'index.html';
+    } else if (currentPath === 'home-2') {
+      currentPath = 'home-2.html';
+    }
 
-    allNavLinks.forEach((link) => {
-      const href = link.getAttribute('href');
-      if (href && href.includes(currentPath)) {
-        const parentNavItem = link.closest('.nav-item, .mobile-nav-item');
-        if (parentNavItem) {
-          parentNavItem.classList.add('active');
+    // Reset dropdown items & sub links
+    document.querySelectorAll('.dropdown-item, .mobile-sub-link').forEach(el => el.classList.remove('active'));
+
+    const isHome = currentPath === 'index.html' || currentPath === 'home-2.html';
+    if (isHome) {
+      document.querySelectorAll(`.dropdown-item[href*="${currentPath}"], .mobile-sub-link[href*="${currentPath}"]`).forEach(el => {
+        el.classList.add('active');
+      });
+    }
+
+    // Ensure parent nav items reflect active page
+    document.querySelectorAll('.navbar-nav .nav-item, .mobile-nav-list .mobile-nav-item').forEach(item => {
+      const links = item.querySelectorAll('a');
+      let matches = false;
+      links.forEach(a => {
+        const href = a.getAttribute('href');
+        if (href && (href === currentPath || href.endsWith('/' + currentPath))) {
+          matches = true;
         }
-        link.classList.add('active');
+      });
+      if (matches) {
+        item.classList.add('active');
       }
     });
 

@@ -369,7 +369,6 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
-  contain: layout paint;
   transition: none !important;
   animation: none !important;
 }
@@ -578,6 +577,7 @@ h1, h2, h3, h4, h5, h6 {
   gap: 0.8rem;
   padding: 0.7rem 0.85rem;
   border-radius: var(--border-radius-sm);
+  border: 1px solid transparent;
   color: var(--text-primary);
   transition: all var(--transition-fast);
 }
@@ -587,6 +587,12 @@ h1, h2, h3, h4, h5, h6 {
   background-color: var(--bg-surface-alt);
   color: var(--accent-gold);
   transform: translateX(4px);
+}
+
+.dropdown-item.active {
+  background-color: rgba(212, 175, 55, 0.14);
+  border-color: rgba(212, 175, 55, 0.35);
+  color: var(--accent-gold);
 }
 
 .dropdown-item-icon {
@@ -601,6 +607,14 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.85rem;
   flex-shrink: 0;
   margin-top: 2px;
+  transition: all var(--transition-fast);
+}
+
+.dropdown-item.active .dropdown-item-icon {
+  background: var(--color-gold-main);
+  color: #0A0B0F;
+  font-weight: 800;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
 .dropdown-item-text {
@@ -612,16 +626,26 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-primary);
+  transition: color var(--transition-fast);
 }
 
-.dropdown-item:hover .dropdown-item-title {
+.dropdown-item:hover .dropdown-item-title,
+.dropdown-item.active .dropdown-item-title {
   color: var(--accent-gold);
+}
+
+.dropdown-item.active .dropdown-item-title {
+  font-weight: 700;
 }
 
 .dropdown-item-sub {
   font-size: 0.75rem;
   color: var(--text-secondary);
   line-height: 1.3;
+}
+
+.dropdown-item.active .dropdown-item-sub {
+  color: var(--text-primary);
 }
 
 [data-theme="light"] .dropdown-menu {
@@ -649,6 +673,27 @@ h1, h2, h3, h4, h5, h6 {
 [data-theme="light"] .dropdown-item:hover,
 [data-theme="light"] .dropdown-item:focus {
   background-color: #F8F5EE;
+}
+
+[data-theme="light"] .dropdown-item.active {
+  background-color: rgba(180, 83, 9, 0.12);
+  border-color: rgba(180, 83, 9, 0.38);
+}
+
+[data-theme="light"] .dropdown-item.active .dropdown-item-title {
+  color: #B45309;
+  font-weight: 700;
+}
+
+[data-theme="light"] .dropdown-item.active .dropdown-item-icon {
+  background: #B45309;
+  color: #FFFFFF;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(180, 83, 9, 0.25);
+}
+
+[data-theme="light"] .dropdown-item.active .dropdown-item-sub {
+  color: #374151;
 }
 
 /* Navbar Action Controls */
