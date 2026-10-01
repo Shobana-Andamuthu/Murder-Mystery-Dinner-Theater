@@ -576,8 +576,15 @@
     @media (max-width: 480px) {
       .auth-visual { min-height: 240px; max-height: 280px; }
       .auth-visual-content { padding: 1.5rem 1.25rem; }
-      .auth-form-panel { padding: 2rem 1.25rem; }
+      .auth-form-panel { padding: 1.75rem 1rem; }
       .auth-form-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+      .auth-submit-btn { padding: 0.85rem 1rem; font-size: 0.875rem; }
+    }
+
+    @media (max-width: 320px) {
+      .auth-form-panel { padding: 1.25rem 0.65rem; }
+      .auth-input { padding-left: 2.2rem; font-size: 0.82rem; }
+      .auth-form-title { font-size: 1.35rem; }
     }
   </style>
 </head>

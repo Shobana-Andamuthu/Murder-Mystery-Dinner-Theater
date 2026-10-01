@@ -150,8 +150,12 @@
 
     .auth-select {
       width: 100%;
-      padding: 0.82rem 1rem 0.82rem 2.75rem;
+      padding: 0.82rem 2.25rem 0.82rem 2.75rem;
       background: var(--bg-surface-alt);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFB800' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.85rem center;
+      background-size: 14px 14px;
       border: 1.5px solid var(--border-subtle);
       border-radius: var(--border-radius-md);
       color: var(--text-primary);
@@ -161,6 +165,25 @@
       outline: none;
       cursor: pointer;
       -webkit-appearance: none;
+      appearance: none;
+    }
+
+    [data-theme="light"] .auth-select {
+      background-color: #FFFFFF;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23B45309' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      color: #111827;
+      border-color: #D1D5DB;
+    }
+
+    .auth-select option {
+      background: #18191E;
+      color: #FFFFFF;
+      padding: 0.6rem 0.8rem;
+    }
+
+    [data-theme="light"] .auth-select option {
+      background: #FFFFFF;
+      color: #111827;
     }
 
     .auth-select:focus {
@@ -614,6 +637,18 @@
       .auth-two-col { grid-template-columns: 1fr; }
       .auth-form-panel { padding: 2rem 1.25rem; }
       .auth-visual { min-height: 240px; max-height: 280px; }
+    }
+
+    @media (max-width: 480px) {
+      .auth-form-panel { padding: 1.75rem 1rem; }
+      .auth-submit-btn { padding: 0.85rem 1rem; font-size: 0.875rem; }
+      .auth-select { padding: 0.75rem 2rem 0.75rem 2.4rem; font-size: 0.85rem; }
+    }
+
+    @media (max-width: 320px) {
+      .auth-form-panel { padding: 1.25rem 0.65rem; }
+      .auth-input { padding-left: 2.2rem; font-size: 0.82rem; }
+      .auth-form-title { font-size: 1.35rem; }
     }
   </style>
 </head>

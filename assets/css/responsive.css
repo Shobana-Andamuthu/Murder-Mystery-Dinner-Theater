@@ -176,9 +176,9 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. Tablet (768px - 1023px)
+   4. iPad & Tablet (up to 1199px)
    -------------------------------------------------------------------------- */
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
   body { overflow-x: clip; }
 
   .master-header {
@@ -330,11 +330,29 @@
 /* --------------------------------------------------------------------------
    7. Home 1 Section Responsive Adjustments
    -------------------------------------------------------------------------- */
-@media (max-width: 1023px) {
-  .booking-form-grid {
-    grid-template-columns: 1fr 1fr;
+@media (max-width: 1320px) {
+  .hero-booking-widget {
+    max-width: 100%;
+    padding: 1.25rem 1.5rem;
   }
 
+  .booking-form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .booking-form-grid > div:last-child {
+    grid-column: span 2;
+  }
+
+  .booking-form-grid > div:last-child .btn {
+    width: 100%;
+    height: 46px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1023px) {
   .hero-stats-row {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
@@ -374,6 +392,17 @@
 @media (max-width: 767px) {
   .booking-form-grid {
     grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .booking-form-grid > div:last-child {
+    grid-column: span 1;
+  }
+
+  .booking-form-grid > div:last-child .btn {
+    width: 100%;
+    height: 48px;
+    justify-content: center;
   }
 
   .hero-stats-row {
@@ -382,6 +411,18 @@
 
   .acts-timeline-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .act-title {
+    min-height: auto;
+  }
+
+  .act-course-badge {
+    height: auto;
+    min-height: 46px;
+    max-height: none;
+    padding: 0.6rem 0.8rem;
   }
 
   .shows-cards-grid {
@@ -390,6 +431,12 @@
 
   .events-bento-grid {
     grid-template-columns: 1fr;
+  }
+
+  .menu-courses-grid,
+  .dining-courses-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
   }
 
   .dining-floating-card {
@@ -492,6 +539,20 @@
     flex-direction: column;
   }
 
+  .h2-hero-actions {
+    justify-content: center;
+    width: 100%;
+    margin: 1.5rem auto 0;
+    gap: 0.85rem;
+  }
+
+  .h2-hero-actions .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    text-align: center;
+  }
+
   .countdown-clock-grid {
     gap: 0.75rem;
   }
@@ -508,6 +569,110 @@
   .h2-floating-cocktail {
     position: static;
     margin-top: 1rem;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8b. Calendar Page Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 1320px) {
+  .cal-search-widget-wrap {
+    max-width: 100%;
+    padding: 1.5rem 1.75rem;
+  }
+
+  .cal-search-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .cal-search-btn {
+    grid-column: span 2;
+    width: 100%;
+    height: 46px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1100px) {
+  .cal-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cal-search-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .cal-search-btn {
+    grid-column: span 1;
+    width: 100%;
+    height: 48px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 680px) {
+  .cal-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.25rem;
+  }
+  .cal-card-showtag,
+  .cal-card-title,
+  .cal-card-meta {
+    min-height: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8c. Events Page Responsive Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .events-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .events-inquiry-bar-wrap {
+    max-width: 100%;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .events-inquiry-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+  }
+
+  .events-inquiry-field:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .events-inquiry-action {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .events-inquiry-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .events-inquiry-field:nth-child(3) {
+    grid-column: span 1;
+  }
+
+  .events-inquiry-action {
+    grid-column: span 1;
   }
 }
 
@@ -556,10 +721,43 @@
     word-break: normal;
   }
 
-  /* Form controls stay within screen bounds */
+  /* Form controls & dropdowns stay perfectly within screen bounds */
   input, select, textarea, button {
-    max-width: 100%;
-    box-sizing: border-box;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  select {
+    width: 100% !important;
+    min-width: 0 !important;
+    text-overflow: ellipsis !important;
+  }
+
+  select option {
+    background-color: #181A24 !important;
+    color: #FFFFFF !important;
+    font-size: 0.875rem !important;
+    padding: 0.5rem !important;
+  }
+
+  [data-theme="light"] select option {
+    background-color: #FFFFFF !important;
+    color: #111215 !important;
+  }
+
+  .cal-search-field,
+  .events-inquiry-field,
+  .events-form-field,
+  .contact-field,
+  .booking-field-group,
+  .auth-field-group,
+  .custom-select-wrap,
+  .custom-select-trigger,
+  .custom-select-menu {
+    min-width: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   /* Contact Strip Clean Mobile Alignment */
@@ -598,21 +796,369 @@
     line-height: 1.4 !important;
   }
 
-  /* Guarantees & Pillars of Assurance Clean Vertical Checkmark Alignment */
-  .contact-guarantees-grid,
-  .story-guarantees-grid {
+  /* Floating Media Badges & Hero Tags Mobile Containment */
+  .events-perks-float-badge {
+    bottom: 1rem !important;
+    left: 1rem !important;
+    right: 1rem !important;
+    max-width: calc(100% - 2rem) !important;
+    box-sizing: border-box !important;
+    padding: 0.75rem 1rem !important;
+  }
+
+  .menu-hero-badge {
+    font-size: 0.725rem !important;
+    letter-spacing: 0.05em !important;
+    padding: 0.35rem 0.75rem !important;
+    white-space: normal !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
+  }
+
+  /* Contact CTA Box & Action Buttons Mobile Full Containment */
+  .contact-cta-box {
+    padding: 2.5rem 1.25rem !important;
+  }
+
+  .contact-cta-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+  }
+
+  .contact-cta-actions .btn {
+    width: 100% !important;
+    max-width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  /* Guarantees & Pillars of Assurance Clean Alignment */
+  .contact-guarantees-grid {
     grid-template-columns: 1fr !important;
     max-width: 320px !important;
     margin: 0 auto !important;
     gap: 0.85rem !important;
   }
 
-  .contact-guarantee-item,
-  .story-guarantee-item {
+  .contact-guarantee-item {
     justify-content: flex-start !important;
     text-align: left !important;
     width: 100% !important;
     gap: 0.75rem !important;
+  }
+
+  .story-guarantees-grid {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    gap: 1rem 2rem !important;
+  }
+
+  .story-guarantee-item {
+    display: inline-flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    width: auto !important;
+    gap: 0.6rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .shows-productions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .story-ensemble-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+  .genre-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .shows-premieres-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .seating-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .seating-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .seating-feature-item {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .shows-productions-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .show-card-title {
+    min-height: auto;
+  }
+  .show-card-synopsis {
+    min-height: auto;
+  }
+  .genre-cards-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .genre-card-desc {
+    min-height: auto;
+  }
+  .shows-premieres-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .premiere-card-title {
+    min-height: auto;
+  }
+  .premiere-card-desc {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .story-ensemble-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.25rem;
+  }
+  .story-ensemble-card {
+    padding: 1.75rem 1.25rem 1.5rem;
+  }
+  .story-ensemble-name,
+  .story-ensemble-role,
+  .story-ensemble-quote,
+  .ensemble-stat-k,
+  .ensemble-stat-v {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 1100px) {
+  .events-trust-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .events-formats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .events-venues-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .menu-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .events-formats-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .events-format-title {
+    min-height: auto;
+  }
+  .events-format-desc {
+    min-height: auto;
+  }
+  .events-format-item {
+    min-height: auto;
+  }
+  .events-venues-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .events-venue-title {
+    min-height: auto;
+  }
+  .events-venue-desc {
+    min-height: auto;
+  }
+  .menu-courses-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .menu-course-title {
+    min-height: auto;
+  }
+  .menu-course-timing {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 540px) {
+  .events-trust-strip {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+  .events-trust-item {
+    padding: 0.65rem 0.75rem;
+  }
+  .events-format-body {
+    padding: 1.25rem 1.15rem;
+  }
+  .events-format-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    text-align: center;
+  }
+  .events-select-tier-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  .events-venue-body {
+    padding: 1.25rem 1.15rem;
+  }
+  .menu-course-body {
+    padding: 1.25rem 1.1rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu-courses-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .dietary-panel {
+    padding: 2rem 1.75rem;
+  }
+  .dietary-panel-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.35rem;
+  }
+  .menu-provenance-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.35rem;
+  }
+  .menu-cocktails-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.35rem;
+  }
+}
+
+@media (max-width: 860px) {
+  .menu-flights-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .menu-flight-card:nth-child(3) {
+    grid-column: auto;
+    max-width: 100%;
+  }
+  .menu-guarantees-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .menu-courses-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .menu-dietary-tabs {
+    gap: 0.5rem;
+    margin: 1.75rem 0 2rem;
+  }
+  .dietary-tab-btn {
+    padding: 0.55rem 1.1rem;
+    font-size: 0.8rem;
+  }
+  .dietary-panel {
+    padding: 1.5rem 1.15rem;
+  }
+  .dietary-panel-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .dietary-panel-title {
+    font-size: 1.25rem;
+  }
+  .menu-provenance-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.25rem;
+  }
+  .menu-cocktails-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .menu-course-title,
+  .menu-course-desc,
+  .menu-course-timing,
+  .menu-dish-brief,
+  .dietary-dish-title,
+  .dietary-dish-desc,
+  .menu-flight-name,
+  .menu-flight-footer,
+  .menu-provenance-title,
+  .menu-provenance-desc,
+  .menu-guarantee-title,
+  .menu-guarantee-desc {
+    min-height: auto;
   }
 }
 
@@ -625,5 +1171,110 @@
     padding: 0.75rem 1.15rem;
     font-size: 0.875rem;
   }
+  .story-ensemble-card {
+    padding: 1.5rem 1.1rem 1.35rem;
+  }
+  .show-card-body {
+    padding: 1.25rem 1.1rem;
+  }
+  .show-card-actions {
+    grid-template-columns: 1fr;
+  }
+  .dietary-panel {
+    padding: 1.25rem 0.9rem;
+  }
+  .dietary-panel-title {
+    font-size: 1.15rem;
+  }
+  .dietary-card-body {
+    padding: 1rem 0.95rem 1.2rem;
+  }
+  .dietary-dish-title {
+    font-size: 1rem;
+  }
+  .menu-flight-card {
+    padding: 1.75rem 1.25rem 1.5rem;
+  }
+  .menu-cocktail-thumb {
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
+  }
+  .menu-cocktail-info {
+    padding: 0.85rem 0.95rem;
+  }
+  .menu-provenance-card {
+    padding: 0;
+  }
+  .menu-guarantee-card {
+    padding: 1.75rem 1.25rem;
+  }
+  .contact-map-overlay-badge {
+    top: 0.85rem;
+    left: 0.85rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+    max-width: calc(100% - 1.7rem);
+  }
 }
+
+/* --------------------------------------------------------------------------
+   Ultra-Narrow Viewports Safeguards (360px down to 200px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .hero-booking-widget,
+  .cal-search-widget-wrap,
+  .events-proposal-form-box,
+  .contact-form-wrap {
+    padding: 1.25rem 0.75rem !important;
+  }
+
+  .custom-select-trigger,
+  .cal-search-input,
+  .booking-input,
+  .contact-input,
+  .events-form-field input,
+  .events-form-field select {
+    font-size: 0.82rem !important;
+    padding: 0.65rem 0.75rem !important;
+  }
+
+  .custom-select-item {
+    font-size: 0.8rem !important;
+    padding: 0.55rem 0.75rem !important;
+  }
+
+  .btn {
+    font-size: 0.82rem !important;
+    padding: 0.65rem 0.95rem !important;
+  }
+}
+
+@media (max-width: 260px) {
+  .container {
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
+  }
+
+  .hero-booking-widget,
+  .cal-search-widget-wrap,
+  .events-proposal-form-box,
+  .contact-form-wrap {
+    padding: 1rem 0.5rem !important;
+  }
+
+  .custom-select-trigger {
+    padding: 0.55rem 0.5rem !important;
+  }
+
+  .custom-select-label {
+    font-size: 0.775rem !important;
+  }
+}
+
 

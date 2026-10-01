@@ -665,6 +665,24 @@
       });
     }
 
+    // Venue Select buttons on events.html
+    const venueSelectBtns = document.querySelectorAll('.events-select-venue-btn');
+    if (venueSelectBtns.length) {
+      venueSelectBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const venue = btn.getAttribute('data-venue') || 'venue';
+          if (typeof window.showToast === 'function') {
+            window.showToast(`Selected "${venue.toUpperCase()}" venue room. Complete inquiry details below.`, 'info');
+          }
+          const ctaSection = document.getElementById('eventsInquiryCta');
+          if (ctaSection) {
+            ctaSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
     if (eventsProposalForm) {
       eventsProposalForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -1010,9 +1028,10 @@
       });
     });
 
-    // Initialize Scroll Reveal & Stat Counters
+    // Initialize Scroll Reveal, Stat Counters & Accessible Custom Selects
     initScrollReveal();
     initStatCounters();
+    initAccessibleCustomSelects();
   });
 
   // -------------------------------------------------------------------------
@@ -1236,6 +1255,189 @@
     }, { threshold: 0.15 });
 
     counterElements.forEach((el) => counterObserver.observe(el));
+  }
+
+  // -------------------------------------------------------------------------
+  // 8. Accessible Custom Select Dropdown System
+  // -------------------------------------------------------------------------
+  function initAccessibleCustomSelects() {
+    const selects = document.querySelectorAll('select:not(.no-custom-select)');
+    if (!selects.length) return;
+
+    selects.forEach((select) => {
+      // Check if already transformed
+      if (select.parentElement && select.parentElement.classList.contains('custom-select-wrap')) {
+        return;
+      }
+      if (select.dataset.customized === 'true') {
+        return;
+      }
+      select.dataset.customized = 'true';
+
+      const options = Array.from(select.options);
+      if (!options.length) return;
+
+      const selectedOption = select.options[select.selectedIndex] || options[0];
+      const initialText = selectedOption ? selectedOption.text : '';
+
+      // Create Custom Wrapper
+      const wrap = document.createElement('div');
+      wrap.className = 'custom-select-wrap';
+      if (select.id) wrap.setAttribute('data-select-id', select.id);
+
+      // Create Trigger Button
+      const trigger = document.createElement('button');
+      trigger.type = 'button';
+      trigger.className = 'custom-select-trigger';
+      trigger.setAttribute('aria-haspopup', 'listbox');
+      trigger.setAttribute('aria-expanded', 'false');
+
+      const label = document.createElement('span');
+      label.className = 'custom-select-label';
+      label.textContent = initialText;
+
+      const arrow = document.createElement('span');
+      arrow.className = 'custom-select-arrow';
+      arrow.setAttribute('aria-hidden', 'true');
+      arrow.innerHTML = `
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 10l5 5 5-5z"/>
+        </svg>
+      `;
+
+      trigger.appendChild(label);
+      trigger.appendChild(arrow);
+      wrap.appendChild(trigger);
+
+      // Create Menu List
+      const menu = document.createElement('ul');
+      menu.className = 'custom-select-menu';
+      menu.setAttribute('role', 'listbox');
+      menu.setAttribute('tabindex', '-1');
+
+      options.forEach((opt, idx) => {
+        const item = document.createElement('li');
+        item.className = 'custom-select-item';
+        item.setAttribute('role', 'option');
+        item.setAttribute('data-value', opt.value);
+        item.setAttribute('data-index', idx);
+        item.textContent = opt.text;
+
+        if (opt.selected || idx === select.selectedIndex) {
+          item.classList.add('is-selected');
+          item.setAttribute('aria-selected', 'true');
+        } else {
+          item.setAttribute('aria-selected', 'false');
+        }
+
+        item.addEventListener('click', (e) => {
+          e.stopPropagation();
+          select.selectedIndex = idx;
+          select.value = opt.value;
+          label.textContent = opt.text;
+
+          menu.querySelectorAll('.custom-select-item').forEach((i) => {
+            i.classList.remove('is-selected');
+            i.setAttribute('aria-selected', 'false');
+          });
+          item.classList.add('is-selected');
+          item.setAttribute('aria-selected', 'true');
+
+          wrap.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+
+          // Dispatch native events
+          select.dispatchEvent(new Event('change', { bubbles: true }));
+          select.dispatchEvent(new Event('input', { bubbles: true }));
+        });
+
+        menu.appendChild(item);
+      });
+
+      wrap.appendChild(menu);
+
+      // Insert wrap before select and move select inside wrap
+      select.parentNode.insertBefore(wrap, select);
+      wrap.appendChild(select);
+      select.classList.add('has-custom-select');
+
+      // Trigger Click Toggle
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = wrap.classList.contains('is-open');
+
+        // Close all other custom dropdowns first
+        document.querySelectorAll('.custom-select-wrap.is-open').forEach((other) => {
+          if (other !== wrap) {
+            other.classList.remove('is-open');
+            const otherTrigger = other.querySelector('.custom-select-trigger');
+            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        if (isOpen) {
+          wrap.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        } else {
+          wrap.classList.add('is-open');
+          trigger.setAttribute('aria-expanded', 'true');
+        }
+      });
+
+      // Keyboard navigation
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          if (!wrap.classList.contains('is-open')) {
+            wrap.classList.add('is-open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        } else if (e.key === 'Escape') {
+          wrap.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Keep custom UI in sync if select value is altered externally
+      select.addEventListener('change', () => {
+        const curOpt = select.options[select.selectedIndex];
+        if (curOpt) {
+          label.textContent = curOpt.text;
+          menu.querySelectorAll('.custom-select-item').forEach((i, idx) => {
+            const isMatch = idx === select.selectedIndex;
+            i.classList.toggle('is-selected', isMatch);
+            i.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+          });
+        }
+      });
+    });
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+      document.querySelectorAll('.custom-select-wrap.is-open').forEach((wrap) => {
+        if (!wrap.contains(e.target)) {
+          wrap.classList.remove('is-open');
+          const trg = wrap.querySelector('.custom-select-trigger');
+          if (trg) trg.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.custom-select-wrap.is-open').forEach((wrap) => {
+          wrap.classList.remove('is-open');
+          const trg = wrap.querySelector('.custom-select-trigger');
+          if (trg) {
+            trg.setAttribute('aria-expanded', 'false');
+            trg.focus();
+          }
+        });
+      }
+    });
   }
 })();
 
