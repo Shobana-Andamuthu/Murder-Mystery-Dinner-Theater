@@ -258,106 +258,67 @@
       <div class="container">
         <div class="cal-hero-content">
           <div class="cal-hero-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM9 14H7v-2h2v2zm4 0h-2v-2h2v2zm4 0h-2v-2h2v2zm-8 4H7v-2h2v2zm4 4h-2v-2h2v2zm4 0h-2v-2h2v2z"/>
-            </svg>
-            <span>Live Box Office &amp; Season Schedules</span>
+            <span class="live-pulse-dot" style="margin-right: 2px;"></span>
+            <span>Live Box Office &amp; Seating Inventory &bull; 2026 Season</span>
           </div>
           <h1 class="cal-hero-title">THE REPERTOIRE CALENDAR &amp; BOX OFFICE</h1>
           <p class="cal-hero-lead">
             Select your evening of intrigue. Reserve private dining tables, secure speakeasy banquettes, 
-            or explore exclusive Sunday champagne matinees across our active season repertoire.
+            or explore exclusive Sunday champagne matinees across our active season repertoire. Paired with fine dining.
           </p>
+          <div class="cal-hero-actions">
+            <a href="#scheduleMatrix" class="btn btn-primary">
+              <span>Explore Master Schedule</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" />
+              </svg>
+            </a>
+            <a href="shows.html" class="btn btn-outline-gold">
+              <span>View Repertoire Productions</span>
+            </a>
+          </div>
         </div>
 
-        <!-- Instant Date Finder Widget -->
-        <div class="cal-search-widget-wrap">
-          <form id="dateFinderForm" class="cal-search-grid">
-            <div class="cal-search-field">
-              <label for="finderShowSelect" class="cal-search-label">Production</label>
-              <select id="finderShowSelect" class="cal-search-select">
-                <option value="all">All Active Mysteries</option>
-                <option value="obsidian">The Obsidian Key (Noir)</option>
-                <option value="manhattan">Midnight in Manhattan</option>
-                <option value="baron">The Baron's Last Toast</option>
-              </select>
-            </div>
-
-            <div class="cal-search-field">
-              <label for="finderMonthSelect" class="cal-search-label">Performance Month</label>
-              <select id="finderMonthSelect" class="cal-search-select">
-                <option value="oct">October 2026</option>
-                <option value="nov">November 2026</option>
-                <option value="dec">December 2026 (Holiday)</option>
-              </select>
-            </div>
-
-            <div class="cal-search-field">
-              <label for="finderTimeSelect" class="cal-search-label">Experience Slot</label>
-              <select id="finderTimeSelect" class="cal-search-select">
-                <option value="any">All Slots (Evening &amp; Matinee)</option>
-                <option value="evening">Dinner Soirée (7:00 PM)</option>
-                <option value="matinee">Champagne Matinee (1:00 PM)</option>
-              </select>
-            </div>
-
-            <div class="cal-search-field">
-              <label for="finderPartySelect" class="cal-search-label">Party Size</label>
-              <select id="finderPartySelect" class="cal-search-select">
-                <option value="2">2 Guests (Intimate Table)</option>
-                <option value="4">4 Guests (Banquette)</option>
-                <option value="6">6–8 Guests (VIP Stage)</option>
-                <option value="12">10+ Guests (Group Buyout)</option>
-              </select>
-            </div>
-
-            <button type="submit" class="btn btn-primary cal-search-btn">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-              </svg>
-              <span>Check Box Office</span>
-            </button>
-          </form>
-
-          <!-- Live Stats Strip -->
-          <div class="cal-hero-stats-row">
-            <div class="cal-hero-stat-item">
-              <div class="cal-hero-stat-icon">
+        <!-- Live Box Office Stats Ribbon Strip -->
+        <div class="cal-filter-ribbon-wrap">
+          <div class="cal-chef-strip">
+            <div class="cal-chef-item">
+              <div class="cal-chef-icon">
                 <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/></svg>
               </div>
               <div>
-                <div class="cal-hero-stat-number">24 Soirées</div>
-                <div class="cal-hero-stat-label">Scheduled Each Month</div>
+                <div class="cal-chef-title">24 Soirées</div>
+                <div class="cal-chef-desc">Scheduled Each Month</div>
               </div>
             </div>
 
-            <div class="cal-hero-stat-item">
-              <div class="cal-hero-stat-icon">
+            <div class="cal-chef-item">
+              <div class="cal-chef-icon">
                 <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
               </div>
               <div>
-                <div class="cal-hero-stat-number">88 Guests</div>
-                <div class="cal-hero-stat-label">Intimate Max Capacity</div>
+                <div class="cal-chef-title">88 Guests</div>
+                <div class="cal-chef-desc">Intimate Max Capacity</div>
               </div>
             </div>
 
-            <div class="cal-hero-stat-item">
-              <div class="cal-hero-stat-icon">
+            <div class="cal-chef-item">
+              <div class="cal-chef-icon">
                 <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
               </div>
               <div>
-                <div class="cal-hero-stat-number">4.97 / 5.0</div>
-                <div class="cal-hero-stat-label">Guest Experience Rating</div>
+                <div class="cal-chef-title">4.97 / 5.0</div>
+                <div class="cal-chef-desc">Guest Experience Rating</div>
               </div>
             </div>
 
-            <div class="cal-hero-stat-item">
-              <div class="cal-hero-stat-icon">
+            <div class="cal-chef-item">
+              <div class="cal-chef-icon">
                 <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
               </div>
               <div>
-                <div class="cal-hero-stat-number">24/7 Concierge</div>
-                <div class="cal-hero-stat-label">Dietary &amp; Seating Care</div>
+                <div class="cal-chef-title">24/7 Concierge</div>
+                <div class="cal-chef-desc">Dietary &amp; Seating Care</div>
               </div>
             </div>
           </div>

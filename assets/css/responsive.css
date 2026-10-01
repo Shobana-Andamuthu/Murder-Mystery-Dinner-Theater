@@ -445,11 +445,62 @@
   }
 
   .home-hero {
-    padding: 3.5rem 0 3rem;
+    padding: 3.5rem 0 2.5rem;
+    min-height: auto !important;
+  }
+
+  .home-hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero-tag-badge {
+    max-width: 100%;
+    white-space: normal;
+    font-size: 0.75rem;
+    padding: 0.35rem 0.85rem;
+  }
+
+  .home-hero-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    word-break: break-word;
+  }
+
+  .home-hero-lead {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-booking-widget {
+    padding: 1.25rem 1rem !important;
+    margin: 0 auto 2rem !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 0.75rem;
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .stat-item {
+    min-width: 0;
   }
 
   .stat-number {
-    font-size: 1.65rem;
+    font-size: 1.45rem !important;
+    word-break: break-word;
+  }
+
+  .stat-label {
+    font-size: 0.72rem !important;
+    line-height: 1.35 !important;
   }
 }
 
@@ -510,7 +561,10 @@
 
   .whispers-split-grid {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -532,7 +586,39 @@
   }
 
   .quiz-container-box {
-    padding: 1.5rem;
+    padding: 1.25rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .whispers-split-grid {
+    gap: 1.25rem;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .whisper-lead-card {
+    padding: 1.5rem 1.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .whisper-quote {
+    font-size: 1.08rem !important;
+    line-height: 1.55 !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .telegrams-stack {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 1.25rem !important;
+  }
+
+  .telegram-card {
+    padding: 1.25rem 1.25rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .passcode-form {
@@ -806,33 +892,64 @@
     padding: 0.75rem 1rem !important;
   }
 
-  .menu-hero-badge {
-    font-size: 0.725rem !important;
+  .menu-hero-badge,
+  .story-hero-badge,
+  .hero-tag-badge,
+  .hero-pill-badge,
+  .case-file-badge,
+  .h2-hero-tag {
+    font-size: 0.72rem !important;
     letter-spacing: 0.05em !important;
-    padding: 0.35rem 0.75rem !important;
-    white-space: normal !important;
+    padding: 0.35rem 0.8rem !important;
+    white-space: nowrap !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
     text-align: center !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
-  /* Contact CTA Box & Action Buttons Mobile Full Containment */
-  .contact-cta-box {
+  /* Contact & Shows CTA Boxes & Action Buttons Mobile Full Containment */
+  .contact-cta-box,
+  .shows-cta-box {
     padding: 2.5rem 1.25rem !important;
-  }
-
-  .contact-cta-actions {
-    flex-direction: column !important;
-    align-items: stretch !important;
-    gap: 1rem !important;
-  }
-
-  .contact-cta-actions .btn {
     width: 100% !important;
-    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-cta-actions,
+  .shows-cta-actions,
+  .final-cta-actions {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.85rem !important;
+    width: 100% !important;
+  }
+
+  .contact-cta-actions .btn,
+  .shows-cta-actions .btn,
+  .final-cta-actions .btn,
+  .events-proposal-submit-btn,
+  .contact-submit-btn {
+    width: 100% !important;
+    max-width: 440px !important;
+    padding: 0.85rem 1.15rem !important;
+    font-size: 0.9rem !important;
     justify-content: center !important;
     text-align: center !important;
-    white-space: normal !important;
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+  }
+
+  .contact-cta-actions .btn span,
+  .shows-cta-actions .btn span,
+  .final-cta-actions .btn span,
+  .events-proposal-submit-btn span,
+  .contact-submit-btn span {
+    white-space: nowrap !important;
   }
 
   /* Guarantees & Pillars of Assurance Clean Alignment */
@@ -1276,5 +1393,141 @@
     font-size: 0.775rem !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Unified Hero Height Standards Across Breakpoints
+   -------------------------------------------------------------------------- */
+.home-hero,
+.h2-hero-section {
+  min-height: 100vh !important;
+  min-height: 100dvh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+/* --------------------------------------------------------------------------
+   Standardized First-Section Height System (All Non-Home Pages)
+   -------------------------------------------------------------------------- */
+.shows-hero-section,
+.cal-hero-section,
+.events-hero-section,
+.menu-hero-section,
+.story-hero-section,
+.contact-hero-section {
+  min-height: 560px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 5.5rem 0 3.5rem !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 1200px) {
+  .shows-hero-section,
+  .cal-hero-section,
+  .events-hero-section,
+  .menu-hero-section,
+  .story-hero-section,
+  .contact-hero-section {
+    min-height: 520px;
+    padding: 5rem 0 3rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .shows-hero-section,
+  .cal-hero-section,
+  .events-hero-section,
+  .menu-hero-section,
+  .story-hero-section,
+  .contact-hero-section {
+    min-height: 480px;
+    padding: 4.5rem 0 2.75rem !important;
+  }
+  .menu-chef-strip,
+  .shows-chef-strip,
+  .cal-chef-strip,
+  .events-chef-strip,
+  .story-chef-strip,
+  .contact-chef-strip {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+  .menu-hero-content,
+  .shows-hero-content,
+  .cal-hero-content {
+    margin-bottom: 2.5rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .shows-hero-section,
+  .cal-hero-section,
+  .events-hero-section,
+  .menu-hero-section,
+  .story-hero-section,
+  .contact-hero-section {
+    min-height: auto;
+    padding: 3.5rem 0 2.25rem !important;
+  }
+  .menu-chef-strip,
+  .shows-chef-strip,
+  .cal-chef-strip {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  .menu-filter-ribbon-wrap,
+  .shows-filter-ribbon-wrap,
+  .cal-filter-ribbon-wrap {
+    padding: 1.15rem 1.25rem !important;
+  }
+  .menu-hero-content,
+  .shows-hero-content,
+  .cal-hero-content {
+    margin-bottom: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .shows-hero-section,
+  .cal-hero-section,
+  .events-hero-section,
+  .menu-hero-section,
+  .story-hero-section,
+  .contact-hero-section {
+    padding: 3rem 0 2rem !important;
+  }
+  .shows-hero-actions,
+  .cal-hero-actions,
+  .events-hero-actions,
+  .story-hero-actions,
+  .contact-hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+  .shows-hero-actions .btn,
+  .cal-hero-actions .btn,
+  .events-hero-actions .btn,
+  .story-hero-actions .btn,
+  .contact-hero-actions .btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .shows-hero-section,
+  .cal-hero-section,
+  .events-hero-section,
+  .menu-hero-section,
+  .story-hero-section,
+  .contact-hero-section {
+    padding: 2.5rem 0 1.75rem !important;
+  }
+}
+
 
 
