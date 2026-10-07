@@ -4693,13 +4693,13 @@ html.drawer-is-open {
 .show-card-highlight {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.65rem;
-  padding: 0.75rem 0.85rem;
+  gap: 0.75rem;
+  padding: 0.85rem 0.95rem;
   background: var(--bg-surface-alt);
   border: 1px solid var(--border-subtle);
   border-radius: var(--border-radius-md);
-  min-height: 64px;
-  align-items: center;
+  min-height: 68px;
+  align-items: start;
   box-sizing: border-box;
   margin-bottom: 1.15rem;
   width: 100%;
@@ -4708,20 +4708,31 @@ html.drawer-is-open {
 .show-hl-col {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.25rem;
   min-width: 0;
-  overflow: hidden;
+  justify-content: flex-start;
+}
+
+.show-hl-col:last-child {
+  padding-left: 0.65rem;
+  border-left: 1px solid var(--border-subtle);
+}
+
+[dir="rtl"] .show-hl-col:last-child {
+  padding-left: 0;
+  padding-right: 0.65rem;
+  border-left: none;
+  border-right: 1px solid var(--border-subtle);
 }
 
 .show-hl-k {
   font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--color-gold-bright);
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.2;
 }
 
 [data-theme="light"] .show-hl-k {
@@ -4729,7 +4740,7 @@ html.drawer-is-open {
 }
 
 .show-hl-v {
-  font-size: 0.775rem;
+  font-size: 0.785rem;
   font-weight: 600;
   color: var(--text-primary);
   line-height: 1.35;
@@ -5440,9 +5451,18 @@ html.drawer-is-open {
   }
   .show-card-highlight {
     grid-template-columns: 1fr;
-    gap: 0.6rem;
+    gap: 0.55rem;
     min-height: auto;
     padding: 0.85rem 1rem;
+    align-items: stretch;
+  }
+  .show-hl-col:last-child {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--border-subtle);
   }
   .show-hl-v {
     white-space: normal;
@@ -7796,8 +7816,8 @@ html.drawer-is-open {
     grid-row: auto;
   }
   .events-packages-grid {
-    grid-template-columns: 1fr;
-    max-width: 480px;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 860px;
     margin-left: auto;
     margin-right: auto;
     gap: 1.5rem;

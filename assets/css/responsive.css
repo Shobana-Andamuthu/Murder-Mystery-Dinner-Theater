@@ -1002,14 +1002,30 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+  .events-packages-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
 }
 
 @media (max-width: 1024px) {
   .show-card-highlight {
     grid-template-columns: 1fr;
-    gap: 0.5rem;
+    gap: 0.55rem;
     min-height: auto;
-    padding: 0.75rem 0.85rem;
+    padding: 0.85rem;
+    align-items: stretch;
+  }
+  .show-hl-col:last-child {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    padding-top: 0.55rem;
+    border-top: 1px solid var(--border-subtle);
   }
   .story-ensemble-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1021,6 +1037,13 @@
   }
   .shows-premieres-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .events-packages-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
     gap: 1.5rem;
   }
   .seating-cards-grid {
@@ -1065,6 +1088,13 @@
   }
   .genre-card-desc {
     min-height: auto;
+  }
+  .events-packages-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
   }
   .shows-premieres-grid {
     grid-template-columns: 1fr;
