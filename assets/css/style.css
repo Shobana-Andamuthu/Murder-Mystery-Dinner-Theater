@@ -7843,6 +7843,13 @@ html.drawer-is-open {
 }
 
 @media (max-width: 768px) {
+  .events-packages-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.75rem;
+  }
   .events-inquiry-grid {
     grid-template-columns: 1fr;
   }

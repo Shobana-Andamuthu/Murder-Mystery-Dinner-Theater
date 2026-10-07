@@ -1065,6 +1065,16 @@
   }
 }
 
+@media (max-width: 800px) {
+  .events-packages-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.75rem;
+  }
+}
+
 @media (max-width: 680px) {
   .shows-productions-grid {
     grid-template-columns: 1fr;
