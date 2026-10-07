@@ -8533,18 +8533,18 @@ html.drawer-is-open {
   padding: 1.15rem 1.35rem;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   flex-grow: 1;
   min-width: 0;
+  gap: 0.35rem;
 }
 
 .menu-cocktail-name-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: baseline;
   gap: 0.75rem;
-  margin-bottom: 0.4rem;
-  min-height: 2.75rem;
+  margin-bottom: 0;
 }
 
 .menu-cocktail-name {
@@ -8554,9 +8554,6 @@ html.drawer-is-open {
   color: var(--text-primary);
   line-height: 1.25;
   margin: 0;
-  white-space: normal;
-  word-break: normal;
-  overflow-wrap: break-word;
 }
 
 .menu-cocktail-price {
