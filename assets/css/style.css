@@ -2756,7 +2756,7 @@ html.drawer-is-open {
 
 .final-cta-features {
   margin-top: 2rem;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: #FFE082 !important;
   display: flex;
@@ -2764,6 +2764,11 @@ html.drawer-is-open {
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.final-cta-features span {
+  color: #FFE082 !important;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
 }
 
@@ -4157,16 +4162,22 @@ html.drawer-is-open {
   color: #6B7280;
 }
 
-[data-theme="light"] .h2-countdown-inner .final-cta-features,
-[data-theme="light"] .final-cta-features {
-  color: #1F2937 !important;
+[data-theme="light"] .h2-countdown-inner .final-cta-features {
+  color: #374151 !important;
   text-shadow: none !important;
 }
 
-[data-theme="light"] .h2-countdown-inner .final-cta-features span,
-[data-theme="light"] .final-cta-features span {
-  color: #1F2937 !important;
+[data-theme="light"] .h2-countdown-inner .final-cta-features span {
+  color: #374151 !important;
   text-shadow: none !important;
+}
+
+.final-cta-section .final-cta-features,
+.final-cta-section .final-cta-features span,
+[data-theme="light"] .final-cta-section .final-cta-features,
+[data-theme="light"] .final-cta-section .final-cta-features span {
+  color: #FFE082 !important;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9) !important;
 }
 
 @keyframes fadeIn {
