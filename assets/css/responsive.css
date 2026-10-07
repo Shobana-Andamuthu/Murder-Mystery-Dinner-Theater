@@ -1278,6 +1278,16 @@
   }
 }
 
+@media (max-width: 768px) {
+  .menu-cocktails-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.25rem;
+  }
+}
+
 @media (max-width: 680px) {
   .menu-courses-grid {
     grid-template-columns: 1fr;

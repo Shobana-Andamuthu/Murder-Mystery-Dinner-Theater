@@ -8533,7 +8533,7 @@ html.drawer-is-open {
   padding: 1.15rem 1.35rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   flex-grow: 1;
   min-width: 0;
 }
@@ -8541,9 +8541,10 @@ html.drawer-is-open {
 .menu-cocktail-name-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: flex-start;
   gap: 0.75rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+  min-height: 2.75rem;
 }
 
 .menu-cocktail-name {
@@ -8554,6 +8555,8 @@ html.drawer-is-open {
   line-height: 1.25;
   margin: 0;
   white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
 .menu-cocktail-price {
@@ -8562,6 +8565,7 @@ html.drawer-is-open {
   color: var(--accent-gold);
   font-size: 1.05rem;
   flex-shrink: 0;
+  line-height: 1.25;
 }
 
 .menu-cocktail-desc {
