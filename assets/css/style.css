@@ -10587,7 +10587,9 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 
 .contact-map-visual {
   position: relative;
-  min-height: 440px;
+  display: flex;
+  flex-direction: column;
+  min-height: 460px;
   width: 100%;
   height: 100%;
   border-right: 1px solid var(--border-subtle);
@@ -10599,48 +10601,40 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   border-color: rgba(0, 0, 0, 0.1);
 }
 
-.contact-map-iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 440px;
-  border: none;
-  display: block;
+.contact-map-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.25rem;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--color-gold-bright);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  z-index: 2;
+  box-sizing: border-box;
 }
 
-.contact-map-overlay-badge {
-  position: absolute;
-  bottom: 1.25rem;
-  left: 50%;
-  transform: translateX(-50%);
-  top: auto;
-  right: auto;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  background: rgba(13, 15, 20, 0.92);
-  border: 1px solid rgba(212, 175, 55, 0.45);
-  color: var(--color-gold-bright);
-  font-size: 0.82rem;
-  font-weight: 700;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius-full);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
-  pointer-events: none;
-  width: max-content;
-  max-width: calc(100% - 2.5rem);
+[data-theme="light"] .contact-map-topbar {
+  background: #F8F5EE;
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+  color: #92400E;
+}
+
+.contact-map-topbar-text {
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
-[data-theme="light"] .contact-map-overlay-badge {
-  background: rgba(255, 255, 255, 0.95);
-  border-color: #B45309;
-  color: #92400E;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+.contact-map-iframe {
+  width: 100%;
+  height: 100%;
+  flex: 1;
+  min-height: 380px;
+  border: none;
+  display: block;
 }
 
 .contact-map-dot {
@@ -11186,16 +11180,9 @@ input[type="date"].contact-input {
   .contact-map-details {
     padding: 2.25rem 1.5rem;
   }
-  .contact-map-overlay-badge {
-    bottom: 1.25rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 0.78rem;
-    padding: 0.45rem 0.85rem;
-    max-width: calc(100% - 1.5rem);
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+  .contact-map-topbar {
+    padding: 0.75rem 1.15rem;
+    font-size: 0.8rem;
   }
   .contact-valet-body {
     padding: 2.25rem 1.5rem;
