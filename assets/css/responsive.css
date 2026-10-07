@@ -994,7 +994,7 @@
     gap: 1.5rem;
   }
   .genre-cards-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   .shows-premieres-grid {
@@ -1031,7 +1031,7 @@
     gap: 1.25rem;
   }
   .genre-cards-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
   .shows-premieres-grid {
@@ -1064,19 +1064,43 @@
   }
 }
 
-@media (max-width: 800px) {
-  .events-packages-grid {
+@media (max-width: 768px) {
+  .genre-cards-grid {
     grid-template-columns: 1fr !important;
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
-    gap: 1.75rem;
+    gap: 1.5rem;
+  }
+  .shows-productions-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .shows-premieres-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
   }
 }
 
 @media (max-width: 680px) {
+  .genre-cards-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .genre-card-desc {
+    min-height: auto;
+  }
   .shows-productions-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
     max-width: 440px;
     margin-left: auto;
     margin-right: auto;
@@ -1086,16 +1110,6 @@
     min-height: auto;
   }
   .show-card-synopsis {
-    min-height: auto;
-  }
-  .genre-cards-grid {
-    grid-template-columns: 1fr;
-    max-width: 440px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 1.5rem;
-  }
-  .genre-card-desc {
     min-height: auto;
   }
   .events-packages-grid {

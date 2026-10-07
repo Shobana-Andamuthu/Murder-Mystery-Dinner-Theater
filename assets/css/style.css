@@ -5501,6 +5501,30 @@ html.drawer-is-open {
   }
 }
 
+@media (max-width: 768px) {
+  .genre-cards-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .shows-productions-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+  .shows-premieres-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 1.5rem;
+  }
+}
+
 @media (max-width: 640px) {
   .shows-live-badge-card {
     position: static !important;
