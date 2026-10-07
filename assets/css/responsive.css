@@ -997,6 +997,12 @@
 }
 
 @media (max-width: 1024px) {
+  .show-card-highlight {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    min-height: auto;
+    padding: 0.75rem 0.85rem;
+  }
   .story-ensemble-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
