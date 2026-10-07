@@ -244,11 +244,12 @@
       });
     });
 
-    // G. Back-to-Top Button
+    // G. Back-to-Top Button & Anchor Smooth Scrolling
     const backToTopBtn = document.querySelector('.back-to-top');
     if (backToTopBtn) {
+      let isFormFocused = false;
       const toggleBackToTop = () => {
-        if (window.scrollY > 350) {
+        if (window.scrollY > 350 && !isFormFocused) {
           backToTopBtn.classList.add('is-visible');
         } else {
           backToTopBtn.classList.remove('is-visible');
@@ -258,12 +259,63 @@
       window.addEventListener('scroll', toggleBackToTop, { passive: true });
       toggleBackToTop();
 
+      // Hide back to top button while user is typing in forms on mobile
+      const formFields = document.querySelectorAll('input, textarea, select');
+      formFields.forEach((field) => {
+        field.addEventListener('focus', () => {
+          isFormFocused = true;
+          backToTopBtn.classList.remove('is-visible');
+        });
+        field.addEventListener('blur', () => {
+          isFormFocused = false;
+          toggleBackToTop();
+        });
+      });
+
       backToTopBtn.addEventListener('click', () => {
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
         });
       });
+    }
+
+    // Anchor Link Smooth Scroll with Header Offset
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#' || targetId === '#!') return;
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          const header = document.querySelector('.master-header');
+          const headerH = header ? header.offsetHeight : 76;
+          const targetY = targetEl.getBoundingClientRect().top + window.pageYOffset - headerH - 16;
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+          if (history.pushState) {
+            history.pushState(null, null, targetId);
+          }
+        }
+      });
+    });
+
+    // Handle initial URL hash on load
+    if (window.location.hash) {
+      setTimeout(() => {
+        const initialTarget = document.querySelector(window.location.hash);
+        if (initialTarget) {
+          const header = document.querySelector('.master-header');
+          const headerH = header ? header.offsetHeight : 76;
+          const targetY = initialTarget.getBoundingClientRect().top + window.pageYOffset - headerH - 16;
+          window.scrollTo({
+            top: targetY,
+            behavior: 'smooth'
+          });
+        }
+      }, 150);
     }
 
     // H. Highlight Active Navigation Item & Dropdown State Based on URL
