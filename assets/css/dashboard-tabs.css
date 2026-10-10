@@ -650,3 +650,57 @@
     height: 100%;
   }
 }
+
+/* Responsiveness: Dashboard Ledger Table at 360px and small viewports */
+@media (max-width: 640px) {
+  .dash-ledger-split {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .dash-ledger-card {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--border-radius-md);
+  }
+
+  .dash-ledger-table {
+    min-width: 460px;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .dash-ledger-table th,
+  .dash-ledger-table td {
+    padding: 0.75rem 0.65rem;
+    font-size: 0.8125rem;
+    white-space: normal;
+  }
+
+  .dash-ledger-table th:first-child,
+  .dash-ledger-table td:first-child {
+    padding-left: 0.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .dash-ledger-card {
+    margin: 0;
+    width: 100%;
+    border-radius: 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dash-ledger-table {
+    min-width: 440px;
+  }
+
+  .dash-ledger-table th,
+  .dash-ledger-table td {
+    padding: 0.65rem 0.5rem;
+    font-size: 0.75rem;
+  }
+}

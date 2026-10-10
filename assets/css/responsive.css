@@ -516,6 +516,19 @@
     height: 380px;
   }
 
+  .h2-wax-seal-badge {
+    top: -0.75rem;
+    right: 0.5rem;
+    width: 78px;
+    height: 78px;
+    font-size: 0.6rem;
+  }
+
+  [dir="rtl"] .h2-wax-seal-badge {
+    right: auto;
+    left: 0.5rem;
+  }
+
   .suspects-pin-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1576,6 +1589,7 @@
   .shows-hero-actions,
   .cal-hero-actions,
   .events-hero-actions,
+  .menu-hero-actions,
   .story-hero-actions,
   .contact-hero-actions {
     flex-direction: column !important;
@@ -1585,6 +1599,7 @@
   .shows-hero-actions .btn,
   .cal-hero-actions .btn,
   .events-hero-actions .btn,
+  .menu-hero-actions .btn,
   .story-hero-actions .btn,
   .contact-hero-actions .btn {
     width: 100% !important;
