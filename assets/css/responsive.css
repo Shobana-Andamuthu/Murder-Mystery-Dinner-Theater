@@ -380,7 +380,16 @@
   }
 
   .events-bento-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .bento-card-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-card-compact .bento-card-img-wrap {
+    height: 190px;
   }
 
   .testimonials-grid {
@@ -1051,6 +1060,9 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
   }
+  .show-production-card.show-production-feature {
+    grid-column: span 3;
+  }
   .events-packages-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     max-width: 860px;
@@ -1091,6 +1103,21 @@
     margin-left: auto;
     margin-right: auto;
     gap: 1.5rem;
+  }
+  .show-production-card,
+  .show-production-card.show-production-flagship,
+  .show-production-card.show-production-feature {
+    grid-column: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .show-production-card.show-production-flagship .show-card-media {
+    aspect-ratio: 16 / 10 !important;
+    min-height: 220px !important;
+    height: auto !important;
+  }
+  .show-production-card.show-production-flagship .show-card-body {
+    padding: 1.5rem 1.25rem !important;
   }
   .shows-premieres-grid {
     grid-template-columns: 1fr !important;
@@ -1193,6 +1220,16 @@
     margin-left: auto;
     margin-right: auto;
     gap: 1.5rem;
+  }
+  .events-format-card {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .events-script-grid::before {
+    display: none !important;
+  }
+  .events-script-grid {
+    grid-template-columns: 1fr !important;
   }
   .events-format-title {
     min-height: auto;
