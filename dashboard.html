@@ -70,8 +70,14 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
         <span>Back to Site</span>
       </a>
-      <a href="login.html" class="dash-btn-logout" title="Log Out" aria-label="Log Out">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+      <button type="button" class="dash-btn-profile" id="dashTopbarProfileBtn" data-tab="tab-profile" title="View Patron Profile" aria-label="View Patron Profile">
+        <img src="assets/images/dashboard/dashboard_patron_avatar.jpg" alt="Lord Julian Vance" class="dash-btn-profile-img">
+        <span class="dash-btn-profile-name">Lord Vance</span>
+        <span class="dash-btn-profile-badge">Profile</span>
+      </button>
+      <a href="login.html" class="dash-btn-logout-labeled" title="Log Out of Patron Portal" aria-label="Log Out">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+        <span>Log Out</span>
       </a>
     </div>
   </header>
@@ -128,14 +134,13 @@
             <span>Concierge Dispatch</span>
           </button>
         </li>
+        <li class="dash-menu-item">
+          <button type="button" class="dash-menu-btn" data-tab="tab-profile" id="tab-profile-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+            <span>Patron Profile</span>
+          </button>
+        </li>
       </ul>
-
-      <div class="dash-sidebar-footer">
-        <div style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;">
-          Grand Enigma Alibi Society<br>
-          <strong style="color:var(--color-gold-bright);">VIP Member #0849</strong>
-        </div>
-      </div>
     </aside>
 
     <!-- MAIN AREA (tabs + content) -->
@@ -170,6 +175,10 @@
         <button type="button" class="dash-mobile-tab-btn" data-tab="tab-concierge">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
           Concierge
+        </button>
+        <button type="button" class="dash-mobile-tab-btn" data-tab="tab-profile">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+          Profile
         </button>
       </nav>
 
@@ -231,6 +240,246 @@
               </div>
             </div>
           </section>
+            <!-- Live Experience Progression Timeline -->
+            <section class="dash-overview-section" aria-labelledby="timelineHeading">
+              <div class="dash-section-header-compact">
+                <div>
+                  <span class="dash-tag-small">Live Production Chronology</span>
+                  <h2 class="dash-heading-compact" id="timelineHeading">Tonight's Mystery Staging &amp; Act Progression</h2>
+                </div>
+                <div class="dash-live-badge"><span class="live-dot"></span> Show In Progress &bull; Act I</div>
+              </div>
+
+              <div class="dash-stage-timeline">
+                <div class="dash-timeline-step completed">
+                  <div class="dash-timeline-node">
+                    <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </div>
+                  <div class="dash-timeline-info">
+                    <div class="dash-timeline-time">6:15 PM &bull; Complete</div>
+                    <div class="dash-timeline-title">Porte-Cochere Welcome</div>
+                    <div class="dash-timeline-desc">Complimentary valet, coat check &amp; Table #7 escort</div>
+                  </div>
+                </div>
+
+                <div class="dash-timeline-step active">
+                  <div class="dash-timeline-node">
+                    <span class="active-pulse"></span>
+                  </div>
+                  <div class="dash-timeline-info">
+                    <div class="dash-timeline-time">7:00 PM (Current)</div>
+                    <div class="dash-timeline-title">Act I: The Disputed Will</div>
+                    <div class="dash-timeline-desc">Reading of the testament &amp; French Onion Truffle Velouté</div>
+                  </div>
+                </div>
+
+                <div class="dash-timeline-step upcoming">
+                  <div class="dash-timeline-node">3</div>
+                  <div class="dash-timeline-info">
+                    <div class="dash-timeline-time">7:45 PM</div>
+                    <div class="dash-timeline-title">The Fatal Poisoning</div>
+                    <div class="dash-timeline-desc">Lights extinguish, library screams &amp; estate bridge collapse</div>
+                  </div>
+                </div>
+
+                <div class="dash-timeline-step upcoming">
+                  <div class="dash-timeline-node">4</div>
+                  <div class="dash-timeline-info">
+                    <div class="dash-timeline-time">8:30 PM</div>
+                    <div class="dash-timeline-title">Act II: Cross-Examinations</div>
+                    <div class="dash-timeline-desc">Audience interrogation of heirs &amp; Duck Confit entree</div>
+                  </div>
+                </div>
+
+                <div class="dash-timeline-step upcoming">
+                  <div class="dash-timeline-node">5</div>
+                  <div class="dash-timeline-info">
+                    <div class="dash-timeline-time">9:15 PM</div>
+                    <div class="dash-timeline-title">Clue Deliberation &amp; Ballots</div>
+                    <div class="dash-timeline-desc">Table voting, chocolate sphere finale &amp; suspect indictment</div>
+                  </div>
+                </div>
+
+                <div class="dash-timeline-step upcoming">
+                  <div class="dash-timeline-node">6</div>
+                  <div class="dash-timeline-info">
+                    <div class="dash-timeline-time">9:45 PM</div>
+                    <div class="dash-timeline-title">The Grand Unmasking</div>
+                    <div class="dash-timeline-desc">Scotland Yard verdict, culprit confession &amp; Sleuth honors</div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Overview 2-Column Grid: Nearby Suspects + Gastronomy Summary -->
+            <div class="dash-overview-grid">
+              <!-- Left Column: Suspects Seated Near Table #7 -->
+              <div class="dash-overview-card">
+                <div class="dash-card-header">
+                  <div>
+                    <span class="dash-tag-small">Crime Scene Radar</span>
+                    <h3 class="dash-card-title">Suspects Seated Near Table #7</h3>
+                  </div>
+                  <button type="button" class="dash-card-action-btn" data-tab="tab-case">
+                    <span>Full Intel</span> &rarr;
+                  </button>
+                </div>
+
+                <div class="dash-suspects-list">
+                  <div class="dash-suspect-item prime">
+                    <div class="dash-suspect-avatar">DT</div>
+                    <div class="dash-suspect-body">
+                      <div class="dash-suspect-top">
+                        <strong>Dr. Gabriel Thorne</strong>
+                        <span class="dash-suspicion-tag high">84% Suspicion</span>
+                      </div>
+                      <p class="dash-suspect-role">The Disgraced Physician &bull; Seated Table 6</p>
+                      <div class="dash-suspect-clue">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        Empty amber vial found near coat rack. Nervous tremors observed.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dash-suspect-item">
+                    <div class="dash-suspect-avatar">MV</div>
+                    <div class="dash-suspect-body">
+                      <div class="dash-suspect-top">
+                        <strong>Madame Vivienne</strong>
+                        <span class="dash-suspicion-tag med">68% Suspicion</span>
+                      </div>
+                      <p class="dash-suspect-role">The Glamorous Widow &bull; Seated Piano Lounge</p>
+                      <div class="dash-suspect-clue">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        Black lace veil concealed departure from parlor at 8:12 PM.
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="dash-suspect-item">
+                    <div class="dash-suspect-avatar">IV</div>
+                    <div class="dash-suspect-body">
+                      <div class="dash-suspect-top">
+                        <strong>Inspector Vance</strong>
+                        <span class="dash-suspicion-tag low">22% Suspicion</span>
+                      </div>
+                      <p class="dash-suspect-role">Scotland Yard Lead &bull; Guarding Portico</p>
+                      <div class="dash-suspect-clue">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        Alibi verified by Maitre Laurent during opening champagne toast.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Tonight's Gastronomy & Wine Pairing Summary -->
+              <div class="dash-overview-card">
+                <div class="dash-card-header">
+                  <div>
+                    <span class="dash-tag-small">Sommelier &amp; Kitchen Dispatch</span>
+                    <h3 class="dash-card-title">Tonight's 4-Course Pairing Dossier</h3>
+                  </div>
+                  <button type="button" class="dash-card-action-btn" data-tab="tab-gastronomy">
+                    <span>Edit Menu</span> &rarr;
+                  </button>
+                </div>
+
+                <div class="dash-menu-summary-list">
+                  <div class="dash-menu-course-item">
+                    <div class="dash-course-num">I</div>
+                    <div class="dash-course-details">
+                      <div class="dash-course-title">Black Truffle Velouté</div>
+                      <div class="dash-course-sub">Slow-roasted chestnut, chive oil &bull; <em>2021 Chablis Premier Cru</em></div>
+                    </div>
+                    <span class="dash-course-status served">&#10003; Served</span>
+                  </div>
+
+                  <div class="dash-menu-course-item active">
+                    <div class="dash-course-num">II</div>
+                    <div class="dash-course-details">
+                      <div class="dash-course-title">Crisp Duck Confit Grand Enigma</div>
+                      <div class="dash-course-sub">Parsnip mousseline, tart cherry glaze &bull; <em>2018 Nuits-Saint-Georges</em></div>
+                    </div>
+                    <span class="dash-course-status plating">&#9679; Plating</span>
+                  </div>
+
+                  <div class="dash-menu-course-item">
+                    <div class="dash-course-num">III</div>
+                    <div class="dash-course-details">
+                      <div class="dash-course-title">Black Angus Prime Filet Mignon</div>
+                      <div class="dash-course-sub">Morel reduction, dauphinoise potato &bull; <em>2017 Ch&acirc;teau Margaux</em></div>
+                    </div>
+                    <span class="dash-course-status upcoming">Next</span>
+                  </div>
+
+                  <div class="dash-menu-course-item">
+                    <div class="dash-course-num">IV</div>
+                    <div class="dash-course-details">
+                      <div class="dash-course-title">Dark Valrhona Chocolate Sphere</div>
+                      <div class="dash-course-sub">Salted caramel ganache, wild raspberry &bull; <em>20-Year Tawny Port</em></div>
+                    </div>
+                    <span class="dash-course-status upcoming">Finale</span>
+                  </div>
+                </div>
+
+                <div class="dash-table-service-box">
+                  <div class="dash-service-avatar">&#127863;</div>
+                  <div>
+                    <div class="dash-service-name">Dedicated Table #7 Sommelier: <strong>Maitre Laurent</strong></div>
+                    <div class="dash-service-note">All four companion glasses poured upon curtain rise. Dietary flags synced.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alibi Society Milestone & Rewards Hub -->
+            <section class="dash-overview-section" aria-labelledby="rewardsHeading">
+              <div class="dash-overview-card reward-card">
+                <div class="dash-rewards-grid">
+                  <div class="dash-rewards-left">
+                    <span class="dash-tag-small">Alibi Society Loyalty</span>
+                    <h3 class="dash-card-title" id="rewardsHeading">Progress Toward Sovereign Inquisitor</h3>
+                    <p class="dash-rewards-desc">
+                      You currently hold <strong>3,450 Alibi Credits</strong>. Accumulate 550 additional credits to achieve Sovereign rank and unlock private dining chambers and cast parlor invitations.
+                    </p>
+                    <div class="dash-rewards-bar-wrap">
+                      <div class="dash-rewards-bar-fill" style="width: 78%;"></div>
+                    </div>
+                    <div class="dash-rewards-bar-labels">
+                      <span>Grand Inquisitor (Current)</span>
+                      <span>78% Completed</span>
+                      <span>Sovereign (4,000 pts)</span>
+                    </div>
+                  </div>
+
+                  <div class="dash-rewards-perks">
+                    <div class="dash-perk-badge-item unlocked">
+                      <div class="dash-perk-icon">&#10003;</div>
+                      <div>
+                        <strong>Complimentary Valet &amp; Cloakroom</strong>
+                        <small>Active for all season performances</small>
+                      </div>
+                    </div>
+                    <div class="dash-perk-badge-item unlocked">
+                      <div class="dash-perk-icon">&#10003;</div>
+                      <div>
+                        <strong>Front-Row Director's Circle Table</strong>
+                        <small>Guaranteed Table #7 stage sightline</small>
+                      </div>
+                    </div>
+                    <div class="dash-perk-badge-item locked">
+                      <div class="dash-perk-icon">&#128274;</div>
+                      <div>
+                        <strong>Private Parlor &amp; Cast Saloon Access</strong>
+                        <small>Unlocks at 4,000 Alibi Credits (550 to go)</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
         </div>
 
         <!-- TAB 2: ACTIVE PASSES -->
@@ -543,14 +792,14 @@
             </div>
             <div class="dash-chat-box">
               <div class="dash-chat-header">
-                <div style="display:flex;align-items:center;gap:0.85rem;">
-                  <div style="width:10px;height:10px;border-radius:50%;background:#22C55E;box-shadow:0 0 10px #22C55E;"></div>
-                  <div>
-                    <strong style="color:var(--text-primary);font-size:0.95rem;display:block;">Lead Usher Harrison &bull; Box Office Concierge</strong>
-                    <span style="font-size:0.75rem;color:var(--text-muted);">Direct Line for Table #7 Patrons</span>
+                <div class="dash-chat-header-user">
+                  <span class="dash-chat-status-dot" title="Online" aria-label="Online"></span>
+                  <div class="dash-chat-user-details">
+                    <strong class="dash-chat-user-name">Lead Usher Harrison &bull; Box Office Concierge</strong>
+                    <span class="dash-chat-user-sub">Direct Line for Table #7 Patrons</span>
                   </div>
                 </div>
-                <span class="dash-patron-badge" style="margin-bottom:0;">Priority VIP Dispatch</span>
+                <span class="dash-chat-priority-badge">Priority VIP Dispatch</span>
               </div>
               <div class="dash-chat-history" id="dashChatHistory" aria-live="polite">
                 <div class="dash-chat-msg usher">
@@ -573,6 +822,128 @@
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                 </button>
               </form>
+            </div>
+          </section>
+        </div>
+
+
+        <!-- TAB 8: PATRON PROFILE & CREDENTIALS -->
+        <div class="dash-tab-pane" id="tab-profile" role="tabpanel">
+          <section class="dash-pass-section" aria-labelledby="profileHeading">
+            <div class="section-header" style="margin-bottom:2rem;">
+              <span class="section-tag">Patron Credentials &amp; Preferences</span>
+              <h2 class="section-title" id="profileHeading">Patron Profile &amp; Account Settings</h2>
+              <p class="section-subtitle">Manage your personal detective dossier, companion allocations, dietary flags, and access security.</p>
+            </div>
+
+            <div class="dash-profile-grid">
+              <!-- Left: Avatar & Society Credentials Card -->
+              <div class="dash-profile-card">
+                <div class="dash-profile-avatar-wrap">
+                  <img src="assets/images/dashboard/dashboard_patron_avatar.jpg" alt="Lord Julian Vance Portrait" class="dash-profile-avatar-large">
+                  <h3 class="dash-profile-name">Lord Julian Vance</h3>
+                  <div class="dash-profile-meta">Grand Inquisitor VIP &bull; Member #0849</div>
+                </div>
+
+                <div class="dash-profile-stat-list">
+                  <div class="dash-profile-stat-row">
+                    <span class="dash-profile-stat-label">Society Rank:</span>
+                    <span class="dash-profile-stat-val" style="color:var(--color-gold-bright);">Grand Inquisitor VIP</span>
+                  </div>
+                  <div class="dash-profile-stat-row">
+                    <span class="dash-profile-stat-label">Alibi Credits:</span>
+                    <span class="dash-profile-stat-val">3,450 (78% to Sovereign)</span>
+                  </div>
+                  <div class="dash-profile-stat-row">
+                    <span class="dash-profile-stat-label">Cases Solved:</span>
+                    <span class="dash-profile-stat-val">3 of 4 (75% Master Sleuth)</span>
+                  </div>
+                  <div class="dash-profile-stat-row">
+                    <span class="dash-profile-stat-label">Confirmed Table:</span>
+                    <span class="dash-profile-stat-val" style="color:var(--color-gold-bright);">Table #7 (Director's Circle)</span>
+                  </div>
+                  <div class="dash-profile-stat-row">
+                    <span class="dash-profile-stat-label">Patron Since:</span>
+                    <span class="dash-profile-stat-val">Autumn Season 2024</span>
+                  </div>
+                </div>
+
+                <div class="dash-profile-logout-box">
+                  <div class="dash-profile-logout-box-text">
+                    <h4>Session Control</h4>
+                    <p>End your authenticated detective session.</p>
+                  </div>
+                  <a href="login.html" class="dash-profile-logout-btn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+                    <span>Log Out</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Right: Personal Information & Settings -->
+              <div class="dash-profile-card">
+                <form id="dashProfileForm" onsubmit="event.preventDefault(); window.showToast ? window.showToast('Patron profile preferences updated successfully.', 'success') : alert('Saved!');">
+                  <div style="font-size:0.85rem;font-weight:700;color:var(--color-gold-bright);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:1rem;">
+                    Personal Investigation Dossier
+                  </div>
+
+                  <div class="dash-profile-fields-grid">
+                    <div class="dash-profile-field">
+                      <label class="dash-profile-label" for="profFirstName">First Name</label>
+                      <input type="text" id="profFirstName" class="dash-profile-input" value="Julian">
+                    </div>
+                    <div class="dash-profile-field">
+                      <label class="dash-profile-label" for="profLastName">Last Name / Title</label>
+                      <input type="text" id="profLastName" class="dash-profile-input" value="Lord Vance">
+                    </div>
+                    <div class="dash-profile-field">
+                      <label class="dash-profile-label" for="profEmail">Society Alias Email</label>
+                      <input type="email" id="profEmail" class="dash-profile-input" value="julian.vance@society.grandenigma.com">
+                    </div>
+                    <div class="dash-profile-field">
+                      <label class="dash-profile-label" for="profPhone">Direct Line Phone</label>
+                      <input type="tel" id="profPhone" class="dash-profile-input" value="+1 (555) 749-3820">
+                    </div>
+                    <div class="dash-profile-field">
+                      <label class="dash-profile-label" for="profDietary">Primary Dietary Requirement</label>
+                      <input type="text" id="profDietary" class="dash-profile-input" value="Standard Haute French (Truffle Lover)">
+                    </div>
+                    <div class="dash-profile-field">
+                      <label class="dash-profile-label" for="profSeating">Preferred Seating Sightline</label>
+                      <input type="text" id="profSeating" class="dash-profile-input" value="Front-Row Director's Circle (Stage Center)">
+                    </div>
+                    <div class="dash-profile-field full-width">
+                      <label class="dash-profile-label" for="profNotes">Special Concierge Inquiries / Instructions</label>
+                      <input type="text" id="profNotes" class="dash-profile-input" value="Lady Eleanor requires dairy-free dessert substitution. Vintage Bordeaux pairings preferred.">
+                    </div>
+                  </div>
+
+                  <div style="font-size:0.85rem;font-weight:700;color:var(--color-gold-bright);text-transform:uppercase;letter-spacing:0.08em;margin:1.75rem 0 1rem;padding-top:1.25rem;border-top:1px solid var(--border-subtle);">
+                    Security &amp; Passphrase
+                  </div>
+
+                  <div class="dash-profile-fields-grid">
+                    <div class="dash-profile-field">
+                      <label class="dash-profile-label" for="profOldPw">Current Passphrase</label>
+                      <input type="password" id="profOldPw" class="dash-profile-input" placeholder="••••••••••••">
+                    </div>
+                    <div class="dash-profile-field">
+                      <label class="dash-profile-label" for="profNewPw">New Secret Passphrase</label>
+                      <input type="password" id="profNewPw" class="dash-profile-input" placeholder="Minimum 8 characters">
+                    </div>
+                  </div>
+
+                  <div class="dash-profile-actions">
+                    <div style="font-size:0.8rem;color:var(--text-muted);">
+                      All alterations immediately synchronize with the Box Office concierge.
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="padding:0.75rem 1.6rem;">
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/></svg>
+                      <span>Save Profile Changes</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
           </section>
         </div>

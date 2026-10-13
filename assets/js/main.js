@@ -1062,17 +1062,17 @@
       }
     };
 
-    // Attach click handlers to all sidebar menu buttons
-    document.querySelectorAll('.dash-menu-btn[data-tab]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        window.dashSwitchTab(btn.getAttribute('data-tab'));
-      });
-    });
-
-    // Attach click handlers to all mobile tab bar buttons
-    document.querySelectorAll('.dash-mobile-tab-btn[data-tab]').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        window.dashSwitchTab(btn.getAttribute('data-tab'));
+    // Attach click handlers to all tab trigger elements
+    document.querySelectorAll('[data-tab]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const tab = btn.getAttribute('data-tab');
+        if (tab && typeof window.dashSwitchTab === 'function') {
+          // If it's a button or link with data-tab
+          if (btn.tagName === 'A' && btn.getAttribute('href') === '#') {
+            e.preventDefault();
+          }
+          window.dashSwitchTab(tab);
+        }
       });
     });
 

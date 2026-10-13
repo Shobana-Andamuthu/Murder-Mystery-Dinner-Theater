@@ -2220,6 +2220,31 @@ html.drawer-is-open {
   color: var(--text-primary);
 }
 
+.current-prod-actions {
+  display: flex;
+  gap: 1.1rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.current-prod-actions .btn {
+  flex: 1 1 200px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.current-prod-actions .btn span {
+  white-space: nowrap;
+}
+
 /* --------------------------------------------------------------------------
    SECTION 3: The 4-Act Dining Experience
    -------------------------------------------------------------------------- */
@@ -11974,6 +11999,8 @@ input[type="date"].contact-input {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.4rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 [data-theme="light"] .dash-patron-badge {
@@ -12799,15 +12826,18 @@ input[type="date"].contact-input {
 
 /* Sidebar */
 .dash-app-sidebar {
-  width: 270px;
+  width: 260px;
   flex-shrink: 0;
   background: #0B0D12;
   border-right: 1px solid var(--border-subtle);
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  position: sticky;
-  top: 0;
+  height: 100%;
+  min-height: 0;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
   z-index: 100;
   transition: transform var(--transition-normal);
 }
@@ -12913,9 +12943,10 @@ input[type="date"].contact-input {
 }
 
 .dash-sidebar-footer {
-  padding: 1.5rem;
+  padding: 0.75rem 0.75rem 1.25rem;
   border-top: 1px solid var(--border-subtle);
   margin-top: auto;
+  flex-shrink: 0;
 }
 
 [data-theme="light"] .dash-sidebar-footer {

@@ -941,6 +941,7 @@
 
   .contact-cta-actions,
   .shows-cta-actions,
+  .current-prod-actions,
   .final-cta-actions {
     flex-direction: column !important;
     align-items: center !important;
@@ -950,27 +951,47 @@
 
   .contact-cta-actions .btn,
   .shows-cta-actions .btn,
+  .current-prod-actions .btn,
   .final-cta-actions .btn,
   .events-proposal-submit-btn,
   .contact-submit-btn {
+    flex: 0 0 auto !important;
     width: 100% !important;
     max-width: 440px !important;
-    padding: 0.85rem 1.15rem !important;
-    font-size: 0.9rem !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    max-height: 48px !important;
+    padding: 0 1.25rem !important;
+    font-size: 0.88rem !important;
     justify-content: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
     display: inline-flex !important;
     align-items: center !important;
     gap: 0.5rem !important;
+    border-radius: var(--border-radius-full) !important;
   }
 
   .contact-cta-actions .btn span,
   .shows-cta-actions .btn span,
+  .current-prod-actions .btn span,
   .final-cta-actions .btn span,
   .events-proposal-submit-btn span,
   .contact-submit-btn span {
     white-space: nowrap !important;
+  }
+
+  /* Prime Suspects Snippet Mobile Responsive Column */
+  .character-avatars-row {
+    flex-direction: column !important;
+    gap: 0.65rem !important;
+    width: 100% !important;
+  }
+
+  .character-card-mini {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.65rem 0.85rem !important;
   }
 
   /* Guarantees & Pillars of Assurance Clean Alignment */
